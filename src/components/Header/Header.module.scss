@@ -1,0 +1,42 @@
+.container {
+  @apply
+  z-50
+  fixed
+  -top-4
+  left-1/2
+  transform -translate-x-1/2
+  bg-emerald-800
+  shadow-lg
+  shadow-emerald-800/50
+  rounded-lg
+  h-20
+  w-11/12
+  max-w-7xl
+  flex
+  items-end
+  justify-center
+  mx-auto;
+  
+  &:hover {
+    @apply
+    transition
+    ease-in-out
+    duration-700
+    -top-2;
+
+    h3 {
+      @apply
+      mb-6
+      text-gray-100
+    };
+  };
+
+  
+  h3 {
+    @apply
+    text-gray-200
+    mb-4
+    w-full
+    text-3xl;
+  }
+};
