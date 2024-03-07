@@ -1,0 +1,111 @@
+.container {
+  @apply
+  -rotate-12
+  absolute
+  bottom-0
+  right-0
+  translate-y-44
+  -translate-x-4
+  flex
+  flex-col
+  max-w-screen-sm
+  w-1/2
+  min-w-96
+  items-end
+  justify-center;
+
+  &:hover {
+    @apply
+    transition
+    ease-in-out
+    duration-1000
+    -rotate-0
+    -translate-y-0;
+
+    .stackTitle {
+      h3 {
+        @apply
+        transition
+        ease-in-out
+        duration-1000
+        -translate-x-1/3
+      }
+  
+      .openStack {
+      @apply
+        transition
+        ease-in-out
+        delay-100
+        duration-1000
+        translate-y-0
+        rotate-0;
+      }
+    }
+
+    .stackList {
+
+      svg {
+        @apply
+        transition
+        ease-in-out
+        duration-1000
+        delay-200
+        translate-y-0
+      }
+    }
+  }
+
+  .stackTitle {
+    h3 {
+      @apply
+      text-gray-200
+      w-fit
+      h-fit
+      font-sans
+      text-7xl
+      font-black
+      text-right
+    };
+
+    .openStack {
+      @apply
+      z-50
+      absolute
+      flex
+      items-center
+      justify-center
+      top-2
+      right-0
+      size-16
+      text-5xl
+      align-top
+      translate-y-16
+      rotate-12;
+    };
+  }
+
+  .stackList {
+    @apply
+    relative
+    w-full
+    h-48
+    flex
+    flex-wrap
+    gap-x-8
+    rounded
+    py-10
+    px-10
+    bg-emerald-700
+
+    items-center
+    justify-center;
+
+    svg {
+      @apply
+      w-12
+      h-12
+      rounded-md
+      translate-y-8
+    }
+  }
+}

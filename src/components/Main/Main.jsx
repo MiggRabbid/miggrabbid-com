@@ -1,5 +1,7 @@
 import styles from './Main.module.scss';
 
+import MyStack from '../MyStack/MyStack';
+
 const Main = () => (
   <div className={styles.container}>
     <div className={styles.title}>
@@ -15,6 +17,7 @@ const Main = () => (
         DEV
       </p>
     </div>
+    <MyStack />
   </div>
 );
 

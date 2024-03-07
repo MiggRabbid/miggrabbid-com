@@ -1,9 +1,11 @@
 .container {
   @apply
+  relative
+  left-0
   pt-32
-  h-max
+  h-screen
   w-11/12
-  max-w-7xl
+  max-w-screen-2xl
   flex
   flex-col
   justify-center
@@ -13,9 +15,10 @@
   
   .title {
     @apply
-    relative
-    w-2/3
-    h-full
+    absolute
+    top-24
+    w-fit
+    h-fit
     skew-y-6;
 
     
@@ -28,6 +31,9 @@
 
       .text {
         @apply
+        transition
+        ease-in-out
+        duration-500
         text-gray-100
       };
     }
@@ -39,14 +45,16 @@
       text-9xl
       font-black
       text-gray-200;
-    };
+    }
 
-    p:nth-child(2) {
+    .text:nth-child(2) {
       @apply
+      z-50
       absolute
+      text-orange-400
       -left-20
       top-1/2
       transform -translate-y-1/2
-    };
+    }
   }
 }
