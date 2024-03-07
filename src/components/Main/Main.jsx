@@ -1,6 +1,7 @@
 import styles from './Main.module.scss';
 
-import MyStack from '../MyStack/MyStack';
+import AboutMe from './AboutMe/AboutMe';
+import MyStack from './MyStack/MyStack';
 
 const Main = () => (
   <div className={styles.container}>
@@ -17,6 +18,7 @@ const Main = () => (
         DEV
       </p>
     </div>
+    <AboutMe className={styles.aboutMe} />
     <MyStack />
   </div>
 );
