@@ -1,10 +1,12 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
 .container {
   @apply
   relative
-  left-0
-  pt-32
-  h-screen
+  h-full
   w-11/12
+  -top-36
   max-w-screen-2xl
   flex
   flex-col
@@ -16,42 +18,37 @@
   .title {
     @apply
     absolute
-    top-24
+    top-0
     w-fit
     h-fit
     skew-y-6;
 
     
     &:hover {
+      @include anim-duration-500();
       @apply
-      transition
-      ease-in-out
-      duration-500
       -rotate-6;
 
       .text {
-        @apply
-        transition
-        ease-in-out
-        duration-500
-        text-gray-100
+        @include anim-duration-500();
+        color: $second-text-color;
       };
     }
 
     .text {
+      color: $main-text-color;
       @apply
       h-min
       font-sans
       text-9xl
       font-black
-      text-gray-200;
     }
 
     .text:nth-child(2) {
+      color: $accent-text-color;
       @apply
       z-50
       absolute
-      text-orange-400
       -left-20
       top-1/2
       transform -translate-y-1/2

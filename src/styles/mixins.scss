@@ -1,0 +1,11 @@
+@mixin anim-duration-1000() {
+  transition: theme('transitionProperty.DEFAULT');
+  transition-duration: theme('transitionDuration.1000');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
+}
+
+@mixin anim-duration-500() {
+  transition: theme('transitionProperty.DEFAULT');
+  transition-duration: theme('transitionDuration.500');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
+}

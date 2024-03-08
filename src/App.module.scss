@@ -1,9 +1,11 @@
+@import './styles/variables.scss';
+
 .app {
+    background-color: $main-bg-color;
     @apply
     box-border
     mx-0
     w-full
     h-screen
     fixed
-    bg-emerald-950;
   }

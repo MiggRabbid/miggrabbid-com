@@ -1,43 +1,98 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 .container {
+  background-color: $secons-bg-color;
   @apply
   z-50
-  fixed
-  -top-4
-  left-1/2
-  transform -translate-x-1/2
-  bg-emerald-800
-  rounded
-  h-20
+  relative
+  -top-44
+  h-60
   w-11/12
   max-w-7xl
+  rounded
   flex
   items-end
   justify-center
   mx-auto;
   
-  &:hover {
+  .icons {
     @apply
-    transition
-    ease-in-out
-    duration-500
-    translate-y-2;
+    absolute
+    h-fit
+    w-fit
+    top-32
+    right-4
+    flex
+    items-center
+    justify-self-center
+    gap-4;
+    
+    .icons__link {
+      @apply
+      h-10
+      w-10;
+
+      img  {
+        @apply
+        h-full
+        w-full
+      }
+  }
+
+  }
+  &:hover {
+    @include anim-duration-500();
+    @apply
+    origin-top-left
+    rotate-3;
+
+    .icons{
+      @include anim-duration-500();
+      @apply
+      translate-y-4
+      -rotate-3;
+    }
 
     h3 {
+      @include anim-duration-500();
+      color: $second-text-color;
       @apply
-      transition
-      ease-in-out
-      duration-500
-      -translate-y-2
-      text-gray-100
+      -rotate-3
+      translate-x-2
+      -translate-y-6;
     };
+
+    .openContacts{
+      @include anim-duration-500();
+      @apply
+      -rotate-0;
+    }
   };
 
   
   h3 {
+    color: $main-text-color;
     @apply
-    text-gray-200
     mb-4
     w-full
-    text-3xl;
+    text-3xl
+    font-semibold;
   }
+
+  .openContacts{
+    @apply
+    rotate-180
+    absolute
+    bottom-2
+    right-2;
+
+    svg {
+      color: $accent-text-color;
+      @apply
+      h-12
+      w-12;
+    }
+  }
+
+
 };

@@ -8,7 +8,7 @@ const MyStack = () => {
       <div className={styles.stackTitle}>
         <h3>MY STACK</h3>
         <button type="button" className={styles.openStack} aria-label="Open Stack">
-          <svg className="h-16 w-16 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             {' '}
             <line x1="12" y1="19" x2="12" y2="5" />
             {' '}
