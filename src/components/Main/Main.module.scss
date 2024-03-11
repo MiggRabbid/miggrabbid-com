@@ -2,6 +2,7 @@
 @import '../../styles/variables.scss';
 
 .container {
+  @include return-anim-duration-500();
   @apply
   relative
   h-full
@@ -16,6 +17,7 @@
 
   
   .title {
+    @include return-anim-duration-500();
     @apply
     absolute
     top-0
@@ -31,7 +33,14 @@
 
       .text {
         @include anim-duration-500();
-        color: $second-text-color;
+        /* color: $second-text-color; */
+        @apply
+        bg-gradient-to-r
+        from-orange-400
+        to-neutral-300
+        /* inline-block */
+        text-transparent
+        bg-clip-text
       };
     }
 

@@ -9,3 +9,15 @@
   transition-duration: theme('transitionDuration.500');
   transition-timing-function: theme('transitionTimingFunction.in-out');
 }
+
+@mixin return-anim-duration-1000() {
+  -webkit-transition: 1000ms ease-in-out;
+  -moz-transition: 1000ms ease-in-out;
+  -o-transition: 1000ms ease-in-out;
+}
+
+@mixin return-anim-duration-500() {
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
+}
