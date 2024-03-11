@@ -1,5 +1,5 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
 
 .container {
   @include return-anim-duration-500();
@@ -20,7 +20,7 @@
     @include return-anim-duration-500();
     @apply
     absolute
-    top-0
+    top-6
     w-fit
     h-fit
     skew-y-6;
@@ -31,20 +31,18 @@
       @apply
       -rotate-6;
 
-      .text {
+      .title__text {
         @include anim-duration-500();
-        /* color: $second-text-color; */
         @apply
         bg-gradient-to-r
         from-orange-400
         to-neutral-300
-        /* inline-block */
         text-transparent
         bg-clip-text
       };
     }
 
-    .text {
+    .title__text {
       color: $main-text-color;
       @apply
       h-min
@@ -53,7 +51,7 @@
       font-black
     }
 
-    .text:nth-child(2) {
+    .title__text:nth-child(2) {
       color: $accent-text-color;
       @apply
       z-50
@@ -61,6 +59,20 @@
       -left-20
       top-1/2
       transform -translate-y-1/2
+    }
+  }
+
+  .aboutMe {
+    @apply
+    w-2/4;
+
+    .aboutMe__text {
+      @apply
+      indent-8
+      font-sans
+      text-lg
+      text-justify
+      font-normal
     }
   }
 }

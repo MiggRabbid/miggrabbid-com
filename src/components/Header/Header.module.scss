@@ -1,6 +1,8 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
+
 .container {
+  @include return-anim-duration-500();
   background-color: $secons-bg-color;
   @apply
   z-50
@@ -14,8 +16,29 @@
   items-end
   justify-center
   mx-auto;
-  
+
+  &:hover {
+    @include anim-duration-500();
+    @apply
+    origin-bottom-left
+    rotate-3;
+
+    .icons{
+      @include anim-duration-500();
+      @apply
+      translate-y-4
+      -rotate-3;
+    }
+
+    .title_open{
+      @include anim-duration-500();
+      @apply
+      -rotate-0;
+    }
+  };
+
   .icons {
+  @include return-anim-duration-500();
     @apply
     absolute
     h-fit
@@ -37,41 +60,11 @@
         h-full
         w-full
       }
+    }
   }
 
-  }
-  &:hover {
-    @include anim-duration-500();
-    @apply
-    origin-top-left
-    rotate-3;
-
-    .icons{
-      @include anim-duration-500();
-      @apply
-      translate-y-4
-      -rotate-3;
-    }
-
-    h3 {
-      @include anim-duration-500();
-      color: $second-text-color;
-      @apply
-      -rotate-3
-      translate-x-2
-      -translate-y-6;
-    };
-
-    .openContacts{
-      @include anim-duration-500();
-      @apply
-      -rotate-0;
-    }
-  };
-
-  
   h3 {
-    color: $main-text-color;
+    color: $third-text-color;
     @apply
     mb-4
     w-full
@@ -79,7 +72,8 @@
     font-semibold;
   }
 
-  .openContacts{
+  .title_open{
+    @include return-anim-duration-500();
     @apply
     rotate-180
     absolute

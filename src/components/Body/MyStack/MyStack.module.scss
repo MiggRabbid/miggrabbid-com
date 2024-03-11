@@ -23,7 +23,7 @@
     -translate-y-28
     -rotate-0;
 
-    .stackTitle {
+    .title {
       h3 {
         @include anim-duration-1000();
         @apply
@@ -31,7 +31,7 @@
         -translate-x-1/3
       }
   
-      .openStack {
+      .title__open {
       @include anim-duration-1000();
       @apply
         delay-100
@@ -40,8 +40,8 @@
       }
     }
 
-    .stackList {
-      .stackBlock {
+    .stack {
+      .stack__block {
         @include anim-duration-1000();
         @apply
         delay-100
@@ -50,7 +50,7 @@
     }
   }
 
-  .stackTitle {
+  .title {
     @include return-anim-duration-1000();
     @apply
     w-full
@@ -60,7 +60,7 @@
 
     h3 {
       @include return-anim-duration-1000();
-      color: $second-text-color;
+      color: $main-text-color;
       @apply
       relative
       w-full
@@ -72,7 +72,7 @@
       translate-y-2
     };
 
-    .openStack {
+    .title__open {
       @include return-anim-duration-1000();
       @apply
       z-50
@@ -99,7 +99,7 @@
     };
   }
 
-  .stackList {
+  .stack {
     @include return-anim-duration-1000();
     background-color: $secons-bg-color; 
     @apply
@@ -115,7 +115,7 @@
     items-start
     justify-start;
 
-    .stackBlock {
+    .stack__block {
       @include return-anim-duration-1000();
       @apply
       w-full
@@ -126,7 +126,7 @@
       gap-x-4
       translate-y-10;
 
-      .stackBlockTitle{
+      .block__title{
         @include return-anim-duration-1000();
         @apply
         flex
@@ -155,8 +155,8 @@
       }
     }
 
-    .stackBlock:nth-child(2) {
-      .stackBlockTitle {
+    .stack__block:nth-child(2) {
+      .block__title {
         h4 {
           color: $accent-text-color;
         }

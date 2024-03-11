@@ -5,9 +5,9 @@ const MyStack = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.stackTitle}>
+      <div className={styles.title}>
         <h3>MY STACK</h3>
-        <button type="button" className={styles.openStack} aria-label="Open Stack">
+        <button type="button" className={styles.title__open} aria-label="Open Stack">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             {' '}
             <line x1="12" y1="19" x2="12" y2="5" />
@@ -16,9 +16,9 @@ const MyStack = () => {
           </svg>
         </button>
       </div>
-      <div className={styles.stackList}>
-        <div className={styles.stackBlock}>
-          <div className={styles.stackBlockTitle}>
+      <div className={styles.stack}>
+        <div className={styles.stack__block}>
+          <div className={styles.block__title}>
             <h4>MAIN</h4>
           </div>
           <svg viewBox="0 0 128 128" alt="JavaScript">
@@ -76,8 +76,8 @@ const MyStack = () => {
             <path fill="#EBEBEB" d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
           </svg>
         </div>
-        <div className={styles.stackBlock}>
-          <div className={styles.stackBlockTitle}>
+        <div className={styles.stack__block}>
+          <div className={styles.block__title}>
             <h4>EXTRA</h4>
           </div>
           <svg viewBox="0 0 128 128" alt="SCSS">
