@@ -1,11 +1,11 @@
-@import './styles/variables.scss';
-
 .app {
-    background-color: $main-bg-color;
     @apply
     box-border
     mx-0
-    w-full
+    w-screen
     h-screen
-    fixed
+    flex
+    flex-col
+    items-center
+    bg-myTheme-dark;
   }

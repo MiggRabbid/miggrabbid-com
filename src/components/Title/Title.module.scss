@@ -1,0 +1,63 @@
+.container {
+  @apply
+  bg-myTheme-primary
+  text-myTheme-light
+  flex
+  flex-col
+  items-center
+  justify-center
+  w-full
+  h-full
+  relative
+  mt-1;
+
+  .title {
+    @apply
+    w-11/12
+    max-w-screen-2xl;
+
+    .title__title {
+      @apply
+      absolute
+      mt-9
+      top-0
+      left-20
+      w-fit
+      h-fit
+      skew-y-6;
+
+      p {
+        @apply
+        text-myTheme-light
+        h-min
+        font-myFont
+        text-9xl
+        font-black;
+      }
+  
+      p:nth-child(2) {
+        @apply
+        text-myTheme-accent
+        z-50
+        absolute
+        -left-20
+        top-1/2
+        transform -translate-y-1/2
+      }
+    }
+
+    .title__body {
+      @apply
+      absolute
+      bottom-10
+      right-10
+      flex
+      justify-center
+      w-fit
+      h-fit
+      font-myFont
+      text-6xl
+      font-black;
+    }
+  }
+}

@@ -1,12 +1,11 @@
 import styles from './App.module.scss';
-
 import Header from './components/Header/Header';
-import AboutMe from './components/Body/AboutMe/AboutMe';
+import Title from './components/Title/Title';
 
 const App = () => (
   <div className={styles.app}>
     <Header />
-    <AboutMe />
+    <Title />
   </div>
 );
 

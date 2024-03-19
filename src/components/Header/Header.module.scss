@@ -1,92 +1,54 @@
 @import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
 
-.container {
-  @include return-anim-duration-500();
-  background-color: $secons-bg-color;
+.container{
   @apply
-  z-50
-  relative
-  -top-44
-  h-60
-  w-11/12
-  max-w-7xl
-  rounded
+  bg-myTheme-primary
+  text-myTheme-light
   flex
-  items-end
+  items-center
   justify-center
-  mx-auto;
+  w-full
+  h-28;
 
-  &:hover {
-    @include anim-duration-500();
+  .header {
     @apply
-    origin-bottom-left
-    rotate-3;
-
-    .icons{
-      @include anim-duration-500();
-      @apply
-      translate-y-4
-      -rotate-3;
-    }
-
-    .title_open{
-      @include anim-duration-500();
-      @apply
-      -rotate-0;
-    }
-  };
-
-  .icons {
-  @include return-anim-duration-500();
-    @apply
-    absolute
-    h-fit
-    w-fit
-    top-32
-    right-4
     flex
+    justify-between
     items-center
-    justify-self-center
-    gap-4;
+    w-11/12
+    max-w-screen-2xl
+    h-16;
     
-    .icons__link {
+    .header__title {
       @apply
-      h-10
-      w-10;
+      w-fit
+      h-fit
+      ms-12
+      text-2xl
+      font-semibold
+    }
 
-      img  {
+    .header__body {
+      @apply
+      flex
+      justify-between
+      items-center
+      gap-3
+      me-12
+      h-16
+      text-lg;
+
+      a {
+        @include return-anim-duration-300();
         @apply
-        h-full
-        w-full
+        size-7;
+
+        &:hover {
+          @include anim-duration-300();
+          @apply
+          scale-125;
+        }
       }
     }
   }
-
-  h3 {
-    color: $third-text-color;
-    @apply
-    mb-4
-    w-full
-    text-3xl
-    font-semibold;
-  }
-
-  .title_open{
-    @include return-anim-duration-500();
-    @apply
-    rotate-180
-    absolute
-    bottom-2
-    right-2;
-
-    svg {
-      color: $accent-text-color;
-      @apply
-      h-12
-      w-12;
-    }
-  }
-
-
-};
+}
