@@ -1,0 +1,34 @@
+.container {
+  @apply  
+  py-16
+  bg-myTheme-primary
+  text-myTheme-light
+  flex
+  justify-center
+  items-center
+  w-full
+  mt-2;
+
+  .about {
+    @apply
+    w-11/12
+    relative
+    right-10
+    flex
+    flex-col
+    justify-end
+    items-end
+    gap-6;
+    
+    p {
+      @apply
+      w-3/6
+      min-w-96
+      h-fit
+      text-2xl
+      font-normal
+      text-end
+      cursor-default;
+    }
+  }
+}

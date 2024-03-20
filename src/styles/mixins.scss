@@ -1,6 +1,6 @@
 @mixin anim-duration-1000() {
   transition: theme('transitionProperty.DEFAULT');
-  transition-duration: theme('transitionDuration.1000');
+  transition-duration: theme('transitionDuration.700');
   transition-timing-function: theme('transitionTimingFunction.in-out');
 }
 
@@ -20,4 +20,20 @@
   -webkit-transition: 300ms ease-in-out;
   -moz-transition: 300ms ease-in-out;
   -o-transition: 300ms ease-in-out;
+}
+
+@mixin typing-text() {
+  animation: 
+  typing 3.5s steps(35, end),
+  blink-caret .75s step-end infinite;
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FFAF0F }
+  }
 }
