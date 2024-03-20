@@ -1,11 +1,16 @@
 .app {
     @apply
     box-border
-    mx-0
-    w-screen
-    h-screen
-    flex
-    flex-col
-    items-center
+    m-0
+    w-full
+    h-max
     bg-myTheme-dark;
+    /* h-svh	height: 100svh;
+h-lvh	height: 100lvh;
+h-dvh */
+    /* * {
+      @apply
+      border-2
+      border-y-pink-500
+    } */
   }

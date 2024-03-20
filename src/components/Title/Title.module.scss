@@ -1,63 +1,133 @@
+@import '../../styles/mixins.scss';
+
 .container {
+  height: 90vmin;
+
   @apply
   bg-myTheme-primary
   text-myTheme-light
   flex
-  flex-col
-  items-center
   justify-center
   w-full
-  h-full
-  relative
-  mt-1;
+  mt-2;
 
   .title {
     @apply
+    relative
+    flex
+    flex-wrap
+    justify-center
     w-11/12
-    max-w-screen-2xl;
+    max-w-screen-2xl
+    h-full;
 
     .title__title {
       @apply
-      absolute
-      mt-9
-      top-0
-      left-20
-      w-fit
-      h-fit
-      skew-y-6;
+      relative
+      w-3/6
+      min-w-96
+      h-3/6
+      min-h-96;
 
-      p {
-        @apply
-        text-myTheme-light
-        h-min
-        font-myFont
-        text-9xl
-        font-black;
-      }
-  
-      p:nth-child(2) {
-        @apply
-        text-myTheme-accent
-        z-50
-        absolute
-        -left-20
-        top-1/2
-        transform -translate-y-1/2
-      }
-    }
+        div {
+          @include return-anim-duration-1000();
+          @apply
+          absolute
+          mt-9
+          top-10
+          left-10
+          w-full
+          h-fit
+          skew-y-6;
 
+          &:hover {
+            @include anim-duration-1000();
+            @apply -rotate-6;
+          }
+
+          p {
+            @apply
+            text-myTheme-light
+            h-min
+            font-myFont
+            text-9xl
+            font-black;
+          }
+      
+          p:nth-child(2) {
+            @apply
+            text-myTheme-accent
+            z-50
+            absolute
+            -left-20
+            top-1/2
+            transform -translate-y-1/2
+          }
+        }
+      }
+
+    
     .title__body {
       @apply
-      absolute
-      bottom-10
-      right-10
+      w-3/6
+      min-w-96
+      h-3/6
+      min-h-96
       flex
+      flex-col
       justify-center
-      w-fit
-      h-fit
+      items-center;
+    }
+
+    .title__about {
+      @apply
+      w-full
+      min-w-96
+      h-max
+      min-h-96
+      relative
+      flex
+      flex-col
+      justify-end
+      items-end
       font-myFont
       text-6xl
       font-black;
+
+      img {
+        @apply
+        h-full
+        z-0
+        absolute
+        top-2/4
+        -translate-y-2/4
+        -rotate-90
+      }
+
+      h3, p {
+        @apply
+        w-4/6
+        z-50
+        text-end
+        max-w-4xl
+        mb-3
+        font-normal;
+
+        a {
+          @include return-anim-duration-1000();
+
+          &:hover {
+            @include anim-duration-300();
+            @apply text-myTheme-accent
+          }
+        }
+
+
+      }
+
+      h3 { @apply text-3xl }
+
+      p { @apply text-2xl }
     }
   }
 }

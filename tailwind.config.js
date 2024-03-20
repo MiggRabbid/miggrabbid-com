@@ -15,7 +15,7 @@ module.exports = {
           primary: "#191919",
           accent: "#FFAF0F"
         }
-      }
+      },
     },
   },
   plugins: [],
