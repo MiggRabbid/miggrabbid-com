@@ -1,0 +1,87 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  @apply  
+  py-16
+  bg-myTheme-primary
+  text-myTheme-dark
+  w-full
+  flex
+  flex-col
+  justify-center
+  items-center
+  gap-4
+  mt-2;
+
+  .stack {
+    @include shadow();
+    @apply
+    w-11/12
+    max-w-screen-2xl
+    flex
+    overflow-hidden
+    gap-4;
+    
+    .stack__scroll{
+      @apply
+      relative
+      w-max
+      flex
+      flex-col
+      justify-start
+      overflow-hidden
+      gap-6;
+
+      ul:nth-child(1) {
+        @apply
+        relative
+        left-0;
+      }
+
+      ul:nth-child(2) {
+        @apply
+        relative
+        left-1/2
+        -translate-x-1/2;
+      }
+
+      ul:nth-child(3) {
+        @apply
+        relative
+        right-0
+        -translate-x-1/2;
+      }
+
+      ul {
+        @apply
+        w-max
+        h-max
+        flex
+        flex-row
+        gap-8
+        py-1;
+
+        li {
+          @include return-anim-duration-1000();
+          @apply
+          w-min
+          h-max
+          text-7xl
+          uppercase
+          font-black
+          rounded-md
+          m-0
+          p-0;
+    
+          &:hover {
+            @include anim-duration-300();
+            @apply 
+            text-myTheme-accent
+            scale-105
+            cursor-pointer;
+          }
+        }
+      }
+    }
+  }
+}

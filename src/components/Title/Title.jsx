@@ -15,10 +15,10 @@ const Title = () => (
         <nav>
           <ul>
             <li>
-              About
+              Stack
             </li>
             <li>
-              Stack
+              About
             </li>
             <li>
               Skills
