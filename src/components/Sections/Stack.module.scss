@@ -1,7 +1,7 @@
 @import '../../styles/mixins.scss';
 
 .container {
-  height: calc(100vmin - 6rem - 1rem);
+  height: calc(100vmin - 1rem);
   
   @apply  
   py-16
@@ -58,6 +58,7 @@
           w-min
           h-max
           text-7xl
+          font-myTitleFont
           uppercase
           font-black
           rounded-md

@@ -1,13 +1,22 @@
+@import '../../styles/mixins.scss';
+
 .container {
+  height: calc(100vmin - 1rem);
   @apply  
   py-16
   bg-myTheme-primary
   text-myTheme-light
   flex
-  justify-center
-  items-center
+  flex-col
   w-full
-  mt-2;
+  mt-2
+  gap-12;
+
+  .title {
+    @include section-title();
+    @apply
+    text-myTheme-light;
+  }
 
   .about {
     @apply
