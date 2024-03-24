@@ -1,65 +1,56 @@
 @import '../../styles/mixins.scss';
 
 .container {
+  height: calc(100vmin - 6rem - 1rem);
+  
   @apply  
   py-16
   bg-myTheme-primary
-  text-myTheme-dark
+  text-myTheme-light
   w-full
   flex
   flex-col
-  justify-center
   items-center
   gap-4
   mt-2;
 
+  .title {
+    @apply
+    mb-12;
+
+    h2 {
+      @include section-title();
+      @apply
+      text-myTheme-light
+    }
+  }
+
   .stack {
     @include shadow();
     @apply
-    w-11/12
+    w-full
     max-w-screen-2xl
     flex
+    flex-col
+    gap-12
     overflow-hidden
-    gap-4;
-    
+    mb-12;
+
     .stack__scroll{
       @apply
-      relative
       w-max
       flex
-      flex-col
-      justify-start
-      overflow-hidden
-      gap-6;
-
-      ul:nth-child(1) {
-        @apply
-        relative
-        left-0;
-      }
-
-      ul:nth-child(2) {
-        @apply
-        relative
-        left-1/2
-        -translate-x-1/2;
-      }
-
-      ul:nth-child(3) {
-        @apply
-        relative
-        right-0
-        -translate-x-1/2;
-      }
+      justify-start;
 
       ul {
+        @include horizontal-scroll();
         @apply
+        text-myTheme-dark
         w-max
         h-max
         flex
-        flex-row
-        gap-8
-        py-1;
+        gap-12
+        px-4;
 
         li {
           @include return-anim-duration-1000();

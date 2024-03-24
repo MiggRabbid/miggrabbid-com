@@ -1,11 +1,12 @@
 @import '../../styles/mixins.scss';
 
 .container {
-  height: calc(100vmin - 6rem - 0.5rem);
+  height: calc(100vmin - 6rem - 1rem);
 
   @apply
   bg-myTheme-primary
   text-myTheme-light
+  relative
   flex
   justify-center
   w-full
@@ -31,16 +32,7 @@
       items-center;
 
       h1 {
-        @apply
-        h-fit
-        mt-2
-        mx-0
-        text-7xl
-        tracking-wider
-        font-myTitleFont
-        font-black
-        text-myTheme-dark
-        cursor-default;
+        @include section-title();
       }
     }
 
@@ -107,5 +99,24 @@
         }
       }
     }
+  }
+
+  .dev {
+    @apply
+    absolute
+    bottom-10
+    right-16
+    w-full
+    h-full
+    flex
+    justify-end
+    items-end
+    text-3xl
+    uppercase
+    tracking-wider
+    font-myTitleFont
+    font-black
+    cursor-default
+    text-myTheme-accent
   }
 }

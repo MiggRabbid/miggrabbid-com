@@ -27,6 +27,8 @@ const Title = () => (
         </nav>
       </div>
     </div>
+
+    <div className={styles.dev}>THIS SITE IS UNDER DEVELOPMENT</div>
   </div>
 );
 
