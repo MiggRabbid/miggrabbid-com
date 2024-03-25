@@ -58,12 +58,12 @@
         text-lg;
 
         a {
-          @include return-anim-duration-300();
+          @include return-anim-duration-500();
           @apply
-          size-7;
+          size-8;
   
           &:hover {
-            @include anim-duration-300();
+            @include anim-duration-500();
             @apply
             scale-125;
           }

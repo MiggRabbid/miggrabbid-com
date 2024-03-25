@@ -89,10 +89,10 @@
             uppercase;
 
             &:hover {
-              @include anim-duration-300();
+              @include anim-duration-500();
               @apply 
               text-myTheme-accent
-              translate-x-1
+              translate-x-4
               cursor-pointer;
             }
           }

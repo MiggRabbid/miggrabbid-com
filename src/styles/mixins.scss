@@ -6,9 +6,9 @@
   transition-timing-function: theme('transitionTimingFunction.in-out');
 }
 
-@mixin anim-duration-300() {
+@mixin anim-duration-500() {
   transition: theme('transitionProperty.DEFAULT');
-  transition-duration: theme('transitionDuration.300');
+  transition-duration: theme('transitionDuration.500');
   transition-timing-function: theme('transitionTimingFunction.in-out');
 }
 
@@ -18,10 +18,10 @@
   -o-transition: 1000ms ease-in-out;
 }
 
-@mixin return-anim-duration-300() {
-  -webkit-transition: 300ms ease-in-out;
-  -moz-transition: 300ms ease-in-out;
-  -o-transition: 300ms ease-in-out;
+@mixin return-anim-duration-500() {
+  -webkit-transition: 500ms ease-in-out;
+  -moz-transition: 500ms ease-in-out;
+  -o-transition: 500ms ease-in-out;
 }
 
 @mixin typing-text() {
@@ -42,8 +42,12 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #181818 20%, #181818 80%, transparent);
 }
 
-@mixin horizontal-scroll() {
-  animation: scroll 100s linear infinite;
+@mixin horizontal-scroll($seconds: 80) {
+  @if ($seconds == 120) {
+    animation: scroll 120s linear infinite;
+  } @else {
+    animation: scroll 80s linear infinite;
+  }
   @keyframes scroll {
     0% { transform: translateX(0%) }
     100% { transform: translate3d(-100%, 0, 0) }

@@ -1,10 +1,11 @@
 @import '../../styles/mixins.scss';
 
 .container {
-  height: calc(100vmin - 1rem);
+  height: calc(100% - 6rem - 1rem);
   
-  @apply  
-  py-16
+  @apply
+  min-h-max
+  py-12
   bg-myTheme-primary
   text-myTheme-light
   w-full
@@ -25,7 +26,7 @@
     }
   }
 
-  .stack {
+  .stack, .stack__second {
     @include shadow();
     @apply
     w-full
@@ -34,7 +35,7 @@
     flex-col
     gap-12
     overflow-hidden
-    mb-12;
+    mb-8;
 
     .stack__scroll{
       @apply
@@ -43,7 +44,7 @@
       justify-start;
 
       ul {
-        @include horizontal-scroll();
+        @include horizontal-scroll(120);
         @apply
         text-myTheme-dark
         w-max
@@ -61,17 +62,38 @@
           font-myTitleFont
           uppercase
           font-black
-          rounded-md
+          text-nowrap
           m-0
           p-0;
     
           &:hover {
-            @include anim-duration-300();
+            @include anim-duration-500();
             @apply 
             text-myTheme-accent
             scale-105
-            cursor-pointer;
+            cursor-default;
           }
+        }
+      }
+    }
+  }
+
+  .stack__second {
+    @apply 
+    gap-6;
+
+    .stack__scroll {
+      ul {
+        @include horizontal-scroll();
+        @apply
+        gap-7
+        px-2;
+
+        li {
+          @apply
+          font-myTextFont
+          font-bold
+          text-4xl;
         }
       }
     }
