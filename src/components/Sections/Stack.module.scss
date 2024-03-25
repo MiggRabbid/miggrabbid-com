@@ -1,0 +1,101 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  height: calc(100% - 6rem - 1rem);
+  
+  @apply
+  min-h-max
+  py-12
+  bg-myTheme-primary
+  text-myTheme-light
+  w-full
+  flex
+  flex-col
+  items-center
+  gap-4
+  mt-2;
+
+  .title {
+    @apply
+    mb-12;
+
+    h2 {
+      @include section-title();
+      @apply
+      text-myTheme-light
+    }
+  }
+
+  .stack, .stack__second {
+    @include shadow();
+    @apply
+    w-full
+    max-w-screen-2xl
+    flex
+    flex-col
+    gap-12
+    overflow-hidden
+    mb-8;
+
+    .stack__scroll{
+      @apply
+      w-max
+      flex
+      justify-start;
+
+      ul {
+        @include horizontal-scroll(120);
+        @apply
+        text-myTheme-dark
+        w-max
+        h-max
+        flex
+        gap-12
+        px-4;
+
+        li {
+          @include return-anim-duration-1000();
+          @apply
+          w-min
+          h-max
+          text-7xl
+          font-myTitleFont
+          uppercase
+          font-black
+          text-nowrap
+          m-0
+          p-0;
+    
+          &:hover {
+            @include anim-duration-500();
+            @apply 
+            text-myTheme-accent
+            scale-105
+            cursor-default;
+          }
+        }
+      }
+    }
+  }
+
+  .stack__second {
+    @apply 
+    gap-6;
+
+    .stack__scroll {
+      ul {
+        @include horizontal-scroll();
+        @apply
+        gap-7
+        px-2;
+
+        li {
+          @apply
+          font-myTextFont
+          font-bold
+          text-4xl;
+        }
+      }
+    }
+  }
+}
