@@ -30,7 +30,7 @@ const About = () => (
         {' '}
         from the
         {' '}
-        <span><a href="https://ru.hexlet.io/u/miggrabbid">&quot;Hexlet&quot;</a></span>
+        <span><a href="https://ru.hexlet.io/u/miggrabbid" target="_blank" rel="noreferrer">&quot;Hexlet&quot;</a></span>
         {' '}
         programming school, but I continue to develop as a developer.
         {' '}

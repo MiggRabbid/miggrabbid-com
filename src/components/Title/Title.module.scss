@@ -1,16 +1,12 @@
 @import '../../styles/mixins.scss';
+@import '../../styles/animation.scss';
+@import '../../styles/extends.scss';
 
 .container {
   height: calc(100vmin - 6rem - 1rem);
-
+  @extend %container;
   @apply
-  bg-myTheme-primary
-  text-myTheme-light
-  relative
-  flex
-  justify-center
-  w-full
-  mt-2;
+  justify-center;
 
   .title {
     @apply
@@ -32,7 +28,7 @@
       items-center;
 
       h1 {
-        @include section-title();
+        @extend %section-title;
       }
     }
 

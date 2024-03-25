@@ -1,20 +1,19 @@
 @import '../../styles/mixins.scss';
+@import '../../styles/animation.scss';
+@import '../../styles/extends.scss';
 
 .container {
   height: calc(100vmin - 1rem);
-  @apply  
+
+  @extend %container;
+  @apply
   py-16
-  bg-myTheme-primary
-  text-myTheme-light
-  flex
-  flex-col
-  w-full
-  mt-2
   gap-12;
 
   .title {
-    @include section-title();
+    @extend %section-title;
     @apply
+    w-11/12
     text-myTheme-light;
   }
 
@@ -35,10 +34,11 @@
       w-4/6
       min-w-96
       h-fit
-      text-2xl
+      text-xl
       font-normal
       text-start
-      cursor-default;
+      cursor-default
+      indent-10;
 
       span {
         @apply

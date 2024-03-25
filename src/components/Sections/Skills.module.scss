@@ -1,31 +1,127 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/animation.scss';
+@import '../../styles/extends.scss';
+
 .container {
-  height: calc(100vmin - 1rem);
-  @apply  
+  @extend %container;
+  @apply
   py-16
-  bg-myTheme-primary
-  text-myTheme-light
-  flex
-  flex-col
-  w-full
-  mt-2
   gap-12;
 
   .title {
-    @include section-title();
-    @apply
-    text-myTheme-light;
+    h2 {
+      @extend %section-title;
+    }
   }
 
   .skills {
     @apply
     w-11/12
     max-w-screen-2xl
-    relative
-    right-10
+    h-max
     flex
     flex-col
-    justify-center
     items-center
-    gap-6;
+    justify-center;
+
+    .skills__experience {
+      @apply
+      w-full
+      cursor-default
+      mb-10;
+
+      h3 {
+        @extend %section-title;
+        @apply
+        text-2xl
+        text-myTheme-light
+        mb-2;
+      }
+
+      .skills__project {
+        @apply
+        py-4
+        flex
+        flex-col
+        items-center
+        justify-center;
+  
+        h5 {
+          @apply
+          w-5/6
+          font-myTextFont
+          text-xl
+          mb-1;
+        }
+        ul { @apply list-none }
+        
+        p, ul, li {
+          @apply
+          w-5/6
+          font-myTextFont
+          text-xl
+          text-myTheme-light
+          indent-10;
+        }
+  
+        a {
+          @apply italic text-myTheme-accent;
+        }
+      }
+
+    }
+
+    .skills__can {
+      @apply
+      w-full
+      max-w-5xl
+      h-max
+      flex
+      flex-col
+      items-center
+      justify-center;
+
+      h3 {
+        @extend %section-title;
+        @apply
+        text-2xl
+        text-myTheme-light
+        mb-6;
+      }
+
+      .can__made {
+        @apply
+        w-full
+        mb-6
+        h-80
+        bg-myTheme-dark
+        flex
+        flex-row
+        rounded-lg
+        cursor-default;
+
+        div {
+          @apply
+          w-2/5
+          min-w-56
+          bg-slate-600
+          rounded-lg
+          flex
+          justify-center
+          items-center;
+        }
+
+        p {
+          @apply
+          w-3/5
+          py-12
+          px-6
+          font-myTextFont
+          text-xl
+          text-myTheme-light
+          indent-10;
+        }
+      }
+    }
   }
 }

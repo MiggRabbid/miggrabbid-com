@@ -1,26 +1,20 @@
 @import '../../styles/mixins.scss';
+@import '../../styles/animation.scss';
+@import '../../styles/extends.scss';
 
 .container {
   height: calc(100% - 6rem - 1rem);
-  
+  @extend %container;
   @apply
-  min-h-max
   py-12
-  bg-myTheme-primary
-  text-myTheme-light
-  w-full
-  flex
-  flex-col
-  items-center
-  gap-4
-  mt-2;
+  gap-4;
 
   .title {
     @apply
     mb-12;
 
     h2 {
-      @include section-title();
+      @extend %section-title;
       @apply
       text-myTheme-light
     }

@@ -1,0 +1,26 @@
+%section-title {
+  @apply
+  w-full
+  h-fit
+  text-center
+  text-7xl
+  uppercase
+  tracking-wider
+  font-myTitleFont
+  font-black
+  text-myTheme-dark
+  cursor-default;
+};
+
+%container {
+  @apply
+  relative
+  min-h-max  
+  w-full
+  mt-2
+  flex
+  flex-col
+  items-center
+  bg-myTheme-primary
+  text-myTheme-light
+}
