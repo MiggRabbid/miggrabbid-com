@@ -18,22 +18,27 @@ const Header = () => (
         <nav>
           <a href="https://github.com/MiggRabbid" target="_blank" rel="noreferrer">
             <img src={iconGitHub} alt="My GitHub" />
+            <p>My GitHub</p>
           </a>
 
           <a href="https://t.me/MiggRabbid" target="_blank" rel="noreferrer">
             <img src={iconTelegram} alt="My Telegram" />
+            <p>My Telegram</p>
           </a>
 
           <a href="https://career.habr.com/miggrabbid" target="_blank" rel="noreferrer">
             <img src={iconHabr} alt="My Habr" />
+            <p>My Habr</p>
           </a>
 
           <a href="https://linkedin.com/in/miggrabbid" target="_blank" rel="noreferrer">
             <img src={iconLinkedIn} alt="My LinkedIn" />
+            <p>My LinkedIn</p>
           </a>
 
           <a href="mailto:mig26@inbox.ru" target="_blank" rel="noreferrer">
             <img src={iconEmail} alt="My Email" />
+            <p>My eMail</p>
           </a>
         </nav>
       </div>

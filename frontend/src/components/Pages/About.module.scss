@@ -14,7 +14,9 @@
     @extend %section-title;
     @apply
     w-11/12
-    text-myTheme-light;
+    text-myTheme-light
+    border-b-4  
+    border-b-myTheme-dark;
   }
 
   .about {
@@ -31,7 +33,7 @@
     
     p {
       @apply
-      w-4/6
+      w-5/6
       min-w-96
       h-fit
       text-xl

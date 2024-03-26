@@ -61,12 +61,34 @@
         a {
           @include return-anim-duration-500();
           @apply
+          relative
+          flex
+          justify-center
+          items-center
           size-8;
+
+          p {
+            @apply
+            hidden
+          }
   
           &:hover {
             @include anim-duration-500();
             @apply
             scale-125;
+
+            p {
+              @apply
+              text-nowrap
+              block
+              absolute
+              -bottom-4
+              text-myTheme-accent
+              font-normal
+              font-myTextFont
+              text-xs
+              scale-75;
+            }
           }
         }
       }

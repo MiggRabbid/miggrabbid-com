@@ -11,12 +11,15 @@
 
   .title {
     @apply
+    w-11/12
     mb-12;
 
     h2 {
       @extend %section-title;
       @apply
       text-myTheme-light
+      border-b-4  
+      border-b-myTheme-dark;
     }
   }
 

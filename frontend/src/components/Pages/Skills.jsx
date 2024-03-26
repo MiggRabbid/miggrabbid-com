@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import styles from './Skills.module.scss';
+import SignUp from '../Templates/Authorization/SignUp';
+import Login from '../Templates/Authorization/Login';
 
 const Skills = () => (
   <section className={styles.container}>
@@ -52,27 +54,27 @@ const Skills = () => (
       <div className={styles.skills__can}>
         <h3>My skills</h3>
         <div className={styles.can__made}>
-          <div>here will be a component</div>
-          <p>I can work with state, both standard useState and using Redux Toolkit</p>
-        </div>
-
-        <div className={styles.can__made}>
-          <div>here will be a component</div>
+          <SignUp />
           <p>I can create various forms for data entry, both using standard methods and using third-party libraries, such as Formik. For example, registration/authorization forms, with validation and filtering of input data</p>
         </div>
 
         <div className={styles.can__made}>
-          <div>here will be a component</div>
+          <Login />
+          <p>I can work with state, both standard useState and using Redux Toolkit</p>
+        </div>
+
+        <div className={styles.can__made}>
+          <div className={styles.made__cap}>here will be a component</div>
           <p>I can work with modal windows</p>
         </div>
 
         <div className={styles.can__made}>
-          <div>here will be a component</div>
+          <div className={styles.made__cap}>here will be a component</div>
           <p>I know how to work with internationalization, context and providers</p>
         </div>
 
         <div className={styles.can__made}>
-          <div>here will be a component</div>
+          <div className={styles.made__cap}>here will be a component</div>
           <p>Add the required skills and abilities...</p>
         </div>
       </div>

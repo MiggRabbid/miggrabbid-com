@@ -1,0 +1,153 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/extends.scss';
+
+.container {
+  @apply
+  h-full
+  min-h-32
+  w-96
+  min-w-32
+  flex
+  flex-col
+  justify-between
+  px-6
+  py-5
+  rounded-lg
+  bg-myTheme-dark;
+
+  .title {
+    @apply
+    content-center;
+
+    h5 {
+    @apply
+    w-full
+    text-center
+    text-lg
+    font-bold
+    font-myTitleFont
+    text-myTheme-light
+    uppercase;
+    }
+  }
+
+  .login {
+    @apply
+    flex
+    flex-col;
+
+    .login__form {
+      @apply
+      w-full
+      h-full;
+
+      div {
+        @apply
+        w-full
+        relative
+        flex
+        flex-col
+        justify-end
+        items-center;
+
+        .form__lable {
+          @apply
+          z-40
+          text-sm
+          leading-6
+          text-gray-900;
+        }
+
+        .form__input {
+          @extend %input;
+          
+          &:focus {
+            @apply
+            outline
+            outline-2
+            -outline-offset-2
+            outline-myTheme-accent
+            ring-2
+            ring-myTheme-accent
+            ring-opacity-75;
+          }
+        }
+
+        .form__invalid {
+          @extend %input;
+          @apply
+          outline
+          outline-2
+          outline-offset-0
+          outline-red-700;
+
+          &:focus {
+            @apply
+            ring-4
+            ring-red-700
+            ring-opacity-75;
+          }
+        }
+
+        .form__feedback {
+          @apply
+          z-50
+          absolute
+          -bottom-0.5
+          right-3
+          leading-6
+          translate-y-full
+          w-fit
+          h-fit
+          px-4
+          bg-red-700
+          rounded-b-md
+          font-myTextFont
+          text-xs;
+        }
+
+        .feedback__hidden {
+          @apply hidden;
+        }
+      }
+
+      .form__submit {
+        @apply
+        mt-4
+        rounded-md
+        font-bold
+        text-myTheme-dark
+        bg-myTheme-accent;
+
+        button {
+          @apply
+          py-3
+          w-full
+          h-full
+        }
+      }
+    }
+  }
+
+  .footer {
+      .footer__signup{
+        @apply
+        flex
+        items-center
+        justify-center
+        w-full
+        h-7
+        border-t-2
+        border-t-myTheme-primary
+        pt-4;
+
+        a {
+          @apply
+          ms-1
+          w-fit
+          text-myTheme-accent
+        }
+      }
+  }
+}

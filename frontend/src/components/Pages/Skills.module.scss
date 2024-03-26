@@ -9,8 +9,14 @@
   gap-12;
 
   .title {
+    @apply
+    w-11/12;
+    
     h2 {
       @extend %section-title;
+      @apply
+      border-b-4  
+    border-b-myTheme-dark
     }
   }
 
@@ -92,28 +98,32 @@
       .can__made {
         @apply
         w-full
+        min-w-96
         mb-6
         h-80
-        bg-myTheme-dark
         flex
-        flex-row
-        rounded-lg
+        bg-myTheme-primary
         cursor-default;
 
-        div {
+        .made__cap {
           @apply
-          w-2/5
-          min-w-56
-          bg-slate-600
-          rounded-lg
+          h-full
+          min-h-32
+          w-96
+          min-w-32
           flex
+          flex-col
           justify-center
-          items-center;
+          px-6
+          py-12
+          rounded-s
+          bg-myTheme-dark;
         }
 
         p {
           @apply
           w-3/5
+          min-w-44
           py-12
           px-6
           font-myTextFont
