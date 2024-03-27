@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import styles from './Main.module.scss';
-import bgTitleBody from '../../assets/bgTitleBody.svg';
+import bgTitleBody from '../../assets/bgTitleBody.png';
 
 const Main = () => (
   <div className={styles.container}>
@@ -11,8 +11,10 @@ const Main = () => (
       </div>
 
       <div className={styles.title__nav}>
-        <img src={bgTitleBody} alt="" />
         <nav>
+          <div className={styles.nav__bg}>
+            <img src={bgTitleBody} alt="" />
+          </div>
           <ul>
             <li>
               Stack

@@ -7,16 +7,17 @@
 
   @extend %container;
   @apply
-  py-16
   gap-12;
 
   .title {
-    @extend %section-title;
+    @include shadow();
     @apply
-    w-11/12
-    text-myTheme-light
-    border-b-4  
-    border-b-myTheme-dark;
+    w-11/12;
+
+    h2 {
+      @extend %title;
+      @extend %section-title;
+    };
   }
 
   .about {

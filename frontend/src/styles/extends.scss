@@ -1,22 +1,7 @@
-%section-title {
-  @apply
-  w-full
-  h-fit
-  text-center
-  text-7xl
-  uppercase
-  tracking-wider
-  font-myTitleFont
-  font-black
-  text-myTheme-dark
-  cursor-default
-  pb-3;
-};
-
 %container {
   @apply
   relative
-  min-h-max  
+  min-h-max
   w-full
   mt-2
   flex
@@ -26,17 +11,26 @@
   text-myTheme-light
 }
 
-%input {
+%title {
   @apply
-  h-12
-  mt-4
-  block
   w-full
-  rounded-md
-  py-1.5
-  px-1.5
+  h-fit
+  text-center
+  text-7xl
+  uppercase
+  tracking-wider
+  font-myTitleFont
+  font-black
+  mt-4;
+};
+
+%section-title {
+  @apply
   text-myTheme-light
-  bg-myTheme-primary
-  placeholder:text-gray-400
-  placeholder:mx-2;
+  border-b-4
+  border-opacity-50
+  border-b-myTheme-accent
+  pt-4
+  pb-8
+  mb-4;
 }

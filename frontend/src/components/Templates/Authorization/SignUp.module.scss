@@ -1,6 +1,6 @@
 @import '../../../styles//mixins.scss';
 @import '../../../styles/animation.scss';
-@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
 
 .container {
   @apply
@@ -61,33 +61,14 @@
 
         .form__input {
           @extend %input;
-          
           &:focus {
-            @apply
-            outline
-            outline-2
-            -outline-offset-2
-            outline-myTheme-accent
-            ring-2
-            ring-myTheme-accent
-            ring-opacity-75;
+            @extend %input-focus;
           }
         }
 
         .form__invalid {
           @extend %input;
-          @apply
-          outline
-          outline-2
-          outline-offset-0
-          outline-red-700;
-
-          &:focus {
-            @apply
-            ring-4
-            ring-red-700
-            ring-opacity-75;
-          }
+          @extend %input__invalid;
         }
 
         .form__feedback {
@@ -113,19 +94,7 @@
       }
 
       .form__submit {
-        @apply
-        mt-4
-        rounded-md
-        font-bold
-        text-myTheme-dark
-        bg-myTheme-accent;
-
-        button {
-          @apply
-          py-3
-          w-full
-          h-full
-        }
+        @extend %button-auth;
       }
     }
   }

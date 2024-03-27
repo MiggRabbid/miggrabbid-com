@@ -3,13 +3,14 @@
 
 .container{
   @apply
+  z-50
   bg-myTheme-primary
   text-myTheme-light
   flex
   items-center
   justify-center
   w-full
-  h-24;
+  h-20;
 
   .header {
     @apply
@@ -33,7 +34,6 @@
 
       h3 {
         @include typing-text();
-
         @apply
         my-0
         mx-auto
@@ -41,7 +41,7 @@
         overflow-hidden
         text-nowrap
         border-e-4
-        tracking-wider
+        tracking-widest
         border-myTheme-accent
         cursor-default;
       }

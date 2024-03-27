@@ -5,18 +5,16 @@
 .container {
   @extend %container;
   @apply
-  py-16
-  gap-12;
+  gap-3;
 
   .title {
+    @include shadow();
     @apply
     w-11/12;
-    
+
     h2 {
+      @extend %title;
       @extend %section-title;
-      @apply
-      border-b-4  
-    border-b-myTheme-dark
     }
   }
 
@@ -26,18 +24,16 @@
     max-w-screen-2xl
     h-max
     flex
-    flex-col
-    items-center
-    justify-center;
+    flex-col;
 
     .skills__experience {
       @apply
       w-full
       cursor-default
-      mb-10;
+      mt-4;
 
       h3 {
-        @extend %section-title;
+        @extend %title;
         @apply
         text-2xl
         text-myTheme-light
@@ -49,8 +45,7 @@
         py-4
         flex
         flex-col
-        items-center
-        justify-center;
+        items-center;
   
         h5 {
           @apply
@@ -85,10 +80,11 @@
       flex
       flex-col
       items-center
-      justify-center;
+      justify-center
+      mt-6;
 
       h3 {
-        @extend %section-title;
+        @extend %title;
         @apply
         text-2xl
         text-myTheme-light
