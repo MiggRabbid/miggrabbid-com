@@ -24,7 +24,8 @@
     max-w-screen-2xl
     h-max
     flex
-    flex-col;
+    flex-col
+    items-center;
 
     .skills__experience {
       @apply
@@ -56,7 +57,7 @@
         }
         ul { @apply list-none }
         
-        p, ul, li {
+        .project__desc, ul, li {
           @apply
           w-5/6
           font-myTextFont
@@ -72,7 +73,7 @@
 
     }
 
-    .skills__can {
+    .skills__examples {
       @apply
       w-full
       max-w-5xl
@@ -91,7 +92,7 @@
         mb-6;
       }
 
-      .can__made {
+      .examples {
         @apply
         w-full
         min-w-96
@@ -101,7 +102,7 @@
         bg-myTheme-primary
         cursor-default;
 
-        .made__cap {
+        .examples__cap {
           @apply
           h-full
           min-h-32
@@ -116,7 +117,7 @@
           bg-myTheme-dark;
         }
 
-        p {
+        .examples__decs {
           @apply
           w-3/5
           min-w-44

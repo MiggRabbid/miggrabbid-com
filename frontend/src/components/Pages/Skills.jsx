@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import styles from './Skills.module.scss';
-import SignUp from '../Templates/Authorization/SignUp';
-import Login from '../Templates/Authorization/Login';
+import AuthApp from '../Templates/Authorization/AuthApp';
 
 const Skills = () => (
   <section className={styles.container}>
@@ -14,7 +13,7 @@ const Skills = () => (
 
         <div className={styles.skills__project}>
           <h5>Basic projects</h5>
-          <p>
+          <p className={styles.project__desc}>
             &quot;
             <a href="https://github.com/MiggRabbid/frontend-project-44" target="_blank" rel="noreferrer">Brain Games</a>
             &quot; - five console game pack, &quot;
@@ -35,7 +34,7 @@ const Skills = () => (
 
         <div className={styles.skills__project}>
           <h5>Diploma project</h5>
-          <p>
+          <p className={styles.project__desc}>
             <a href="https://github.com/MiggRabbid/frontend-project-12" target="_blank" rel="noreferrer">Real-time app</a>
             , analogue of Slack chat (simplified version).
           </p>
@@ -47,35 +46,35 @@ const Skills = () => (
           <li>working with forms, including: authorization, creating/changing channels and sending messages. As well as validation (Yup) and filtering (Leo-Profanity) of entered data;</li>
           <li>working with the backend using socket.io, Axios. Using REST API;</li>
           <li>project assembly (Webpack), deployment (Render.com) and error monitoring in production (Rollbar);</li>
-          <p>Stack used: JavaScript, Node.JS (working with npm), React, React-Dom, React-Router-Dom, React-Bootstrap, React-Redux, Redux Toolkit, Formik, React-Toastify, Eslint + Airbnb, Yup, i18next , Leo-Profanity, REST API, Axios, Socket.io, Webpack, Render.com, Rollbar.</p>
+          <p className={styles.project__desc}>Stack used: JavaScript, Node.JS (working with npm), React, React-Dom, React-Router-Dom, React-Bootstrap, React-Redux, Redux Toolkit, Formik, React-Toastify, Eslint + Airbnb, Yup, i18next , Leo-Profanity, REST API, Axios, Socket.io, Webpack, Render.com, Rollbar.</p>
         </div>
       </div>
 
-      <div className={styles.skills__can}>
+      <div className={styles.skills__examples}>
         <h3>My skills</h3>
-        <div className={styles.can__made}>
-          <SignUp />
-          <p>I can create various forms for data entry, both using standard methods and using third-party libraries, such as Formik. For example, registration/authorization forms, with validation and filtering of input data</p>
+        <div className={styles.examples}>
+          <AuthApp />
+          <p className={styles.examples__decs}>I can create various forms for data entry, both using standard methods and using third-party libraries, such as Formik. For example, registration/authorization forms, with validation and filtering of input data</p>
         </div>
 
-        <div className={styles.can__made}>
-          <Login />
-          <p>I can work with state, both standard useState and using Redux Toolkit</p>
+        <div className={styles.examples}>
+          <div className={styles.examples__cap}>here will be a component</div>
+          <p className={styles.examples__decs}>I can work with state, both standard useState and using Redux Toolkit</p>
         </div>
 
-        <div className={styles.can__made}>
-          <div className={styles.made__cap}>here will be a component</div>
-          <p>I can work with modal windows</p>
+        <div className={styles.examples}>
+          <div className={styles.examples__cap}>here will be a component</div>
+          <p className={styles.examples__decs}>I can work with modal windows</p>
         </div>
 
-        <div className={styles.can__made}>
-          <div className={styles.made__cap}>here will be a component</div>
-          <p>I know how to work with internationalization, context and providers</p>
+        <div className={styles.examples}>
+          <div className={styles.examples__cap}>here will be a component</div>
+          <p className={styles.examples__decs}>I know how to work with internationalization, context and providers</p>
         </div>
 
-        <div className={styles.can__made}>
-          <div className={styles.made__cap}>here will be a component</div>
-          <p>Add the required skills and abilities...</p>
+        <div className={styles.examples}>
+          <div className={styles.examples__cap}>here will be a component</div>
+          <p className={styles.examples__decs}>Add the required skills and abilities...</p>
         </div>
       </div>
     </div>

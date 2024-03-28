@@ -1,0 +1,16 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/input.extends.scss';
+
+.container {
+  @apply
+  relative
+  h-full
+  min-h-32
+  w-96
+  min-w-32
+  px-6
+  py-5
+  rounded-lg
+bg-myTheme-dark;
+}

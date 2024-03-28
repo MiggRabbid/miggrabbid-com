@@ -4,11 +4,10 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 import styles from './SignUp.module.scss';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { useTranslation } from 'react-i18next';
-// import { toast } from 'react-toastify';
-// import axios from 'axios';
+
+import MainButton from '../Button/MainButton';
+import useAuth from '../../../hooks/useAuth';
+import useActions from '../../../hooks/useActions';
 import routes from '../../../routes';
 
 const getValidationSchema = () => yup.object({
@@ -24,42 +23,29 @@ const getValidationSchema = () => yup.object({
 });
 
 const SignUp = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const { t } = useTranslation();
+  const { signUpSuccess, openModal } = useActions();
+  const { logIn } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
   const confirmPassword = useRef();
-  // const { user, logIn } = useAuth();
-
-  // const error = useSelector(getError);
 
   const formik = useFormik({
     initialValues: { username: '', password: '', confirmPassword: '' },
     validationSchema: getValidationSchema(),
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
-      console.log('click submit in SugnUp -', values);
       try {
         const response = await axios.post(routes.signupRequestPath(), values);
-        console.log('click submit in SugnUp -', response);
-        console.log('Login SugnUp -', response);
-        // logIn(response.data);
-        // navigate(routes.chatPagePath());
+        console.log('Login SugnUp -', response.data);
+        logIn(response.data);
+        signUpSuccess();
+        openModal();
       } catch (e) {
         console.error(e);
-        // if (!e.isAxiosError) {
-        //   toast.error(t('toasts.auth.unknownErr'));
-        // } else if (e.response.status === 409) {
-        //   dispatch(authActions.loginFailed(e.response.data));
-        // } else {
-        //   toast.error(t('toasts.auth.networkErr'));
-        // }
       }
       setSubmitting(false);
     },
   });
-  // eslint-disable-next-line no-extra-boolean-cast
 
   return (
     <div className={styles.container}>
@@ -70,16 +56,18 @@ const SignUp = () => {
       <div className={styles.login}>
         <form className={styles.login__form} onSubmit={formik.handleSubmit}>
           <div>
-            <lable
+            <label
               htmlFor="usernameInput"
-              label="Ваш ник"
-              className={styles.form__lable}
-            />
+              className={styles.form__label}
+            >
+              {' '}
+              Имя пользователя
+            </label>
             <input
               type="text"
               name="username"
               id="usernameInput"
-              placeholder="Ваш ник"
+              placeholder="Имя пользователя"
               autoComplete="username"
               required
               ref={usernameRef}
@@ -102,11 +90,13 @@ const SignUp = () => {
           </div>
 
           <div>
-            <lable
+            <label
               htmlFor="passwordInput"
-              label="Пароль"
-              className={styles.form__lable}
-            />
+              className={styles.form__label}
+            >
+              {' '}
+              Пароль
+            </label>
             <input
               type="password"
               name="password"
@@ -134,11 +124,13 @@ const SignUp = () => {
           </div>
 
           <div>
-            <lable
+            <label
               htmlFor="confirmPassword"
-              label="Подтвердите пароль"
-              className={styles.form__lable}
-            />
+              className={styles.form__label}
+            >
+              {' '}
+              Подтвердите пароль
+            </label>
             <input
               type="password"
               name="confirmPassword"
@@ -165,12 +157,7 @@ const SignUp = () => {
             </div>
           </div>
 
-          <div className={styles.form__submit}>
-            <button type="submit">
-              Зарегистрироваться
-            </button>
-          </div>
-
+          <MainButton text="Зарегистрироваться" />
         </form>
       </div>
     </div>

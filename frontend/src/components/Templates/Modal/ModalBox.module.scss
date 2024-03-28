@@ -1,0 +1,14 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/input.extends.scss';
+
+.container {
+  @apply
+  z-0
+  absolute
+  top-12
+  right-6
+  w-1/2
+  h-fit
+  rounded-md;
+}

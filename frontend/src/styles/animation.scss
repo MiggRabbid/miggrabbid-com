@@ -57,3 +57,12 @@
     100% { transform: theme('translate.0')}
   }
 }
+
+@mixin modal-progress() {
+    animation: scroll 6s linear normal;
+
+  @keyframes scroll {
+    0% { transform: translateX(0%) }
+    100% { transform: translate3d(-110%, 0, 0) }
+  }
+}

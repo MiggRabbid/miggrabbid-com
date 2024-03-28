@@ -10,7 +10,6 @@
 
   .title {
     @apply
-    relative
     flex
     flex-col
     justify-between
@@ -37,9 +36,9 @@
     .title__nav {
       @apply
       relative
-      w-full
       h-full
       min-h-fit
+      w-full
       min-w-max
       flex
       justify-start
@@ -51,9 +50,9 @@
         left-5
         z-10
         w-3/6
-        min-w-fit
+        min-w-max
         h-full
-        min-h-80
+        min-h-max
         flex
         justify-start
         items-center;
@@ -79,7 +78,7 @@
           left-7
           w-fit
           h-full
-          min-h-80
+          min-h-max
           flex
           flex-col
           gap-0.5
@@ -90,7 +89,7 @@
             @apply
             rotate-3
             w-max
-            h-1/6
+            h-min
             min-h-24
             block
             text-9xl

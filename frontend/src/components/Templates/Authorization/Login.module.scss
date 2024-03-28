@@ -4,22 +4,17 @@
 
 .container {
   @apply
-  h-full
-  min-h-32
-  w-96
-  min-w-32
   flex
   flex-col
   justify-between
-  px-6
-  py-5
-  rounded-lg
-  bg-myTheme-dark;
+  z-10
+  w-full
+  h-full;
 
   .title {
     @apply
     content-center;
-
+  
     h5 {
     @apply
     w-full
@@ -31,75 +26,79 @@
     uppercase;
     }
   }
-
+  
   .login {
     @apply
     flex
     flex-col;
-
+  
     .login__form {
       @apply
       w-full
       h-full;
-
+  
       div {
         @apply
         w-full
+        h-fit
         relative
         flex
         flex-col
         justify-end
         items-center;
-
-        .form__lable {
+  
+        .form__label {
           @apply
           z-40
           text-sm
           leading-6
-          text-gray-900;
+          text-gray-900
+          hidden;
         }
-
+  
         .form__input {
           @extend %input;
           &:focus {
             @extend %input-focus;
           }
         }
-
+  
         .form__invalid {
           @extend %input;
           @extend %input__invalid;
         }
-
+  
         .feedback__hidden {
           @apply hidden;
         }
       }
-
+  
       .form__submit {
         @extend %button-auth;
       }
     }
   }
-
-  .footer {
-      .footer__signup{
-        @apply
-        flex
-        items-center
-        justify-center
-        w-full
-        h-7
-        border-t-2
-        border-t-myTheme-primary
-        pt-4;
   
-        a {
-          @apply
-          ms-1
-          w-fit
-          text-myTheme-accent
-        }
+  .footer {
+    .footer__signup{
+      @apply
+      flex
+      items-center
+      justify-center
+      w-full
+      h-7
+      border-t-2
+      border-t-myTheme-primary
+      pt-4;
+  
+      button {
+        @apply
+        ms-1
+        w-fit
+        text-myTheme-accent
+        cursor-pointer
+        font-bold;
       }
+    }
   }
 }

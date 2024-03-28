@@ -1,48 +1,48 @@
+import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
-import { useRef } from 'react';
 import axios from 'axios';
 
 import styles from './Login.module.scss';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { useTranslation } from 'react-i18next';
-// import { toast } from 'react-toastify';
 
+import MainButton from '../Button/MainButton';
+
+import useAuth from '../../../hooks/useAuth';
+import useActions from '../../../hooks/useActions';
+import { getError } from '../../../selectors/authSelectors';
 import routes from '../../../routes';
 
 const Login = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const { t } = useTranslation();
+  const { isSignUp, loginFailed, modalOpen } = useActions();
+  const { logIn } = useAuth();
+  const error = useSelector(getError);
   const passwordRef = useRef(null);
   const usernameRef = useRef();
-  // const { user, logIn } = useAuth();
-
-  // const error = useSelector(getError);
 
   const formik = useFormik({
     initialValues: { username: '', password: '' },
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
-      console.log('click submit in login -', values);
       try {
         const response = await axios.post(routes.loginRequestPath(), values);
-        console.log('Login post -', response);
-        // logIn(response.data);
-        // navigate(routes.chatPagePath());
+        logIn(response.data);
+        modalOpen('success');
       } catch (e) {
-        console.error(e);
-        // if (!e.isAxiosError) {
-        //   toast.error(t('toasts.auth.unknownErr'));
-        // } else if (e.response.status === 401) {
-        //   dispatch(authActions.loginFailed(e.response.data));
-        // } else {
-        //   toast.error(t('toasts.auth.networkErr'));
-        // }
+        console.error(e.response.data);
+        modalOpen('error');
+        loginFailed(e.response.data);
       }
       setSubmitting(false);
     },
   });
+
+  useEffect(() => {
+    console.log('Login error -', error);
+  }, [error]);
+
+  const hundleSignUp = () => {
+    isSignUp();
+  };
 
   return (
     <div className={styles.container}>
@@ -53,16 +53,18 @@ const Login = () => {
       <div className={styles.login}>
         <form className={styles.login__form} onSubmit={formik.handleSubmit}>
           <div>
-            <lable
+            <label
               htmlFor="usernameInput"
-              label="Ваш ник"
-              className={styles.form__lable}
-            />
+              className={styles.form__label}
+            >
+              {' '}
+              Имя пользователя
+            </label>
             <input
               type="text"
               name="username"
               id="usernameInput"
-              placeholder="Ваш ник"
+              placeholder="Имя пользователя"
               autoComplete="username"
               required
               ref={usernameRef}
@@ -72,16 +74,19 @@ const Login = () => {
             />
           </div>
           <div>
-            <lable
+            <label
               htmlFor="passwordInput"
               label="Пароль"
-              className={styles.form__lable}
-            />
+              className={styles.form__label}
+            >
+              {' '}
+              Пароль
+            </label>
             <input
               type="password"
               name="password"
               placeholder="Пароль"
-              id="password"
+              id="passwordInput"
               autoComplete="current-password"
               required
               ref={passwordRef}
@@ -90,18 +95,15 @@ const Login = () => {
               className={styles.form__input}
             />
           </div>
-          <div className={styles.form__submit}>
-            <button type="submit">
-              Войти
-            </button>
-          </div>
+
+          <MainButton text="Войти" />
 
         </form>
       </div>
       <div className={styles.footer}>
         <div className={styles.footer__signup}>
           <span>Нет аккаунта? </span>
-          <a href="/signup">Регистрация</a>
+          <button type="button" onClick={hundleSignUp}>Регистрация</button>
         </div>
       </div>
     </div>

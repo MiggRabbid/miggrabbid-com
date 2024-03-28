@@ -1,0 +1,46 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/input.extends.scss';
+
+.container {
+  @apply
+  flex
+  flex-col
+  justify-between
+  z-10
+  w-full
+  h-full;
+
+  .title {
+    @apply
+    content-center;
+
+    h5 {
+    @apply
+    w-full
+    text-center
+    text-lg
+    font-bold
+    font-myTitleFont
+    text-myTheme-light
+    uppercase;
+    }
+  }
+
+  .body {
+    @apply
+    w-full
+    flex
+    flex-col
+    justify-center
+    items-center;
+
+    .body__text {
+    @apply
+    w-fit
+    text-base
+    text-center
+    text-myTheme-light;
+    }
+  }
+}

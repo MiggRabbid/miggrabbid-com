@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.scss';
-import App from './components/App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+import initApp from './InitApp';
+
+const app = async () => {
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  const vdom = await initApp();
+  root.render(
+    <React.StrictMode>
+      {vdom}
+    </React.StrictMode>,
+  );
+};
+
+app();
