@@ -1,12 +1,19 @@
+import { useSelector } from 'react-redux';
+
 import styles from './AuthModal.module.scss';
 
-const AuthModal = ({ modalType }) => (
-  <div className={styles[modalType]}>
-    <p className={styles.modal__text}>
-      Какая-то ошибка
-    </p>
-    <div />
-  </div>
-);
+import { getModalMessage } from '../../../selectors/modalSelectors';
+
+const AuthModal = ({ modalType }) => {
+  const modalMessage = useSelector(getModalMessage);
+  return (
+    <div className={styles[modalType]}>
+      <p className={styles.modal__text}>
+        { modalMessage }
+      </p>
+      <div />
+    </div>
+  );
+};
 
 export default AuthModal;

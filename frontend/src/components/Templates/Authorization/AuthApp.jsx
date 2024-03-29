@@ -21,8 +21,6 @@ const AuthApp = () => {
   const signUp = useSelector(isSignUp);
   const modalState = useSelector(getModalState);
 
-  console.log('modalState -', modalState);
-
   return (
     <div className={styles.container}>
       { signUp ? <SignUp /> : <PrivateOutlet />}

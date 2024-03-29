@@ -10,7 +10,7 @@ const I18nProvider = ({ children }) => {
   i18nextInstance.use(initReactI18next).use(LanguageDetector)
     .init({
       resources,
-      fallbackLng: 'ru',
+      fallbackLng: 'en',
       interpolation: {
         escapeValue: false,
       },

@@ -1,9 +1,9 @@
-/* eslint-disable max-len */
+import { useTranslation } from 'react-i18next';
+
 import styles from './Stack.module.scss';
 
-const stackMain = ['CSS', 'SCSS', 'JavaScript', 'TypeScript', 'HTML5', 'React', 'Redux', 'Redux Toolkit', 'Bootstrap', 'Tailwind', 'Axios', 'Rest API', 'Websocket', 'Jest', 'Webpack', 'Eslint + Airbnb', 'Git'];
-
-const stackSecond = ['React-Dom', 'React-Router-Dom', 'React-Bootstrap', 'React-Toastify', 'Formik', 'Leo-Profanity', 'Yup', 'i18next', 'Socket.io', 'Render.com', 'Rollbar', 'Adode Photoshop', 'Figma', 'English (A1)', 'Python Basics', 'Java Basics'];
+import stackMain from '../../data/stackMain';
+import stackSecond from '../../data/stackSecond';
 
 const getStack = (stack, index) => {
   const quarter = 0.25;
@@ -21,6 +21,8 @@ const getStack = (stack, index) => {
 };
 
 const Stack = () => {
+  const { t } = useTranslation();
+
   const liFirst = getStack(stackMain, 'first').map((item) => (<li key={item}>{item}</li>));
   const liSecond = getStack(stackMain, 'second').map((item) => (<li key={item}>{item}</li>));
   const liThird = getStack(stackMain, 'third').map((item) => (<li key={item}>{item}</li>));
@@ -34,7 +36,7 @@ const Stack = () => {
   return (
     <section className={styles.container}>
       <div className={styles.title}>
-        <h2>My stack</h2>
+        <h2>{t('stack.title')}</h2>
       </div>
       <div className={styles.stack}>
         <div className={styles.stack__scroll}>

@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import reducer from './store/index';
-import { AuthProvider } from './components/Providers/Providers';
+import { AuthProvider, I18nProvider } from './components/Providers/Providers';
 
 import App from './components/App';
 
@@ -12,11 +12,13 @@ const initApp = () => {
   });
 
   return (
-    <AuthProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </AuthProvider>
+    <I18nProvider>
+      <AuthProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </AuthProvider>
+    </I18nProvider>
   );
 };
 

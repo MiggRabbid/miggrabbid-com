@@ -67,10 +67,6 @@
           @extend %input;
           @extend %input__invalid;
         }
-  
-        .feedback__hidden {
-          @apply hidden;
-        }
       }
   
       .form__submit {

@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
@@ -13,6 +14,7 @@ import { getError } from '../../../selectors/authSelectors';
 import routes from '../../../routes';
 
 const Login = () => {
+  const { t } = useTranslation();
   const { isSignUp, loginFailed, modalOpen } = useActions();
   const { logIn } = useAuth();
   const error = useSelector(getError);
@@ -26,28 +28,26 @@ const Login = () => {
       try {
         const response = await axios.post(routes.loginRequestPath(), values);
         logIn(response.data);
-        modalOpen('success');
+        modalOpen({ modalType: 'success', message: t('templates.modal.success') });
       } catch (e) {
         console.error(e.response.data);
-        modalOpen('error');
         loginFailed(e.response.data);
+        if (!e.isAxiosError) {
+          modalOpen({ modalType: 'error', message: t('validationError.unknownErr') });
+        } else if (e.response.status === 401) {
+          modalOpen({ modalType: 'error', message: t('validationError.thisUserDoesNotExists') });
+        } else {
+          modalOpen({ modalType: 'error', message: t('validationError.networkErr') });
+        }
       }
       setSubmitting(false);
     },
   });
 
-  useEffect(() => {
-    console.log('Login error -', error);
-  }, [error]);
-
-  const hundleSignUp = () => {
-    isSignUp();
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h5>Войти</h5>
+        <h5>{t('templates.authorization.logIn.title')}</h5>
       </div>
 
       <div className={styles.login}>
@@ -57,53 +57,64 @@ const Login = () => {
               htmlFor="usernameInput"
               className={styles.form__label}
             >
-              {' '}
-              Имя пользователя
+              {t('templates.authorization.logIn.inputName.label')}
             </label>
             <input
               type="text"
               name="username"
               id="usernameInput"
-              placeholder="Имя пользователя"
+              placeholder={t('templates.authorization.logIn.inputName.placeholder')}
               autoComplete="username"
               required
               ref={usernameRef}
               value={formik.values.username}
               onChange={formik.handleChange}
-              className={styles.form__input}
+              className={
+                !error
+                  ? (styles.form__input)
+                  : (styles.form__invalid)
+                }
             />
           </div>
+
           <div>
             <label
               htmlFor="passwordInput"
-              label="Пароль"
               className={styles.form__label}
             >
-              {' '}
-              Пароль
+              {t('templates.authorization.logIn.inputPass.label')}
             </label>
             <input
               type="password"
               name="password"
-              placeholder="Пароль"
+              placeholder={t('templates.authorization.logIn.inputPass.placeholder')}
               id="passwordInput"
               autoComplete="current-password"
               required
               ref={passwordRef}
               value={formik.values.password}
               onChange={formik.handleChange}
-              className={styles.form__input}
+              className={
+                !error
+                  ? (styles.form__input)
+                  : (styles.form__invalid)
+                }
             />
           </div>
 
-          <MainButton text="Войти" />
-
+          <MainButton text={t('templates.buttons.logIn')} />
         </form>
       </div>
+
       <div className={styles.footer}>
         <div className={styles.footer__signup}>
-          <span>Нет аккаунта? </span>
-          <button type="button" onClick={hundleSignUp}>Регистрация</button>
+          <span>{t('templates.authorization.logIn.footer.text')}</span>
+          <button
+            type="button"
+            onClick={() => isSignUp()}
+          >
+            {t('templates.authorization.logIn.footer.link')}
+          </button>
         </div>
       </div>
     </div>

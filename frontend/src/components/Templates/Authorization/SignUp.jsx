@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import axios from 'axios';
 
@@ -10,20 +11,21 @@ import useAuth from '../../../hooks/useAuth';
 import useActions from '../../../hooks/useActions';
 import routes from '../../../routes';
 
-const getValidationSchema = () => yup.object({
+const getValidationSchema = (t) => yup.object({
   username: yup.string().trim()
-    .min(3, 'Минимальаня длинна 3 символа')
-    .max(20, 'Максимальная длинна 20 символов')
-    .required('Поле обязательно для заполнения'),
+    .min(3, t('validationError.wronglengthName'))
+    .max(20, t('validationError.wronglengthName'))
+    .required(t('validationError.requiredField')),
   password: yup.string()
-    .min(6, 'Минимальаня длинна 6 символов')
-    .required('Поле обязательно для заполнения'),
+    .min(6, t('validationError.wronglengthPass'))
+    .required(t('validationError.requiredField')),
   confirmPassword: yup.string()
-    .oneOf([yup.ref('password'), null], 'Пароли должны совпадать'),
+    .oneOf([yup.ref('password'), null], t('validationError.invalidPassConfirm')),
 });
 
 const SignUp = () => {
-  const { signUpSuccess, openModal } = useActions();
+  const { t } = useTranslation();
+  const { signUpSuccess, loginFailed, modalOpen } = useActions();
   const { logIn } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -31,7 +33,7 @@ const SignUp = () => {
 
   const formik = useFormik({
     initialValues: { username: '', password: '', confirmPassword: '' },
-    validationSchema: getValidationSchema(),
+    validationSchema: getValidationSchema(t),
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
       try {
@@ -39,9 +41,17 @@ const SignUp = () => {
         console.log('Login SugnUp -', response.data);
         logIn(response.data);
         signUpSuccess();
-        openModal();
+        modalOpen({ modalType: 'success', message: t('templates.modal.success') });
       } catch (e) {
-        console.error(e);
+        console.error(e.response.data);
+        loginFailed(e.response.data);
+        if (!e.isAxiosError) {
+          modalOpen({ modalType: 'error', message: t('validationError.unknownErr') });
+        } else if (e.response.status === 409) {
+          modalOpen({ modalType: 'error', message: t('validationError.thisUserExists') });
+        } else {
+          modalOpen({ modalType: 'error', message: t('validationError.networkErr') });
+        }
       }
       setSubmitting(false);
     },
@@ -50,7 +60,7 @@ const SignUp = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h5>Зарегистрироваться</h5>
+        <h5>{t('templates.authorization.signUp.title')}</h5>
       </div>
 
       <div className={styles.login}>
@@ -60,14 +70,13 @@ const SignUp = () => {
               htmlFor="usernameInput"
               className={styles.form__label}
             >
-              {' '}
-              Имя пользователя
+              {t('templates.authorization.signUp.inputName.label')}
             </label>
             <input
               type="text"
               name="username"
               id="usernameInput"
-              placeholder="Имя пользователя"
+              placeholder={t('templates.authorization.signUp.inputName.placeholder')}
               autoComplete="username"
               required
               ref={usernameRef}
@@ -94,13 +103,12 @@ const SignUp = () => {
               htmlFor="passwordInput"
               className={styles.form__label}
             >
-              {' '}
-              Пароль
+              {t('templates.authorization.signUp.inputPass.label')}
             </label>
             <input
               type="password"
               name="password"
-              placeholder="Пароль"
+              placeholder={t('templates.authorization.signUp.inputPass.placeholder')}
               id="passwordInput"
               autoComplete="current-password"
               required
@@ -128,13 +136,12 @@ const SignUp = () => {
               htmlFor="confirmPassword"
               className={styles.form__label}
             >
-              {' '}
-              Подтвердите пароль
+              {t('templates.authorization.signUp.inputConfirmPass.label')}
             </label>
             <input
               type="password"
               name="confirmPassword"
-              placeholder="Подтвердите пароль"
+              placeholder={t('templates.authorization.signUp.inputConfirmPass.placeholder')}
               id="confirmPassword"
               autoComplete="current-password"
               required
@@ -157,7 +164,7 @@ const SignUp = () => {
             </div>
           </div>
 
-          <MainButton text="Зарегистрироваться" />
+          <MainButton text={t('templates.buttons.signUp')} />
         </form>
       </div>
     </div>

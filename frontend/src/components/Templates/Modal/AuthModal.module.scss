@@ -23,13 +23,15 @@
     w-fit
     uppercase
     text-xs
-    py-3;
+    text-center
+    py-3
+    px-2;
   }
 
   div {
     @include modal-progress();
     @apply
-    relative
+    absolute
     left-0
     bottom-0
     w-full
