@@ -11,19 +11,21 @@ import iconLinkedIn from '../../assets/icon-in.png';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const currLang = t('languages.currLang');
-  const altLang = t('languages.altLang');
+  const curLng = i18n.language;
+  const altLang = curLng === t('languages.ru') ? t('languages.en') : t('languages.ru');
 
   const handleLangSwitch = () => {
-    console.log('currLang -', currLang);
-    console.log('altLang -', altLang);
     i18n.changeLanguage(altLang);
   };
 
   return (
     <header className={styles.container}>
       <div className={styles.header}>
-        <SmallButton curr={currLang} alt={altLang} onClick={handleLangSwitch} />
+        <SmallButton
+          className={styles.header_button}
+          text={altLang}
+          onClick={handleLangSwitch}
+        />
         <div className={styles.header__title}>
           <h3>
             {t('header.title')}

@@ -1,6 +1,7 @@
 @import '../../../styles//mixins.scss';
 @import '../../../styles/animation.scss';
 @import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
 
 .container {
   @apply
@@ -13,6 +14,7 @@
   
   .title {
     @apply
+    relative
     content-center;
 
     h5 {
@@ -24,6 +26,12 @@
     font-myTitleFont
     text-myTheme-light
     uppercase;
+    }
+
+    .title__back {
+      @apply
+      absolute
+      left-0;
     }
   }
 
@@ -88,8 +96,8 @@
           @apply hidden;
         }
       }
-
-      .form__submit {
+      
+      .form_submit {
         @extend %button-auth;
       }
     }

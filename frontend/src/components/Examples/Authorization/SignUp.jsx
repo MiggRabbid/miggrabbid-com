@@ -6,10 +6,14 @@ import axios from 'axios';
 
 import styles from './SignUp.module.scss';
 
-import MainButton from '../Button/MainButton';
+import MainButton from '../../Templates/Button/MainButton';
 import useAuth from '../../../hooks/useAuth';
 import useActions from '../../../hooks/useActions';
 import routes from '../../../routes';
+import SmallButton from '../../Templates/Button/SmallButton';
+
+const MODAL_ERROR = 'error';
+const MODAL_SUCCESS = 'success';
 
 const getValidationSchema = (t) => yup.object({
   username: yup.string().trim()
@@ -41,17 +45,17 @@ const SignUp = () => {
         console.log('Login SugnUp -', response.data);
         logIn(response.data);
         signUpSuccess();
-        modalOpen({ modalType: 'success', message: t('templates.modal.success') });
+        modalOpen({ modalType: MODAL_SUCCESS, message: t('templates.modal.success') });
       } catch (e) {
         console.error(e.response.data);
         loginFailed(e.response.data);
+        const payload = { modalType: MODAL_ERROR, message: t('validationError.networkErr') };
         if (!e.isAxiosError) {
-          modalOpen({ modalType: 'error', message: t('validationError.unknownErr') });
-        } else if (e.response.status === 409) {
-          modalOpen({ modalType: 'error', message: t('validationError.thisUserExists') });
-        } else {
-          modalOpen({ modalType: 'error', message: t('validationError.networkErr') });
+          payload.message = t('validationError.unknownErr');
+        } else if (e.response.status === 401) {
+          payload.message = t('validationError.thisUserDoesNotExists');
         }
+        modalOpen(payload);
       }
       setSubmitting(false);
     },
@@ -60,6 +64,7 @@ const SignUp = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
+        <SmallButton className={styles.title__back} text="<" onClick={() => signUpSuccess()} />
         <h5>{t('templates.authorization.signUp.title')}</h5>
       </div>
 
@@ -164,7 +169,7 @@ const SignUp = () => {
             </div>
           </div>
 
-          <MainButton text={t('templates.buttons.signUp')} />
+          <MainButton className={styles.form_submit} text={t('templates.buttons.signUp')} />
         </form>
       </div>
     </div>

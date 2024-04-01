@@ -1,0 +1,23 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/buttons.extends.scss';
+
+.buttons {
+  @apply
+  w-full
+  h-fit
+  flex
+  flex-row
+  items-center
+  justify-center
+  gap-3
+  uppercase;
+
+  .button {
+    @extend %button-switcher;
+  }
+
+  .button__disable {
+    @extend %button-switcher-disable
+  }
+}

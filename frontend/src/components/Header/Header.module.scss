@@ -14,12 +14,19 @@
 
   .header {
     @apply
+    relative
     flex
     justify-between
     items-center
     w-11/12
     max-w-screen-2xl
     h-16;
+
+    .header_button {
+      @apply
+      absolute
+      right-0;
+    }
     
     .header__title {
       @apply

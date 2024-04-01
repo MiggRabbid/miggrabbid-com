@@ -1,0 +1,52 @@
+%button {
+  @apply
+  mt-4
+  rounded-md
+  font-bold
+  text-myTheme-dark
+  bg-myTheme-accent;
+
+  &:hover {
+    @apply
+    bg-opacity-80;
+  }
+}
+
+%button-auth {
+  @extend %button;
+
+  button {
+    @apply
+    py-3
+    w-full
+    h-full;
+  }
+}
+
+%button-switcher {
+  @extend %button;
+  button {
+    @apply
+    h-fit
+    w-24
+    px-5
+    py-2;
+  }
+}
+
+%button-switcher-disable {
+  @extend %button;
+  @apply
+  text-myTheme-accent
+  bg-myTheme-dark
+  border-2
+  border-myTheme-accent;
+
+  button {
+    @apply
+    h-fit
+    w-24
+    px-5
+    py-2;
+  }
+}

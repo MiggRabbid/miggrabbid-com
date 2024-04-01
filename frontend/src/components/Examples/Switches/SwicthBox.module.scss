@@ -1,0 +1,37 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/buttons.extends.scss';
+
+.switcher {
+  @apply
+  relative
+  h-full
+  min-h-32
+  w-96
+  min-w-32
+  px-6
+  py-5
+  flex
+  flex-col
+  justify-center
+  items-center
+  rounded-lg
+bg-myTheme-dark;
+
+  .switcher__lang, .switcher__theme {
+    @apply
+    h-1/2
+    w-full
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-2;
+  }
+
+  .switcher__theme {
+    @apply
+    border-t-2
+    border-t-myTheme-primary;
+  }
+}

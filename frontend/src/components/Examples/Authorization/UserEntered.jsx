@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './UserEntered.module.scss';
 
-import MainButton from '../Button/MainButton';
+import MainButton from '../../Templates/Button/MainButton.jsx';
 
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth.js';
 import useActions from '../../../hooks/useActions.js';
 import { isNewUser } from '../../../selectors/authSelectors.js';
 
@@ -35,7 +35,7 @@ const UserEntered = () => {
 
       <div className={styles.body}>
         <p className={styles.body__text}>
-          {newUser ? t('templates.authorization.userEntered.SigUp')
+          {newUser ? t('templates.authorization.userEntered.SignUp')
             : t('templates.authorization.userEntered.LogIn')}
         </p>
         <p>{t('templates.authorization.userEntered.text')}</p>

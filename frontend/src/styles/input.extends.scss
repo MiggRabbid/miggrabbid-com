@@ -39,24 +39,3 @@
     ring-opacity-75;
   }
 }
-
-%button-auth {
-  @apply
-  mt-4
-  rounded-md
-  font-bold
-  text-myTheme-dark
-  bg-myTheme-accent;
-    
-  &:hover {
-      @apply
-      bg-opacity-80;
-    }
-
-  button {
-    @apply
-    py-3
-    w-full
-    h-full;
-  }
-}

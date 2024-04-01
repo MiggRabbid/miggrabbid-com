@@ -9,7 +9,7 @@ import { getModalState } from '../../../selectors/modalSelectors';
 import Login from './Login';
 import SignUp from './SignUp';
 import UserEntered from './UserEntered';
-import ModalBox from '../Modal/ModalBox';
+import ModalBox from '../../Templates/Modal/ModalBox';
 
 const PrivateOutlet = () => {
   const authentication = useAuth();

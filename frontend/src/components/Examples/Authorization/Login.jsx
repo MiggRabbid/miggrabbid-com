@@ -6,12 +6,15 @@ import axios from 'axios';
 
 import styles from './Login.module.scss';
 
-import MainButton from '../Button/MainButton';
+import MainButton from '../../Templates/Button/MainButton';
 
 import useAuth from '../../../hooks/useAuth';
 import useActions from '../../../hooks/useActions';
 import { getError } from '../../../selectors/authSelectors';
 import routes from '../../../routes';
+
+const MODAL_ERROR = 'error';
+const MODAL_SUCCESS = 'success';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -28,17 +31,17 @@ const Login = () => {
       try {
         const response = await axios.post(routes.loginRequestPath(), values);
         logIn(response.data);
-        modalOpen({ modalType: 'success', message: t('templates.modal.success') });
+        modalOpen({ modalType: MODAL_SUCCESS, message: t('templates.modal.success') });
       } catch (e) {
         console.error(e.response.data);
         loginFailed(e.response.data);
+        const payload = { modalType: MODAL_ERROR, message: t('validationError.networkErr') };
         if (!e.isAxiosError) {
-          modalOpen({ modalType: 'error', message: t('validationError.unknownErr') });
+          payload.message = t('validationError.unknownErr');
         } else if (e.response.status === 401) {
-          modalOpen({ modalType: 'error', message: t('validationError.thisUserDoesNotExists') });
-        } else {
-          modalOpen({ modalType: 'error', message: t('validationError.networkErr') });
+          payload.message = t('validationError.thisUserDoesNotExists');
         }
+        modalOpen(payload);
       }
       setSubmitting(false);
     },
@@ -102,7 +105,7 @@ const Login = () => {
             />
           </div>
 
-          <MainButton text={t('templates.buttons.logIn')} />
+          <MainButton className={styles.form_submit} text={t('templates.buttons.logIn')} />
         </form>
       </div>
 

@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Skills.module.scss';
 
-import AuthApp from '../Templates/Authorization/AuthApp';
+import AuthApp from '../Examples/Authorization/AuthApp';
+import SwitchBox from '../Examples/Switches/SwicthBox';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ const Skills = () => {
           </div>
 
           <div className={styles.examples}>
-            <div className={styles.examples__cap}>{t('skills.examples.promiseExam')}</div>
+            <SwitchBox />
             <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
           </div>
 

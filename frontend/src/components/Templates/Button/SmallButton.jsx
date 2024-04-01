@@ -1,11 +1,16 @@
 import styles from './SmallButton.module.scss';
 
-const SmallButton = ({ curr, alt, onClick }) => {
-  console.log('SmallButton');
+const SmallButton = (props) => {
+  const {
+    className, text, onClick,
+  } = props;
+
   return (
-    <button data-lang={curr} className={styles.button} type="button" onClick={onClick}>
-      {alt}
-    </button>
+    <div className={className}>
+      <button className={styles.button} type="button" onClick={onClick}>
+        {text}
+      </button>
+    </div>
   );
 };
 

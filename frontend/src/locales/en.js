@@ -1,8 +1,8 @@
 export default {
   translation: {
     languages: {
-      currLang: 'en',
-      altLang: 'ru',
+      ru: 'ru',
+      en: 'en',
     },
     header: {
       title: 'Hi there! My name is Anatoliy',
@@ -137,7 +137,7 @@ export default {
         userEntered: {
           title: ', welcome',
           LogIn: 'Authorization',
-          SigUp: 'Registration ',
+          SignUp: 'Registration',
           text: 'completed successfully',
         },
       },
