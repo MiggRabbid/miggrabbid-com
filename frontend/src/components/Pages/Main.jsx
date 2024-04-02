@@ -7,6 +7,12 @@ import bgTitleBody from '../../assets/bgTitleBody.png';
 
 const Main = () => {
   const { t } = useTranslation();
+
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const themeClass = `container__${currentTheme}`;
+  console.log('Main -', currentTheme);
+  console.log('Main -', themeClass);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>

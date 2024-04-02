@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import reducer from './store/index';
-import { AuthProvider, I18nProvider } from './components/Providers/Providers';
+import { AuthProvider, I18nProvider, ThemeProvider } from './components/Providers/Providers';
 
 import App from './components/App';
 
@@ -14,9 +14,11 @@ const initApp = () => {
   return (
     <I18nProvider>
       <AuthProvider>
-        <Provider store={store}>
-          <App />
-        </Provider>
+        <ThemeProvider>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </ThemeProvider>
       </AuthProvider>
     </I18nProvider>
   );

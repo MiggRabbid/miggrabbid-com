@@ -3,7 +3,7 @@
   mt-4
   rounded-md
   font-bold
-  text-myTheme-dark
+  text-myTheme-primary
   bg-myTheme-accent;
 
   &:hover {
@@ -28,25 +28,18 @@
   button {
     @apply
     h-fit
-    w-24
+    w-32
     px-5
-    py-2;
+    py-2
+    uppercase;
   }
 }
 
 %button-switcher-disable {
-  @extend %button;
+  @extend %button-switcher;
   @apply
   text-myTheme-accent
   bg-myTheme-dark
   border-2
-  border-myTheme-accent;
-
-  button {
-    @apply
-    h-fit
-    w-24
-    px-5
-    py-2;
-  }
+  border-myTheme-accent
 }

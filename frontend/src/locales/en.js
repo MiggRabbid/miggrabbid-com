@@ -1,8 +1,14 @@
 export default {
   translation: {
     languages: {
+      title: 'Switch languages',
       ru: 'ru',
       en: 'en',
+    },
+    theme: {
+      title: 'Switch color theme',
+      light: 'light',
+      dark: 'dark',
     },
     header: {
       title: 'Hi there! My name is Anatoliy',

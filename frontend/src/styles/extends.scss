@@ -1,3 +1,15 @@
+%app {
+  @apply
+  box-border
+  p-0
+  m-0
+  w-full
+  h-max
+  tracking-wide
+  font-myTextFont
+  bg-myTheme-dark;;
+}
+
 %container {
   @apply
   relative
@@ -8,7 +20,7 @@
   flex-col
   items-center
   bg-myTheme-primary
-  text-myTheme-light
+  text-myTheme-light;
 }
 
 %title {
@@ -22,11 +34,13 @@
   font-myTitleFont
   font-black
   mt-4
-  cursor-default;
+  cursor-default
+  text-myTheme-light;
 };
 
 %section-title {
   @apply
+  /* text-myTheme-primary */
   text-myTheme-light
   border-b-4
   border-opacity-50

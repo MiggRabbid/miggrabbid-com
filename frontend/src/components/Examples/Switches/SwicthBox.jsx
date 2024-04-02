@@ -2,16 +2,26 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './SwicthBox.module.scss';
 
-import Switcher from './Swtcher';
+import useTheme from '../../../hooks/useTheme';
+import Switcher from './Switcher';
 
 const SwitchBox = () => {
+  const { theme, changeTheme } = useTheme();
+
   const { t, i18n } = useTranslation();
+
+  const themeLight = t('theme.light', { lng: 'en' });
+  const themeDark = t('theme.dark', { lng: 'en' });
   const curLng = i18n.language;
   const altLang = curLng === t('languages.ru') ? t('languages.en') : t('languages.ru');
 
   const switchLng = () => {
-    console.log('switchLng - ', curLng, altLang);
     i18n.changeLanguage(altLang);
+  };
+
+  const switchTheme = () => {
+    console.log('SwitchBox -', theme);
+    changeTheme();
   };
 
   return (
@@ -19,7 +29,7 @@ const SwitchBox = () => {
       <Switcher
         className={styles.switcher__lang}
         onClick={switchLng}
-        title="Переключение языков"
+        title={t('languages.title')}
         firstBtn={t('languages.ru')}
         secondBtn={t('languages.en')}
         curValue={curLng}
@@ -27,11 +37,11 @@ const SwitchBox = () => {
 
       <Switcher
         className={styles.switcher__theme}
-        onClick={switchLng}
-        title="Переключение цветовой темы"
-        firstBtn="LIGTH"
-        secondBtn="DARK"
-        curValue="DARK"
+        onClick={switchTheme}
+        title={t('theme.title')}
+        firstBtn={themeLight}
+        secondBtn={themeDark}
+        curValue={theme}
       />
     </div>
   );

@@ -1,11 +1,5 @@
+@import '../styles/extends.scss';
+
 .app {
-    @apply
-    box-border
-    p-0
-    m-0
-    w-full
-    h-max
-    bg-myTheme-dark
-    tracking-wide
-    font-myTextFont;
-  }
+  @extend %app
+};

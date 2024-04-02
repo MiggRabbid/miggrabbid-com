@@ -1,8 +1,14 @@
 export default {
   translation: {
     languages: {
+      title: 'Переключение языков',
       ru: 'ru',
       en: 'en',
+    },
+    theme: {
+      title: 'Переключение цветовой темы',
+      light: 'светлая',
+      dark: 'тёмная',
     },
     header: {
       title: 'Приветсвую! Меня зовут Анатолий',

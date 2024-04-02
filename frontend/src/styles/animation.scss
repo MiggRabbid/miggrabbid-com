@@ -48,16 +48,6 @@
   }
 }
 
-
-
-@mixin bg-amimation() {
-  animation: mutation 5s linear infinite;
-  @keyframes mutation {
-    0% { transform: theme('translate.1/2')}
-    100% { transform: theme('translate.0')}
-  }
-}
-
 @mixin modal-progress() {
     animation: scroll 6s linear normal;
 
