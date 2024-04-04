@@ -1,0 +1,47 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/input.extends.scss';
+
+.container {
+  @apply
+  absolute
+  w-full
+  h-96
+  flex
+  justify-center
+  items-center
+  bg-slate-600
+  bg-opacity-60;
+
+  .modal {
+    @apply
+    w-full
+    h-fit
+    m-3
+    px-1
+    rounded-lg
+    overflow-hidden
+    flex
+    flex-col
+    text-myTheme-light
+    bg-myTheme-dark;
+
+    .modal__header {
+      @apply
+      py-3
+      w-full;
+    }
+    .modal__body {
+      @apply
+      h-48
+      w-full
+      bg-myTheme-primary;
+    }
+    .modal__footer {
+      @apply
+      py-3
+      w-full;
+    }
+  }
+}

@@ -4,9 +4,11 @@
 
 .error, .success {
   @apply
-  relative
-  w-full
-  h-full
+  absolute
+  top-12
+  right-6
+  w-48
+  h-fit
   flex
   flex-col
   justify-between
@@ -24,7 +26,7 @@
     uppercase
     text-xs
     text-center
-    py-3
+    py-5
     px-2;
   }
 

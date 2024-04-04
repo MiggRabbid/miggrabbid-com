@@ -1,7 +1,8 @@
 const MainButton = (props) => {
   const {
-    className, onClick, text, isDisabled,
+    className, onClick, isDisabled, text,
   } = props;
+
   return (
     <div className={className}>
       <button type="submit" onClick={onClick} disabled={isDisabled}>

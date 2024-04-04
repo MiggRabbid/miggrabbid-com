@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
-import styles from './ModalBox.module.scss';
 
 import { getModalType } from '../../../selectors/modalSelectors';
 import useActions from '../../../hooks/useActions';
 import AuthModal from './AuthModal';
+import ChangeTodo from './ChangeTodo';
 
 const mappingModal = {
   error: AuthModal,
   success: AuthModal,
+  addAndChangeTodos: ChangeTodo,
+  delTodos: ChangeTodo,
 };
 
 const ModalBox = () => {
@@ -17,18 +17,11 @@ const ModalBox = () => {
   const modalType = useSelector(getModalType);
   const CurrentModal = mappingModal[modalType];
 
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      console.log('Close modal');
-      modalClose();
-    }, 5500);
-    return () => clearTimeout(timerId);
-  }, []);
-
   return (
-    <div className={styles.container}>
-      <CurrentModal modalType={modalType} />
-    </div>
+    <CurrentModal
+      modalType={modalType}
+      modalClose={modalClose}
+    />
   );
 };
 

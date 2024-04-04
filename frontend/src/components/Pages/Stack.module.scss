@@ -76,7 +76,7 @@
 
     .stack__scroll {
       ul {
-        @include horizontal-scroll();
+        @include horizontal-scroll(80);
         @apply
         gap-7
         px-2;

@@ -1,5 +1,6 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/animation.scss';
+@import '../../styles/buttons.extends.scss';
 
 .container{
   @apply
@@ -23,9 +24,11 @@
     h-16;
 
     .header_button {
+      @extend %small-button;
       @apply
       absolute
-      right-0;
+      right-0
+      text-myTheme-accent;
     }
     
     .header__title {

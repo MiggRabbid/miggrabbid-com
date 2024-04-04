@@ -10,8 +10,12 @@
   min-h-32
   w-96
   min-w-32
-  px-6
-  py-5
+  flex
+  flex-row
+  gap-2
+  justify-center
+  items-center
+  overflow-hidden
   rounded-lg
-bg-myTheme-dark;
+  bg-yellow-950;
 }

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -42,7 +42,6 @@ const SignUp = () => {
       setSubmitting(true);
       try {
         const response = await axios.post(routes.signupRequestPath(), values);
-        console.log('Login SugnUp -', response.data);
         logIn(response.data);
         signUpSuccess();
         modalOpen({ modalType: MODAL_SUCCESS, message: t('templates.modal.success') });
@@ -61,10 +60,24 @@ const SignUp = () => {
     },
   });
 
+  useState(() => {
+    console.log(`formik.errors ${formik.errors.username}`);
+    console.log(`formik.errors ${formik.errors.password}`);
+    console.log(`formik.errors ${formik.errors.confirmPassword}`);
+  }, [formik.errors.username, formik.errors.password, formik.errors.confirmPassword]);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <SmallButton className={styles.title__back} text="<" onClick={() => signUpSuccess()} />
+        <SmallButton
+          className={styles.title__back}
+          text={(
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+            </svg>
+)}
+          onClick={() => signUpSuccess()}
+        />
         <h5>{t('templates.authorization.signUp.title')}</h5>
       </div>
 
@@ -99,7 +112,7 @@ const SignUp = () => {
                   : (styles.form__feedback)
                 }
             >
-              От 3 до 20 символов
+              {formik.errors.username}
             </div>
           </div>
 
@@ -132,7 +145,7 @@ const SignUp = () => {
                   : (styles.form__feedback)
                 }
             >
-              Не менее 6 символов
+              {formik.errors.password}
             </div>
           </div>
 
@@ -165,11 +178,14 @@ const SignUp = () => {
                   : (styles.form__feedback)
                 }
             >
-              Пароли не совпадают
+              {formik.errors.confirmPassword}
             </div>
           </div>
 
-          <MainButton className={styles.form_submit} text={t('templates.buttons.signUp')} />
+          <MainButton
+            className={styles.form_submit}
+            text={t('templates.buttons.signUp')}
+          />
         </form>
       </div>
     </div>

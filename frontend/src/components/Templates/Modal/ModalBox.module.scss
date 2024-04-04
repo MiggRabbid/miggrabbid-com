@@ -4,11 +4,8 @@
 
 .container {
   @apply
-  z-0
-  absolute
-  top-12
-  right-6
-  w-1/2
+  w-fit
   h-fit
+  z-0
   rounded-md;
 }

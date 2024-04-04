@@ -29,6 +29,7 @@
     }
 
     .title__back {
+      @extend %small-button-dark;
       @apply
       absolute
       left-0;

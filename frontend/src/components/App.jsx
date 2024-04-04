@@ -9,8 +9,7 @@ import Skills from './Pages/Skills';
 const App = () => {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const themeClass = `app__${currentTheme}`;
-  console.log('App currentTheme -', currentTheme);
-  console.log('App themeClass   -', themeClass);
+  console.log(`App  / currentTheme - ${currentTheme} / themeClass - ${themeClass}`);
 
   return (
     <div className={styles.app} id="app">

@@ -93,11 +93,10 @@ export default {
       examples: {
         title: 'My skills',
         promiseExam: 'here will be a component',
-        firstExam: 'I can create various forms for data entry, both using standard methods and using third-party libraries, such as Formik. For example, registration/authorization forms, with validation and filtering of input data',
-        secondExam: 'I can work with providers and contexts. For example, to switch themes or localize a site',
-        fourthExam: 'I can work with state, both standard useState and using Redux Toolkit',
-        fifthExam: 'I can work with modal windows',
-        otherExam: 'And this is just a small part. Plus I continue to develop my skills.',
+        firstExam: 'I can create various forms for data entry, both using standard methods and using third-party libraries such as Formik. For example, registration/authorization forms with validation',
+        secondExam: 'I can work with providers and contexts and create custom hooks and selectors. For example, to change the theme or localize the site',
+        thirdExam: 'I know how to work with states, both with the standard useState and using the Redux Toolkit. And how to work with filtering the entered data',
+        otherExam: 'This is just a small part. And I continue to develop my skills',
       },
     },
     notFound: {

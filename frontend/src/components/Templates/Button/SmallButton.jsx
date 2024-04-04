@@ -1,13 +1,11 @@
-import styles from './SmallButton.module.scss';
-
 const SmallButton = (props) => {
   const {
-    className, text, onClick,
+    className, onClick, isDisabled, text,
   } = props;
 
   return (
     <div className={className}>
-      <button className={styles.button} type="button" onClick={onClick}>
+      <button type="button" onClick={onClick} disabled={isDisabled}>
         {text}
       </button>
     </div>

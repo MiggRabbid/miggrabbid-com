@@ -5,9 +5,7 @@
 }
 
 @mixin return-anim-duration-1000() {
-  -webkit-transition: 1000ms ease-in-out;
-  -moz-transition: 1000ms ease-in-out;
-  -o-transition: 1000ms ease-in-out;
+  transition: 1000ms ease-in-out;
 }
 
 @mixin anim-duration-500() {
@@ -17,9 +15,7 @@
 }
 
 @mixin return-anim-duration-500() {
-  -webkit-transition: 500ms ease-in-out;
-  -moz-transition: 500ms ease-in-out;
-  -o-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 @mixin typing-text() {

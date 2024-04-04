@@ -14,7 +14,7 @@ const modalSlice = createSlice({
         ...state,
         isOpen: true,
         modalType: payload.modalType,
-        message: payload.message,
+        message: payload.message || null,
       });
     },
     modalClose: (state) => ({

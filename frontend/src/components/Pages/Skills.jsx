@@ -5,6 +5,7 @@ import styles from './Skills.module.scss';
 
 import AuthApp from '../Examples/Authorization/AuthApp';
 import SwitchBox from '../Examples/Switches/SwicthBox';
+import TodoApp from '../Examples/Todos/TodoApp';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -76,19 +77,13 @@ const Skills = () => {
           </div>
 
           <div className={styles.examples}>
-            <div className={styles.examples__cap}>{t('skills.examples.promiseExam')}</div>
-            <p className={styles.examples__decs}>{t('skills.examples.fourthExam')}</p>
+            <TodoApp />
+            <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
           </div>
+        </div>
 
-          <div className={styles.examples}>
-            <div className={styles.examples__cap}>{t('skills.examples.promiseExam')}</div>
-            <p className={styles.examples__decs}>{t('skills.examples.fifthExam')}</p>
-          </div>
-
-          <div className={styles.examples}>
-            <div className={styles.examples__cap}>{t('skills.examples.promiseExam')}</div>
-            <p className={styles.examples__decs}>{t('skills.examples.otherExam')}</p>
-          </div>
+        <div className={styles.skills__footer}>
+          <p className={styles.footer__text}>{t('skills.examples.otherExam')}</p>
         </div>
       </div>
 
