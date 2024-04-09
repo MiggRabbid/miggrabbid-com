@@ -34,7 +34,7 @@ const Stack = () => {
   const liSecondFourth = getStack(stackSecond, 'fourth').map((item) => (<li key={item}>{item}</li>));
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="stack">
       <div className={styles.title}>
         <h2>{t('stack.title')}</h2>
       </div>

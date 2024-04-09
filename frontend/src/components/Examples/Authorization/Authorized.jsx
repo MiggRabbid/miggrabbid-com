@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import styles from './UserEntered.module.scss';
+import styles from './Authorized.module.scss';
 
 import MainButton from '../../Templates/Button/MainButton.jsx';
 
@@ -41,7 +41,7 @@ const UserEntered = () => {
         <p>{t('templates.authorization.userEntered.text')}</p>
       </div>
 
-      <MainButton onClick={handleLogout} text={t('templates.buttons.logOut')} />
+      <MainButton className={styles.logout} onClick={handleLogout} text={t('templates.buttons.logOut')} />
     </div>
   );
 };

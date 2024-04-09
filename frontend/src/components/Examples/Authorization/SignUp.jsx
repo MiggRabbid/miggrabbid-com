@@ -1,16 +1,17 @@
-import { useFormik } from 'formik';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
 import styles from './SignUp.module.scss';
 
-import MainButton from '../../Templates/Button/MainButton';
 import useAuth from '../../../hooks/useAuth';
 import useActions from '../../../hooks/useActions';
 import routes from '../../../routes';
 import SmallButton from '../../Templates/Button/SmallButton';
+import MainButton from '../../Templates/Button/MainButton';
+import { iconBack } from '../../Templates/icons';
 
 const MODAL_ERROR = 'error';
 const MODAL_SUCCESS = 'success';
@@ -51,8 +52,8 @@ const SignUp = () => {
         const payload = { modalType: MODAL_ERROR, message: t('validationError.networkErr') };
         if (!e.isAxiosError) {
           payload.message = t('validationError.unknownErr');
-        } else if (e.response.status === 401) {
-          payload.message = t('validationError.thisUserDoesNotExists');
+        } else if (e.response.status === 409) {
+          payload.message = t('validationError.thisUserExists');
         }
         modalOpen(payload);
       }
@@ -60,22 +61,12 @@ const SignUp = () => {
     },
   });
 
-  useState(() => {
-    console.log(`formik.errors ${formik.errors.username}`);
-    console.log(`formik.errors ${formik.errors.password}`);
-    console.log(`formik.errors ${formik.errors.confirmPassword}`);
-  }, [formik.errors.username, formik.errors.password, formik.errors.confirmPassword]);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <SmallButton
           className={styles.title__back}
-          text={(
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-            </svg>
-)}
+          text={iconBack}
           onClick={() => signUpSuccess()}
         />
         <h5>{t('templates.authorization.signUp.title')}</h5>

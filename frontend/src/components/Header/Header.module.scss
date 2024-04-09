@@ -1,10 +1,9 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/animation.scss';
-@import '../../styles/buttons.extends.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/buttons.extends.scss";
 
-.container{
-  @apply
-  z-50
+.container {
+  @apply z-50
   bg-myTheme-primary
   text-myTheme-light
   flex
@@ -14,8 +13,7 @@
   h-20;
 
   .header {
-    @apply
-    relative
+    @apply relative
     flex
     justify-between
     items-center
@@ -25,15 +23,13 @@
 
     .header_button {
       @extend %small-button;
-      @apply
-      absolute
+      @apply absolute
       right-0
       text-myTheme-accent;
     }
-    
+
     .header__title {
-      @apply
-      font-myTextFont
+      @apply font-myTextFont
       font-semibold
       flex
       justify-center
@@ -44,8 +40,7 @@
 
       h3 {
         @include typing-text();
-        @apply
-        my-0
+        @apply my-0
         mx-auto
         text-2xl
         overflow-hidden
@@ -59,8 +54,7 @@
 
     .header__link {
       nav {
-        @apply
-        flex
+        @apply flex
         justify-between
         items-center
         gap-3
@@ -70,26 +64,22 @@
 
         a {
           @include return-anim-duration-500();
-          @apply
-          relative
+          @apply relative
           flex
           justify-center
           items-center
           size-8;
 
           p {
-            @apply
-            hidden
+            @apply hidden;
           }
-  
+
           &:hover {
             @include anim-duration-500();
-            @apply
-            scale-125;
+            @apply scale-125;
 
             p {
-              @apply
-              text-nowrap
+              @apply text-nowrap
               block
               absolute
               -bottom-4

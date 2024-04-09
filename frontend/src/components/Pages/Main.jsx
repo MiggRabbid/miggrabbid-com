@@ -8,10 +8,17 @@ import bgTitleBody from '../../assets/bgTitleBody.png';
 const Main = () => {
   const { t } = useTranslation();
 
-  // const currentTheme = document.documentElement.getAttribute('data-theme');
-  // const themeClass = `container__${currentTheme}`;
-  // console.log('Main -', currentTheme);
-  // console.log('Main -', themeClass);
+  const handleClickOnMenu = (e) => {
+    const currentTarget = e.target.dataset.target.toLowerCase();
+
+    const element = document.getElementById(currentTarget);
+    if (element) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: element.offsetTop,
+      });
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -26,14 +33,14 @@ const Main = () => {
               <img src={bgTitleBody} alt="" />
             </div>
             <ul>
-              <li>
-                {t('main.menu.stack')}
+              <li className={styles.nav__li}>
+                <button type="button" data-target={t('main.menu.stack')} onClick={handleClickOnMenu}>{t('main.menu.stack')}</button>
               </li>
-              <li>
-                {t('main.menu.about')}
+              <li className={styles.nav__li}>
+                <button type="button" data-target={t('main.menu.about')} onClick={handleClickOnMenu}>{t('main.menu.about')}</button>
               </li>
-              <li>
-                {t('main.menu.skills')}
+              <li className={styles.nav__li}>
+                <button type="button" data-target={t('main.menu.skills')} onClick={handleClickOnMenu}>{t('main.menu.skills')}</button>
               </li>
             </ul>
           </nav>

@@ -35,7 +35,8 @@
   font-black
   mt-4
   cursor-default
-  text-myTheme-light;
+  text-myTheme-light
+  select-none;
 };
 
 %section-title {
@@ -47,5 +48,6 @@
   border-b-myTheme-accent
   pt-4
   pb-8
-  mb-4;
+  mb-4
+  select-none;
 }

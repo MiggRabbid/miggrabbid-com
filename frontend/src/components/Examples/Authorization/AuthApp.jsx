@@ -8,13 +8,13 @@ import { getModalState, getModalType } from '../../../selectors/modalSelectors';
 
 import Login from './Login';
 import SignUp from './SignUp';
-import UserEntered from './UserEntered';
+import Authorized from './Authorized';
 import ModalBox from '../../Templates/Modal/ModalBox';
 
 const PrivateOutlet = () => {
   const authentication = useAuth();
   const isAuthenticated = !!authentication.user;
-  return isAuthenticated ? <UserEntered /> : <Login />;
+  return isAuthenticated ? <Authorized /> : <Login />;
 };
 
 const AuthApp = () => {

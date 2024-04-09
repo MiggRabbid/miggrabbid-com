@@ -52,3 +52,13 @@
     100% { transform: translate3d(-110%, 0, 0) }
   }
 }
+
+@mixin click-on-menu() {
+  animation: shift 5s ease-in-out;
+  animation-delay: 500ms;
+
+  @keyframes shift {
+    0% { transform: translateY(0%) }
+    100% { transform: translateY(-200%) }
+  }
+}

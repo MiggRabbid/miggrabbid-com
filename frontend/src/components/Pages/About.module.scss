@@ -1,28 +1,25 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/animation.scss';
-@import '../../styles/extends.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/extends.scss";
 
 .container {
   height: calc(100vmin - 1rem);
 
   @extend %container;
-  @apply
-  gap-12;
+  @apply gap-12;
 
   .title {
     @include shadow();
-    @apply
-    w-11/12;
+    @apply w-11/12;
 
     h2 {
       @extend %title;
       @extend %section-title;
-    };
+    }
   }
 
   .about {
-    @apply
-    w-11/12
+    @apply w-11/12
     max-w-screen-2xl
     relative
     right-10
@@ -31,10 +28,9 @@
     justify-center
     items-center
     gap-6;
-    
+
     p {
-      @apply
-      w-5/6
+      @apply w-5/6
       min-w-96
       h-fit
       text-xl
@@ -44,8 +40,7 @@
       indent-10;
 
       span {
-        @apply
-        text-myTheme-accent
+        @apply text-myTheme-accent;
       }
     }
   }

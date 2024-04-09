@@ -1,6 +1,6 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/animation.scss';
-@import '../../styles/extends.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/extends.scss";
 
 .container {
   height: calc(100vmin - 1rem);
@@ -8,8 +8,7 @@
 
   .title {
     @include shadow();
-    @apply
-    w-11/12;
+    @apply w-11/12;
 
     h2 {
       @extend %title;
@@ -17,10 +16,10 @@
     }
   }
 
-  .stack, .stack__second {
+  .stack,
+  .stack__second {
     @include shadow();
-    @apply
-    mt-8
+    @apply mt-8
     w-full
     max-w-screen-2xl
     flex
@@ -28,16 +27,14 @@
     gap-8
     overflow-hidden;
 
-    .stack__scroll{
-      @apply
-      w-max
+    .stack__scroll {
+      @apply w-max
       flex
       justify-start;
 
       ul {
         @include horizontal-scroll(120);
-        @apply
-        text-myTheme-dark
+        @apply text-myTheme-dark
         w-max
         h-max
         flex
@@ -46,21 +43,20 @@
 
         li {
           @include return-anim-duration-1000();
-          @apply
-          w-min
+          @apply w-min
           h-max
           text-7xl
           font-myTitleFont
           uppercase
           font-black
           text-nowrap
+          select-none
           m-0
           p-0;
-    
+
           &:hover {
             @include anim-duration-500();
-            @apply 
-            text-myTheme-accent
+            @apply text-myTheme-accent
             scale-105
             cursor-default;
           }
@@ -70,20 +66,17 @@
   }
 
   .stack__second {
-    @apply 
-    gap-6
+    @apply gap-6
     mb-12;
 
     .stack__scroll {
       ul {
         @include horizontal-scroll(80);
-        @apply
-        gap-7
+        @apply gap-7
         px-2;
 
         li {
-          @apply
-          font-myTextFont
+          @apply font-myTextFont
           font-bold
           text-4xl;
         }

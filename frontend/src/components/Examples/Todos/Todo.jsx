@@ -47,24 +47,11 @@ const Todo = ({ title }) => {
           : (
             <ul className={styles.body__table}>
               <p>Актуальные задачи:</p>
-              <li className={styles.body__list}>
-                задача 1
-              </li>
-              <li className={styles.body__list}>
-                задача 2
-              </li>
-              <li className={styles.body__list}>
-                задача 3
-              </li>
-              <li className={styles.body__list}>
-                задача 4
-              </li>
-              <li className={styles.body__list}>
-                задача 5
-              </li>
-              <li className={styles.body__list}>
-                задача 6
-              </li>
+              {todos.map((item) => (
+                <li key={item.id} className={styles.body__list}>
+                  {item.title}
+                </li>
+              ))}
             </ul>
           )}
       </div>

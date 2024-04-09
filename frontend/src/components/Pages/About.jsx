@@ -6,7 +6,7 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="about">
       <div className={styles.title}>
         <h2>{t('aboutMe.title')}</h2>
       </div>

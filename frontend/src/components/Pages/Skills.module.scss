@@ -1,16 +1,14 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/animation.scss';
-@import '../../styles/extends.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/extends.scss";
 
 .container {
   @extend %container;
-  @apply
-  gap-3;
+  @apply gap-3;
 
   .title {
     @include shadow();
-    @apply
-    w-11/12;
+    @apply w-11/12;
 
     h2 {
       @extend %title;
@@ -18,10 +16,8 @@
     }
   }
 
-  
   .skills {
-    @apply
-    w-11/12
+    @apply w-11/12
     max-w-screen-2xl
     h-max
     flex
@@ -29,54 +25,51 @@
     items-center;
 
     .skills__experience {
-      @apply
-      w-full
+      @apply w-full
       cursor-default
       mt-4;
 
       h3 {
         @extend %title;
-        @apply
-        text-2xl
+        @apply text-2xl
         text-myTheme-light
         mb-2;
       }
 
       .skills__project {
-        @apply
-        py-4
+        @apply py-4
         flex
         flex-col
         items-center;
-  
+
         h5 {
-          @apply
-          w-5/6
+          @apply w-5/6
           font-myTextFont
           text-xl
           mb-1;
         }
-        ul { @apply list-none }
-        
-        .project__desc, ul, li {
-          @apply
-          w-5/6
+        ul {
+          @apply list-none;
+        }
+
+        .project__desc,
+        ul,
+        li {
+          @apply w-5/6
           font-myTextFont
           text-xl
           text-myTheme-light
           indent-10;
         }
-  
+
         a {
           @apply italic text-myTheme-accent;
         }
       }
-
     }
 
     .skills__examples {
-      @apply
-      w-full
+      @apply w-full
       max-w-5xl
       h-max
       flex
@@ -87,15 +80,13 @@
 
       h3 {
         @extend %title;
-        @apply
-        text-2xl
+        @apply text-2xl
         text-myTheme-light
         mb-6;
       }
 
       .examples {
-        @apply
-        h-96
+        @apply h-96
         w-full
         min-w-96
         mb-6
@@ -105,8 +96,7 @@
         cursor-default;
 
         .examples__cap {
-          @apply
-          h-96
+          @apply h-96
           w-96
           flex
           flex-col
@@ -118,8 +108,7 @@
         }
 
         .examples__decs {
-          @apply
-          w-3/5
+          @apply w-3/5
           min-w-44
           py-12
           px-6
@@ -133,8 +122,7 @@
 
     .skills__footer {
       @include shadow();
-      @apply
-      w-full
+      @apply w-full
       flex
       justify-center
       items-center
@@ -143,8 +131,7 @@
       border-t-myTheme-accent;
 
       .footer__text {
-        @apply
-        text-2xl
+        @apply text-2xl
         text-myTheme-light
         py-5;
       }

@@ -3,16 +3,16 @@ import { useSelector } from 'react-redux';
 import { getModalType } from '../../../selectors/modalSelectors';
 import useActions from '../../../hooks/useActions';
 import AuthModal from './AuthModal';
-import ChangeTodo from './ChangeTodo';
+import TodoModal from './TodoModal';
 
 const mappingModal = {
   error: AuthModal,
   success: AuthModal,
-  addAndChangeTodos: ChangeTodo,
-  delTodos: ChangeTodo,
+  addAndChangeTodos: TodoModal,
+  delTodos: TodoModal,
 };
 
-const ModalBox = () => {
+const ModalBox = ({ state, setState }) => {
   const { modalClose } = useActions();
   const modalType = useSelector(getModalType);
   const CurrentModal = mappingModal[modalType];
@@ -21,6 +21,8 @@ const ModalBox = () => {
     <CurrentModal
       modalType={modalType}
       modalClose={modalClose}
+      state={state}
+      setState={setState}
     />
   );
 };

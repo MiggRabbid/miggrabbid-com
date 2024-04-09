@@ -1,11 +1,10 @@
-@import '../../../styles//mixins.scss';
-@import '../../../styles/animation.scss';
-@import '../../../styles/input.extends.scss';
-@import '../../../styles/buttons.extends.scss';
+@import "../../../styles//mixins.scss";
+@import "../../../styles/animation.scss";
+@import "../../../styles/input.extends.scss";
+@import "../../../styles/buttons.extends.scss";
 
 .container {
-  @apply
-  flex
+  @apply flex
   flex-col
   justify-between
   z-10
@@ -13,12 +12,10 @@
   h-full;
 
   .title {
-    @apply
-    content-center;
-  
+    @apply content-center;
+
     h5 {
-    @apply
-    w-full
+      @apply w-full
     text-center
     text-lg
     font-bold
@@ -27,43 +24,39 @@
     uppercase;
     }
   }
-  
+
   .login {
-    @apply
-    flex
+    @apply flex
     flex-col;
-  
+
     .login__form {
-      @apply
-      w-full
+      @apply w-full
       h-full;
-  
+
       div {
-        @apply
-        w-full
+        @apply w-full
         h-fit
         relative
         flex
         flex-col
         justify-end
         items-center;
-  
+
         .form__label {
-          @apply
-          z-40
+          @apply z-40
           text-sm
           leading-6
           text-gray-900
           hidden;
         }
-  
+
         .form__input {
           @extend %input;
           &:focus {
             @extend %input-focus;
           }
         }
-  
+
         .form__invalid {
           @extend %input;
           @extend %input__invalid;
@@ -75,11 +68,10 @@
       }
     }
   }
-  
+
   .footer {
-    .footer__signup{
-      @apply
-      flex
+    .footer__signup {
+      @apply flex
       items-center
       justify-center
       w-full
@@ -87,10 +79,9 @@
       border-t-2
       border-t-myTheme-primary
       pt-4;
-  
+
       button {
-        @apply
-        ms-1
+        @apply ms-1
         w-fit
         text-myTheme-accent
         cursor-pointer

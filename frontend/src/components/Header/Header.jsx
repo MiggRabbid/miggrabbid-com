@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.container}>
+    <header className={styles.container} id="header">
       <div className={styles.header}>
         <SmallButton
           className={styles.header_button}

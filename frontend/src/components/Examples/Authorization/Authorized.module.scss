@@ -1,11 +1,10 @@
-@import '../../../styles//mixins.scss';
-@import '../../../styles/animation.scss';
-@import '../../../styles/input.extends.scss';
-@import '../../../styles/buttons.extends.scss';
+@import "../../../styles//mixins.scss";
+@import "../../../styles/animation.scss";
+@import "../../../styles/input.extends.scss";
+@import "../../../styles/buttons.extends.scss";
 
 .container {
-  @apply
-  flex
+  @apply flex
   flex-col
   justify-between
   z-10
@@ -13,12 +12,10 @@
   h-full;
 
   .title {
-    @apply
-    content-center;
+    @apply content-center;
 
     h5 {
-    @apply
-    w-full
+      @apply w-full
     text-center
     text-lg
     font-bold
@@ -29,19 +26,21 @@
   }
 
   .body {
-    @apply
-    w-full
+    @apply w-full
     flex
     flex-col
     justify-center
     items-center;
 
     .body__text {
-    @apply
-    w-fit
+      @apply w-fit
     text-base
     text-center
     text-myTheme-light;
     }
+  }
+
+  .logout {
+    @extend %button-auth;
   }
 }

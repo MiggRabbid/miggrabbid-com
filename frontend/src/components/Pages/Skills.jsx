@@ -10,7 +10,7 @@ import TodoApp from '../Examples/Todos/TodoApp';
 const Skills = () => {
   const { t } = useTranslation();
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="skills">
       <div className={styles.title}>
         <h2>{t('skills.title')}</h2>
       </div>

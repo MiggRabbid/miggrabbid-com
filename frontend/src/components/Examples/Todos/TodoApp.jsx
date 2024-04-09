@@ -11,13 +11,13 @@ const TodoApp = () => {
   const modalState = useSelector(getModalState);
   const modalType = useSelector(getModalType);
 
-  const isAuthModalType = (type) => type === 'addAndChangeTodos' || type === 'delTodo';
+  const isNotAuthModalType = (type) => type === 'addAndChangeTodos' || type === 'delTodo';
 
   return (
     <div className={styles.container}>
       <Todo title="Hook useState" />
       <Todo title="Redux Toolkit" />
-      {(modalState && isAuthModalType(modalType)) && <ModalBox />}
+      {(modalState && isNotAuthModalType(modalType)) && <ModalBox />}
     </div>
   );
 };

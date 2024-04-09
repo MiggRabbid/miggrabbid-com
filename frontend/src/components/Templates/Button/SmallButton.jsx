@@ -1,6 +1,6 @@
 const SmallButton = (props) => {
   const {
-    className, onClick, isDisabled, text,
+    className, text, onClick, isDisabled,
   } = props;
 
   return (

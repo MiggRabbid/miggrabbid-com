@@ -1,0 +1,53 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+
+.body {
+  @apply
+  h-56
+  py-2
+  px-2
+  m-0
+  rounded-lg
+  bg-myTheme-primary
+  text-xs;
+
+  .body__placeholder {
+    @apply
+    py-1
+    h-fit
+    text-center
+    uppercase
+    overflow-hidden
+    text-gray-400;
+  }
+
+  .body__table {
+    @applyка
+    h-64
+    w-full
+    overflow-hidden;
+
+    p {
+      @apply
+      w-full
+      pt-1
+      pb-2;
+    }
+
+    .body__list {
+      @apply
+      py-1
+      h-fit
+      w-full
+      border-t
+      border-t-myTheme-dark
+      list-inside
+      list-disc
+      text-nowrap
+      overflow-hidden
+      text-ellipsis;
+    }
+  }
+}
