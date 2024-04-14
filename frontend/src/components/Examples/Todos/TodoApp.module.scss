@@ -4,17 +4,11 @@
 @import '../../../styles/input.extends.scss';
 
 .container {
+  @extend %container-exampels;
   @apply
-  relative
-  h-full
-  min-h-32
-  w-96
-  min-w-32
   flex
   flex-row
   gap-2
   justify-center
-  items-center
-  overflow-hidden
-  rounded-lg;
+  items-center;
 }

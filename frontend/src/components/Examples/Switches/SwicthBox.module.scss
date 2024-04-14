@@ -1,22 +1,17 @@
 @import '../../../styles//mixins.scss';
+@import '../../../styles/extends.scss';
 @import '../../../styles/animation.scss';
 @import '../../../styles/buttons.extends.scss';
 
 .switcher {
+  @extend %container-exampels;
   @apply
-  relative
-  h-full
-  min-h-32
-  w-96
-  min-w-32
   px-6
   py-5
   flex
   flex-col
   justify-center
-  items-center
-  rounded-lg
-bg-myTheme-dark;
+  items-center;
 
   .switcher__lang, .switcher__theme {
     @apply

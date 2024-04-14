@@ -10,15 +10,15 @@ import TodoApp from '../Examples/Todos/TodoApp';
 const Skills = () => {
   const { t } = useTranslation();
   return (
-    <section className={styles.container} id="skills">
+    <div className={styles.container} id="skills">
       <div className={styles.title}>
         <h2>{t('skills.title')}</h2>
       </div>
       <div className={styles.skills}>
-        <div className={styles.skills__experience}>
+        <section className={styles.skills__experience}>
           <h3>{t('skills.educExp.title')}</h3>
 
-          <div className={styles.skills__project}>
+          <article className={styles.skills__project}>
             <h5>{t('skills.educExp.base.title')}</h5>
             <p className={styles.project__desc}>
               <a href="https://github.com/MiggRabbid/frontend-project-44" target="_blank" rel="noreferrer">
@@ -42,9 +42,9 @@ const Skills = () => {
             <li>{t('skills.educExp.base.li_5')}</li>
             <li>{t('skills.educExp.base.li_6')}</li>
             <p className={styles.project__desc}>{t('skills.educExp.base.usedStack')}</p>
-          </div>
+          </article>
 
-          <div className={styles.skills__project}>
+          <article className={styles.skills__project}>
             <h5>{t('skills.educExp.diploma.title')}</h5>
             <p className={styles.project__desc}>
               <a href="https://github.com/MiggRabbid/frontend-project-12" target="_blank" rel="noreferrer">{t('skills.educExp.diploma.desc_sc_a')}</a>
@@ -61,33 +61,37 @@ const Skills = () => {
             <p className={styles.project__desc}>
               {t('skills.educExp.diploma.usedStack')}
             </p>
-          </div>
-        </div>
+          </article>
+        </section>
 
-        <div className={styles.skills__examples}>
-          <h3>{t('skills.examples.title')}</h3>
-          <div className={styles.examples}>
-            <AuthApp />
-            <p className={styles.examples__decs}>{t('skills.examples.firstExam')}</p>
+        <section className={styles.skills__examples}>
+          <div className={styles.examples__title}>
+            <h3>{t('skills.examples.title')}</h3>
           </div>
+          <div className={styles.examples__block}>
+            <article className={styles.block__example}>
+              <AuthApp />
+              <p className={styles.examples__decs}>{t('skills.examples.firstExam')}</p>
+            </article>
 
-          <div className={styles.examples}>
-            <SwitchBox />
-            <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
+            <article className={styles.block__example}>
+              <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
+              <SwitchBox />
+            </article>
+
+            <article className={styles.block__example}>
+              <TodoApp />
+              <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
+            </article>
           </div>
+        </section>
 
-          <div className={styles.examples}>
-            <TodoApp />
-            <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
-          </div>
-        </div>
-
-        <div className={styles.skills__footer}>
+        <section className={styles.skills__footer}>
           <p className={styles.footer__text}>{t('skills.examples.otherExam')}</p>
-        </div>
+        </section>
       </div>
 
-    </section>
+    </div>
   );
 };
 

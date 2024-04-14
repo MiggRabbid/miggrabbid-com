@@ -48,6 +48,7 @@
           text-xl
           mb-1;
         }
+
         ul {
           @apply list-none;
         }
@@ -69,8 +70,8 @@
     }
 
     .skills__examples {
-      @apply w-full
-      max-w-5xl
+      @apply relative
+      w-10/12
       h-max
       flex
       flex-col
@@ -78,46 +79,60 @@
       justify-center
       mt-6;
 
-      h3 {
-        @extend %title;
-        @apply text-2xl
-        text-myTheme-light
-        mb-6;
+      .examples__title {
+        @apply w-11/12 h-fit;
+
+        h3 {
+          @extend %title;
+          @apply text-2xl
+          text-myTheme-light
+          block
+          w-11/12
+          mb-10;
+        }
       }
 
-      .examples {
-        @apply h-96
-        w-full
-        min-w-96
-        mb-6
-        h-80
+      .examples__block {
+        @apply w-full
         flex
-        bg-myTheme-primary
-        cursor-default;
-
-        .examples__cap {
-          @apply h-96
-          w-96
+        flex-row
+        gap-3
+        justify-between;
+        
+        .block__example {
+          @apply
+          left-0
+          w-fit
+          h-fit
+          max-w-4xl
+          min-w-96
+          mb-10
           flex
           flex-col
-          justify-center
-          px-6
-          py-12
-          rounded-s
-          bg-myTheme-dark;
+          cursor-default;
+  
+          .examples__decs {
+            @apply
+            h-72
+            w-96
+            px-6
+            font-myTextFont
+            text-xl
+            flex
+            items-center
+            text-myTheme-primary
+            rounded-md
+            indent-10
+            bg-myTheme-light;
+          }
         }
-
-        .examples__decs {
-          @apply w-3/5
-          min-w-44
-          py-12
-          px-6
-          font-myTextFont
-          text-xl
-          text-myTheme-light
-          indent-10;
-        }
+  
+        /* .examples:nth-child(3) {
+          @apply
+          translate-x-10;
+        } */
       }
+
     }
 
     .skills__footer {
