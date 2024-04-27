@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './SwicthBox.module.scss';
 
-import useTheme from '../../../hooks/useTheme';
+import useTheme from '../../../../hooks/useTheme';
 import Switcher from './Switcher';
 
 const SwitchBox = () => {

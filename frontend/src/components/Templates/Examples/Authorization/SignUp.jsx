@@ -6,12 +6,13 @@ import axios from 'axios';
 
 import styles from './SignUp.module.scss';
 
-import useAuth from '../../../hooks/useAuth';
-import useActions from '../../../hooks/useActions';
-import routes from '../../../routes';
-import SmallButton from '../../Templates/Button/SmallButton';
-import MainButton from '../../Templates/Button/MainButton';
-import { iconBack } from '../../Templates/icons';
+import useAuth from '../../../../hooks/useAuth';
+import useActions from '../../../../hooks/useActions';
+import routes from '../../../../routes';
+
+import SmallButton from '../../Button/SmallButton';
+import MainButton from '../../Button/MainButton';
+import { iconBack } from '../../icons';
 
 const MODAL_ERROR = 'error';
 const MODAL_SUCCESS = 'success';

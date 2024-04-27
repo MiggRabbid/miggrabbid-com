@@ -6,12 +6,12 @@ import axios from 'axios';
 
 import styles from './Login.module.scss';
 
-import MainButton from '../../Templates/Button/MainButton';
+import MainButton from '../../Button/MainButton';
 
-import useAuth from '../../../hooks/useAuth';
-import useActions from '../../../hooks/useActions';
-import { getError } from '../../../selectors/authSelectors';
-import routes from '../../../routes';
+import useAuth from '../../../../hooks/useAuth';
+import useActions from '../../../../hooks/useActions';
+import { getError } from '../../../../selectors/authSelectors';
+import routes from '../../../../routes';
 
 const MODAL_ERROR = 'error';
 const MODAL_SUCCESS = 'success';

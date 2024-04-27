@@ -95,44 +95,41 @@
       .examples__block {
         @apply w-full
         flex
-        flex-row
-        gap-3
-        justify-between;
+        flex-col
+        gap-12
+        justify-center
+        items-center;
         
         .block__example {
           @apply
           left-0
-          w-fit
-          h-fit
-          max-w-4xl
-          min-w-96
-          mb-10
+          w-full
+          h-full
           flex
-          flex-col
-          cursor-default;
+          flex-row
+          cursor-default
+          bg-myTheme-dark
+          rounded-2xl
+          overflow-hidden;
   
           .examples__decs {
             @apply
-            h-72
-            w-96
-            px-6
+            h-fit
+            w-8/12
+            min-w-96
+            px-4
+            py-4
             font-myTextFont
-            text-xl
+            uppercase
+            font-bold
+            text-ellipsis
             flex
             items-center
-            text-myTheme-primary
-            rounded-md
-            indent-10
-            bg-myTheme-light;
+            text-myTheme-light
+            indent-10;
           }
         }
-  
-        /* .examples:nth-child(3) {
-          @apply
-          translate-x-10;
-        } */
       }
-
     }
 
     .skills__footer {

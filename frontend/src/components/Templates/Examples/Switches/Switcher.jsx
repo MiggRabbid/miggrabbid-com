@@ -1,6 +1,6 @@
 import styles from './Switcher.module.scss';
 
-import MainButton from '../../Templates/Button/MainButton';
+import MainButton from '../../Button/MainButton';
 
 const Switcher = (props) => {
   const {

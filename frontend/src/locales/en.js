@@ -91,7 +91,7 @@ export default {
         },
       },
       examples: {
-        title: 'My skills',
+        title: 'I can do different useful things',
         promiseExam: 'here will be a component',
         firstExam: 'I can create various forms for data entry, both using standard methods and using third-party libraries such as Formik. For example, registration/authorization forms with validation',
         secondExam: 'I can work with providers and contexts and create custom hooks and selectors. For example, to change the theme or localize the site',

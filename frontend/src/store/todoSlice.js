@@ -12,7 +12,7 @@ const todoSlice = createSlice({
       console.log('addTodo -', payload);
       return ({
         ...state,
-        todos: [...state.todos, payload],
+        todos: payload,
       });
     },
     changeTodo: (state, { payload }) => {
@@ -33,7 +33,7 @@ const todoSlice = createSlice({
     },
     resetTodo: (state) => ({
       ...state,
-      isOpen: [],
+      todos: [],
     }),
   },
 });

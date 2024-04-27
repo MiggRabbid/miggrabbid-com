@@ -1,13 +1,9 @@
 import { useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { uniqueId } from 'lodash';
 
 import styles from './TodoModal.module.scss';
-
-import useActions from '../../../hooks/useActions';
-import { getModalMessage } from '../../../selectors/modalSelectors';
 
 import SmallButton from '../Button/SmallButton';
 import MainButton from '../Button/MainButton';
@@ -25,30 +21,27 @@ const getValidationSchema = () => yup.object({
 });
 
 // TodoModal плохое название, т.к. элемент добавляет или изменяет задачу.
-const TodoModal = ({ state, changeState }) => {
+const TodoModal = (props) => {
+  console.log('------- TodoModal');
+  const {
+    state, setState, setModal, initialModalState, id,
+  } = props;
   const modalInputRef = useRef(null);
-  const { modalClose } = useActions();
-  const modalMessage = useSelector(getModalMessage);
 
   useEffect(() => modalInputRef.current.focus(), [modalInputRef]);
-
-  useEffect(() => {
-    console.log('TodoModal changeState -', changeState);
-    console.log('TodoModal state -', JSON.stringify(state));
-  }, [state, changeState]);
 
   const formik = useFormik({
     initialValues: { title: '', body: '' },
     validationSchema: getValidationSchema(),
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true);
-      const id = uniqueId();
+      const todoId = uniqueId(`${id}-`);
       console.log('state -', state);
-      console.log('new todo -', { ...values, id });
-      if (modalMessage === 'usestate') changeState([]);
-      if (modalMessage === 'rtk') changeState.addTodo();
-      modalClose();
+      console.log('new todo -', { ...values, id: todoId });
+      const newState = [...state, { ...values, id: todoId }];
+      setState(newState);
       setSubmitting(false);
+      setModal(initialModalState);
     },
   });
 
@@ -129,7 +122,7 @@ const TodoModal = ({ state, changeState }) => {
             <SmallButton
               className={styles.form__back}
               text={iconBack}
-              onClick={modalClose}
+              onClick={() => setModal(initialModalState)}
             />
             <MainButton
               className={styles.form_submit}

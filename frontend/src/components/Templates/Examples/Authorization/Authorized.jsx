@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Authorized.module.scss';
 
-import MainButton from '../../Templates/Button/MainButton.jsx';
+import MainButton from '../../Button/MainButton.jsx';
 
-import useAuth from '../../../hooks/useAuth.js';
-import useActions from '../../../hooks/useActions.js';
-import { isNewUser } from '../../../selectors/authSelectors.js';
+import useAuth from '../../../../hooks/useAuth.js';
+import useActions from '../../../../hooks/useActions.js';
+import { isNewUser } from '../../../../selectors/authSelectors.js';
 
 const UserEntered = () => {
   const { t } = useTranslation();

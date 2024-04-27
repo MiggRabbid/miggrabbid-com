@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Skills.module.scss';
 
-import AuthApp from '../Examples/Authorization/AuthApp';
-import SwitchBox from '../Examples/Switches/SwicthBox';
-import TodoApp from '../Examples/Todos/TodoApp';
+import AuthApp from '../Templates/Examples/Authorization/AuthApp';
+import SwitchBox from '../Templates/Examples/Switches/SwicthBox';
+import TodoApp from '../Templates/Examples/Todos/TodoApp';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -15,6 +15,28 @@ const Skills = () => {
         <h2>{t('skills.title')}</h2>
       </div>
       <div className={styles.skills}>
+        <section className={styles.skills__examples}>
+          <div className={styles.examples__title}>
+            <h3>{t('skills.examples.title')}</h3>
+          </div>
+          <div className={styles.examples__block}>
+            <article className={styles.block__example}>
+              <AuthApp />
+              <p className={styles.examples__decs}>{t('skills.examples.firstExam')}</p>
+            </article>
+
+            <article className={styles.block__example}>
+              <SwitchBox />
+              <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
+            </article>
+
+            <article className={styles.block__example}>
+              <TodoApp />
+              <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
+            </article>
+          </div>
+        </section>
+
         <section className={styles.skills__experience}>
           <h3>{t('skills.educExp.title')}</h3>
 
@@ -62,28 +84,6 @@ const Skills = () => {
               {t('skills.educExp.diploma.usedStack')}
             </p>
           </article>
-        </section>
-
-        <section className={styles.skills__examples}>
-          <div className={styles.examples__title}>
-            <h3>{t('skills.examples.title')}</h3>
-          </div>
-          <div className={styles.examples__block}>
-            <article className={styles.block__example}>
-              <AuthApp />
-              <p className={styles.examples__decs}>{t('skills.examples.firstExam')}</p>
-            </article>
-
-            <article className={styles.block__example}>
-              <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
-              <SwitchBox />
-            </article>
-
-            <article className={styles.block__example}>
-              <TodoApp />
-              <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
-            </article>
-          </div>
         </section>
 
         <section className={styles.skills__footer}>

@@ -1,13 +1,11 @@
-@import '../../../styles//mixins.scss';
-@import '../../../styles/extends.scss';
-@import '../../../styles/animation.scss';
-@import '../../../styles/buttons.extends.scss';
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/buttons.extends.scss';
+@import '../../../../styles/input.extends.scss';
 
 .switcher {
   @extend %container-exampels;
   @apply
-  px-6
-  py-5
   flex
   flex-col
   justify-center

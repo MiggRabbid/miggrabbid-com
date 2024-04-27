@@ -16,5 +16,5 @@ build:
 start:
 	npm run start
 
-localstart:
+dev:
 	make start-backend & make start-frontend

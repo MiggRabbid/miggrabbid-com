@@ -1,7 +1,7 @@
-@import '../../../styles/mixins.scss';
-@import '../../../styles/extends.scss';
-@import '../../../styles/input.extends.scss';
-@import '../../../styles/buttons.extends.scss';
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/buttons.extends.scss';
+@import '../../../../styles/input.extends.scss';
 
 .container {
   @apply
@@ -14,14 +14,13 @@
   rounded-lg
   flex
   flex-col
-  justify-between
-  bg-myTheme-dark;
+  justify-between;
 
   .header {
     @apply
     w-full
     h-fit
-    px-2
+    px-1
     pb-3
     flex
     flex-row;
@@ -29,11 +28,12 @@
     p {
       @apply 
       w-full
-      text-center
+      text-sm
+      text-start
       uppercase;
     }
 
-    .header__botton {
+    .header__bottom {
       @extend %small-button-dark;
     }
   }
@@ -42,15 +42,17 @@
     @apply
     h-56
     py-2
-    px-2
+    px-1
     m-0
+    flex
+    flex-col
+    justify-between
     rounded-lg
     bg-myTheme-primary
     text-xs;
 
     .body__placeholder {
       @apply
-      py-1
       h-fit
       text-center
       uppercase
@@ -59,7 +61,7 @@
     }
 
     .body__table {
-      @applyка
+      @apply
       h-64
       w-full
       overflow-hidden;
@@ -67,8 +69,11 @@
       p {
         @apply
         w-full
+        px-2
         pt-1
-        pb-2;
+        pb-2
+        border-b
+        border-y-myTheme-dark;
       }
 
       .body__list {
@@ -76,7 +81,7 @@
         py-1
         h-fit
         w-full
-        border-y
+        border-b
         border-y-myTheme-dark
         list-inside
         list-disc
@@ -85,7 +90,8 @@
         text-ellipsis;
       }
     }
-  }
+
+    
 
   .footer {
     @apply
@@ -93,9 +99,7 @@
     h-fit
     flex
     flex-row
-    justify-between
-    px-2
-    pt-3;
+    justify-between;
 
     .footer__pagination {
       @apply
@@ -104,6 +108,20 @@
       flex
       flex-row
       gap-2;
+
+      .pagination__text {
+        @apply
+        flex
+        items-center
+        justify-center
+        w-10;
+
+        p {
+          @apply
+          text-xs
+          text-myTheme-accent;
+        }
+      }
     }
 
     .footer__bottom {
@@ -113,5 +131,6 @@
     .footer__bottom_disable {
       @extend %small-button-disable;
     } 
+  }
   }
 }
