@@ -150,6 +150,11 @@ export default {
         logIn: 'LogIn',
         signUp: 'SignUp',
         logOut: 'LogOut',
+        up: 'Up',
+        addTodo: 'Фdd task',
+        resetTodo: 'Delete tasks',
+        prevPage: 'Previous page',
+        nextPage: 'Next page',
       },
       modal: {
         success: 'Everything is fine',

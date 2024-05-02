@@ -149,6 +149,11 @@ export default {
         logIn: 'Войти',
         signUp: 'Зарегистрироваться',
         logOut: 'Выйти',
+        up: 'Вверх',
+        addTodo: 'Добавить задачу',
+        resetTodo: 'Удалить задачи',
+        prevPage: 'Предыдущая страница',
+        nextPage: 'Следующая страница',
       },
       modal: {
         success: 'Всё в порядке',

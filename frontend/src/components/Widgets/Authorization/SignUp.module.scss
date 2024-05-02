@@ -1,0 +1,98 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/animation.scss';
+
+.container {
+  @apply flex
+  flex-col
+  justify-between
+  z-10
+  w-full
+  h-full;
+
+  .title {
+    @apply relative
+    content-center;
+
+    h5 {
+      @apply w-full
+    text-center
+    text-lg
+    font-bold
+    font-myTitleFont
+    text-myTheme-light
+    uppercase;
+    }
+
+    .title__back {
+      @extend %small-button-dark;
+      @apply absolute
+      left-0;
+    }
+  }
+
+  .login {
+    @apply flex
+    flex-col;
+
+    .login__form {
+      @apply w-full
+      h-full;
+
+      div {
+        @apply w-full
+        relative
+        flex
+        flex-col
+        justify-end
+        items-center;
+
+        .form__label {
+          @apply z-40
+          text-sm
+          leading-6
+          text-gray-900
+          hidden;
+        }
+
+        .form__input {
+          @extend %input;
+          &:focus {
+            @extend %input-focus;
+          }
+        }
+
+        .form__invalid {
+          @extend %input;
+          @extend %input__invalid;
+        }
+
+        .form__feedback {
+          @apply z-50
+          absolute
+          -bottom-0
+          right-3
+          leading-6
+          translate-y-full
+          w-fit
+          h-fit
+          px-4
+          bg-red-700
+          rounded-b-md
+          font-myTextFont
+          text-xs;
+        }
+
+        .feedback__hidden {
+          @apply hidden;
+        }
+      }
+
+      .form_submit {
+        @extend %button-auth;
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Header.module.scss';
 
-import SmallButton from '../Templates/Button/SmallButton';
+import SmallButton from '../Shared/Button/SmallButton';
+
 import iconEmail from '../../assets/icon-em.png';
 import iconTelegram from '../../assets/icon-tg.png';
 import iconGitHub from '../../assets/icon-git.png';

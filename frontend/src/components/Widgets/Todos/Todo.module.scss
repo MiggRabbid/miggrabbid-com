@@ -1,0 +1,136 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/animation.scss';
+
+.container {
+  @apply
+  h-full
+  min-h-32
+  w-1/2
+  min-w-32
+  px-1
+  py-1
+  rounded-lg
+  flex
+  flex-col
+  justify-between;
+
+  .header {
+    @apply
+    w-full
+    h-fit
+    px-1
+    flex
+    flex-row;
+
+    p {
+      @apply 
+      w-full
+      text-sm
+      text-start
+      uppercase;
+    }
+
+    .header__bottom {
+      @extend %small-button-dark;
+    }
+  }
+
+  .body {
+    @apply
+    h-64
+    py-2
+    px-1
+    m-0
+    flex
+    flex-col
+    justify-between
+    rounded-lg
+    bg-myTheme-primary
+    text-xs;
+
+    .body__placeholder {
+      @apply
+      h-fit
+      text-center
+      uppercase
+      overflow-hidden
+      text-myTheme-light;
+    }
+
+    .body__table {
+      @apply
+      h-64
+      w-full
+      overflow-hidden;
+
+      p {
+        @apply
+        w-full
+        px-2
+        pt-1
+        pb-2
+        border-b
+        border-y-myTheme-dark;
+      }
+
+      .body__list {
+        @apply
+        py-1
+        h-fit
+        w-full
+        border-b
+        border-y-myTheme-dark
+        list-inside
+        list-disc
+        text-nowrap
+        overflow-hidden
+        text-ellipsis;
+      }
+    }
+
+    
+
+  .footer {
+    @apply
+    w-full
+    h-fit
+    flex
+    flex-row
+    justify-between;
+
+    .footer__pagination {
+      @apply
+      h-fit
+      w-fit
+      flex
+      flex-row
+      gap-1;
+
+      .pagination__text {
+        @apply
+        flex
+        items-center
+        justify-center
+        w-10;
+
+        p {
+          @apply
+          text-xs
+          text-myTheme-accent;
+        }
+      }
+    }
+
+    .footer__bottom {
+      @extend %small-button-ligth;
+    }
+
+    .footer__bottom_disable {
+      @extend %small-button-disable;
+    } 
+  }
+  }
+}

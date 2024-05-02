@@ -1,0 +1,197 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/extends.scss";
+@import "../../../styles/buttons.extends.scss";
+@import "../../../styles/input.extends.scss";
+
+.container {
+  @apply absolute
+  top-1/2
+  -translate-y-1/2
+  left-1/2
+  -translate-x-1/2
+  w-96
+  h-96
+  flex
+  justify-center
+  items-center
+  bg-slate-900
+  bg-opacity-50
+  z-50;
+
+  .modal {
+    @apply w-full
+    h-fit
+    m-8
+    px-2
+    rounded-lg
+    overflow-hidden
+    flex
+    flex-col
+    text-myTheme-light
+    bg-myTheme-dark;
+
+    .modal__form {
+      @apply w-full
+      h-full;
+
+      
+      div {
+        @apply w-full
+        relative
+        flex
+        flex-col
+        justify-end
+        items-end;
+
+        .form__label {
+          @apply z-40
+          text-sm
+          leading-6
+          text-gray-900
+          hidden;
+        }
+
+        .form__input {
+          @extend %input;
+          @apply mt-2
+          text-sm;
+
+          &:focus {
+            @extend %input-focus;
+          }
+        }
+
+        .form__invalid {
+          @extend %input;
+          @extend %input__invalid;
+        }
+
+        .form__input__textarea {
+          @extend .form__input;
+          @apply h-52
+          mt-2
+          text-sm
+          text-wrap
+          text-ellipsis
+          text-justify
+          resize-none
+          overflow-hidden;
+          ;
+        }
+
+        .form__invalid__textarea {
+          @extend %input;
+          @extend %input__invalid;
+          @apply h-48
+          max-h-48
+          text-sm
+          text-wrap
+          text-justify
+          text-clip
+          resize-none
+          overflow-hidden;
+        }
+
+        .form__feedback {
+          @apply z-50
+          absolute
+          -bottom-0
+          right-3
+          leading-6
+          translate-y-full
+          w-fit
+          h-fit
+          px-4
+          bg-red-700
+          rounded-b-md
+          font-myTextFont
+          text-xs;
+        }
+
+        .feedback__hidden {
+          @apply hidden;
+        }
+      }
+
+      .modal__footer {
+        @apply
+        flex
+        flex-row
+        justify-between
+        items-center;
+
+        .form__back {
+          @extend %small-button-dark;
+        }
+  
+        .form_submit {
+          @extend %button-switcher;
+          @apply w-fit
+          h-fit
+          my-2
+          py-0
+          text-xs;
+        }
+      }
+    }
+
+    .modal__todo {
+      @apply
+      w-full
+      h-fit
+      py-2
+      flex
+      flex-col
+
+      gap-2;
+
+      div {
+        @apply
+        flex
+        flex-row
+        justify-between;
+
+        
+        .todo__back {
+          @extend %small-button-dark;
+        }
+      }
+
+      .todo__title, .todo__body {
+        @apply
+        flex
+        items-center
+        w-full
+        py-2
+        px-2
+        rounded-md
+        text-sm
+        text-myTheme-light
+        bg-myTheme-primary;
+      }
+
+      .todo__title {
+        @apply
+        w-56
+        h-12
+        uppercase;
+      }
+
+      .todo__body {
+        @apply
+        flex
+        items-start
+        h-52;
+
+        p {
+          @apply
+          align-top
+          text-start
+          text-ellipsis
+          text-pretty
+          overflow-y-auto;
+        }
+      }
+    }
+  }
+}
