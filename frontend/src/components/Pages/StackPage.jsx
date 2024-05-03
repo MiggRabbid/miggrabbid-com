@@ -26,44 +26,57 @@ const StackPage = () => {
   const liFirst = getStack(stackMain, 'first').map((item) => (<li key={item}>{item}</li>));
   const liSecond = getStack(stackMain, 'second').map((item) => (<li key={item}>{item}</li>));
   const liThird = getStack(stackMain, 'third').map((item) => (<li key={item}>{item}</li>));
+  const liFourth = getStack(stackMain, 'fourth').map((item) => (<li key={item}>{item}</li>));
 
   const liSecondFirst = getStack(stackSecond, 'first').map((item) => (<li key={item}>{item}</li>));
   const liSecondSecond = getStack(stackSecond, 'second').map((item) => (<li key={item}>{item}</li>));
   const liSecondThird = getStack(stackSecond, 'third').map((item) => (<li key={item}>{item}</li>));
+  const liSecondFourth = getStack(stackSecond, 'fourth').map((item) => (<li key={item}>{item}</li>));
 
   return (
     <section className={styles.container} id="stack">
       <div className={styles.title}>
         <h2>{t('stack.title')}</h2>
       </div>
-      <div className={styles.stack}>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__first}>{liFirst}</ul>
-          <ul className={styles.scroll__first}>{liFirst}</ul>
-        </div>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__second}>{liSecond}</ul>
-          <ul className={styles.scroll__second}>{liSecond}</ul>
-        </div>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__third}>{liThird}</ul>
-          <ul className={styles.scroll__third}>{liThird}</ul>
-        </div>
+      <div className={styles.stack__section}>
+        <article className={styles.stack__main}>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__first}>{liFirst}</ul>
+            <ul className={styles.scroll__first}>{liFirst}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__second}>{liSecond}</ul>
+            <ul className={styles.scroll__second}>{liSecond}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__third}>{liThird}</ul>
+            <ul className={styles.scroll__third}>{liThird}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__fourth}>{liFourth}</ul>
+            <ul className={styles.scroll__fourth}>{liFourth}</ul>
+          </div>
+        </article>
+        <article className={styles.stack__second}>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__first}>{liSecondFirst}</ul>
+            <ul className={styles.scroll__first}>{liSecondFirst}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__second}>{liSecondSecond}</ul>
+            <ul className={styles.scroll__second}>{liSecondSecond}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__third}>{liSecondThird}</ul>
+            <ul className={styles.scroll__third}>{liSecondThird}</ul>
+          </div>
+          <div className={styles.stack__scroll}>
+            <ul className={styles.scroll__fourth}>{liSecondFourth}</ul>
+            <ul className={styles.scroll__fourth}>{liSecondFourth}</ul>
+          </div>
+        </article>
       </div>
-      <div className={styles.stack__second}>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__first}>{liSecondFirst}</ul>
-          <ul className={styles.scroll__first}>{liSecondFirst}</ul>
-        </div>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__second}>{liSecondSecond}</ul>
-          <ul className={styles.scroll__second}>{liSecondSecond}</ul>
-        </div>
-        <div className={styles.stack__scroll}>
-          <ul className={styles.scroll__third}>{liSecondThird}</ul>
-          <ul className={styles.scroll__third}>{liSecondThird}</ul>
-        </div>
-      </div>
+
     </section>
   );
 };

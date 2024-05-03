@@ -5,7 +5,7 @@ const modalSlice = createSlice({
   initialState: {
     isOpen: false,
     modalType: null,
-    data: null,
+    message: null,
   },
   reducers: {
     modalOpen: (state, { payload }) => {
@@ -14,14 +14,14 @@ const modalSlice = createSlice({
         ...state,
         isOpen: true,
         modalType: payload.modalType,
-        data: payload.message,
+        message: payload.message,
       });
     },
     modalClose: (state) => ({
       ...state,
       isOpen: false,
       modalType: null,
-      data: null,
+      message: null,
     }),
   },
 });

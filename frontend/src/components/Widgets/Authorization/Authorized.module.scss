@@ -5,26 +5,7 @@
 @import '../../../styles/animation.scss';
 
 .container {
-  @apply flex
-  flex-col
-  justify-between
-  z-10
-  w-96
-  h-full;
-
-  .title {
-    @apply content-center;
-
-    h5 {
-      @apply w-full
-    text-center
-    text-lg
-    font-bold
-    font-myTitleFont
-    text-myTheme-light
-    uppercase;
-    }
-  }
+  @extend %auth-pages-container;
 
   .body {
     @apply w-full

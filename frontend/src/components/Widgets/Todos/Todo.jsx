@@ -13,7 +13,7 @@ const ADD_TODO = 'addTodo';
 const OPEN_TODO = 'openTodo';
 // const DEL_TODO = 'deleteTodo';
 
-const LINES_PER_PAGE = 6;
+const LINES_PER_PAGE = 7;
 
 const initialModalState = {
   isOpen: false,
@@ -84,43 +84,44 @@ const Todo = (props) => {
             </ul>
           )}
 
-        <div className={styles.footer}>
-          <div className={styles.footer__pagination}>
-            <SmallButton
-              className={(currentPage < 2)
-                ? (styles.footer__bottom_disable)
-                : styles.footer__bottom}
-              isDisabled={currentPage < 2}
-              onClick={() => setCurrentPage(currentPage - 1)}
-              icon={iconLeft}
-              text={t('templates.buttons.prevPage')}
-            />
-            <div className={styles.pagination__text}>
-              {
+      </div>
+
+      <div className={styles.footer}>
+        <div className={styles.footer__pagination}>
+          <SmallButton
+            className={(currentPage <= 1)
+              ? (styles.footer__bottom_disable)
+              : styles.footer__bottom}
+            isDisabled={currentPage <= 1}
+            onClick={() => setCurrentPage(currentPage - 1)}
+            icon={iconLeft}
+            text={t('templates.buttons.prevPage')}
+          />
+          <div className={styles.pagination__text}>
+            {
               todos.length > 0 && (
               <p>
                 {`${currentPage} из ${totalPages}`}
               </p>
               )
             }
-            </div>
-            <SmallButton
-              className={todos.length <= LINES_PER_PAGE || currentPage >= totalPages
-                ? (styles.footer__bottom_disable)
-                : styles.footer__bottom}
-              isDisabled={todos.length <= LINES_PER_PAGE || currentPage >= totalPages}
-              onClick={() => setCurrentPage(currentPage + 1)}
-              icon={iconRight}
-              text={t('templates.buttons.nextPage')}
-            />
           </div>
           <SmallButton
-            className={styles.footer__bottom}
-            onClick={handleAddTodo}
-            icon={(iconAdd)}
-            text={t('templates.buttons.addTodo')}
+            className={todos.length <= LINES_PER_PAGE || currentPage >= totalPages
+              ? (styles.footer__bottom_disable)
+              : styles.footer__bottom}
+            isDisabled={todos.length <= LINES_PER_PAGE || currentPage >= totalPages}
+            onClick={() => setCurrentPage(currentPage + 1)}
+            icon={iconRight}
+            text={t('templates.buttons.nextPage')}
           />
         </div>
+        <SmallButton
+          className={styles.footer__bottom}
+          onClick={handleAddTodo}
+          icon={(iconAdd)}
+          text={t('templates.buttons.addTodo')}
+        />
       </div>
 
       {

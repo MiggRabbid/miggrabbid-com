@@ -41,7 +41,6 @@
 
 %section-title {
   @apply
-  /* text-myTheme-primary */
   text-myTheme-light
   border-b-4
   border-opacity-50
@@ -54,11 +53,36 @@
 
 %container-exampels {
   @apply
+  relative
   h-80
   w-96
   px-3
-  py-3
+  py-4
   border-e-8
   border-myTheme-primary
   overflow-hidden;
+}
+
+%auth-pages-container {
+  @apply h-full
+  w-full
+  relative
+  flex
+  flex-col
+  justify-between
+  z-10;
+
+  .title {
+    @apply content-center;
+
+    h5 {
+      @apply w-full
+      text-center
+      text-lg
+      font-bold
+      font-myTitleFont
+      text-myTheme-light
+      uppercase;
+    }
+  }
 }

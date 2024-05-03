@@ -46,15 +46,15 @@ const SignUp = () => {
         const response = await axios.post(routes.signupRequestPath(), values);
         logIn(response.data);
         signUpSuccess();
-        modalOpen({ modalType: MODAL_SUCCESS, data: t('templates.modal.success') });
+        modalOpen({ modalType: MODAL_SUCCESS, message: t('templates.modal.success') });
       } catch (e) {
         console.error(e.response.data);
         loginFailed(e.response.data);
-        const payload = { modalType: MODAL_ERROR, data: t('validationError.networkErr') };
+        const payload = { modalType: MODAL_ERROR, message: t('validationError.networkErr') };
         if (!e.isAxiosError) {
-          payload.data = t('validationError.unknownErr');
+          payload.message = t('validationError.unknownErr');
         } else if (e.response.status === 409) {
-          payload.data = t('validationError.thisUserExists');
+          payload.message = t('validationError.thisUserExists');
         }
         modalOpen(payload);
       }
@@ -67,7 +67,8 @@ const SignUp = () => {
       <div className={styles.title}>
         <SmallButton
           className={styles.title__back}
-          text={iconBack}
+          icon={iconBack}
+          text={t('templates.buttons.back')}
           onClick={() => signUpSuccess()}
         />
         <h5>{t('templates.authorization.signUp.title')}</h5>

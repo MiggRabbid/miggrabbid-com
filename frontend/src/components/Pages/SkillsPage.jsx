@@ -15,24 +15,36 @@ const SkillsPage = () => {
         <h2>{t('skills.title')}</h2>
       </div>
       <div className={styles.skills}>
+
         <section className={styles.skills__examples}>
-          <div className={styles.examples__title}>
-            <h3>{t('skills.examples.title')}</h3>
-          </div>
           <div className={styles.examples__block}>
+
             <article className={styles.block__example}>
               <AuthApp />
-              <p className={styles.examples__decs}>{t('skills.examples.firstExam')}</p>
+              <div className={styles.examples__decs}>
+                <p className={styles.decs__text__main}>{t('skills.examples.firstExam_1')}</p>
+                <p className={styles.decs__text__main}>{t('skills.examples.firstExam_2')}</p>
+                <p className={styles.decs__text__second}>{t('skills.examples.firstExam_3')}</p>
+              </div>
             </article>
 
             <article className={styles.block__example}>
               <SwitchBox />
-              <p className={styles.examples__decs}>{t('skills.examples.secondExam')}</p>
+              <div className={styles.examples__decs}>
+                <p className={styles.decs__text__main}>{t('skills.examples.secondExam_1')}</p>
+                <p className={styles.decs__text__main}>{t('skills.examples.secondExam_2')}</p>
+                <p className={styles.decs__text__second}>{t('skills.examples.secondExam_3')}</p>
+              </div>
             </article>
 
             <article className={styles.block__example}>
               <TodoApp />
-              <p className={styles.examples__decs}>{t('skills.examples.thirdExam')}</p>
+              <div className={styles.examples__decs}>
+                <p className={styles.decs__text__main}>{t('skills.examples.thirdExam_1')}</p>
+                <p className={styles.decs__text__main}>{t('skills.examples.thirdExam_2')}</p>
+                <p className={styles.decs__text__second}>{t('skills.examples.thirdExam_3')}</p>
+              </div>
+
             </article>
           </div>
         </section>
@@ -62,7 +74,6 @@ const SkillsPage = () => {
             <li>{t('skills.educExp.base.li_3')}</li>
             <li>{t('skills.educExp.base.li_4')}</li>
             <li>{t('skills.educExp.base.li_5')}</li>
-            <li>{t('skills.educExp.base.li_6')}</li>
             <p className={styles.project__desc}>{t('skills.educExp.base.usedStack')}</p>
           </article>
 
@@ -89,8 +100,8 @@ const SkillsPage = () => {
         <section className={styles.skills__footer}>
           <p className={styles.footer__text}>{t('skills.examples.otherExam')}</p>
         </section>
-      </div>
 
+      </div>
     </div>
   );
 };

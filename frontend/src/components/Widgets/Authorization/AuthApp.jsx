@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 import styles from './AuthApp.module.scss';
 
 import useAuth from '../../../hooks/useAuth';
 import { isSignUp } from '../../../selectors/authSelectors';
-import { getModalState, getModalType } from '../../../selectors/modalSelectors';
+import { getModalState } from '../../../selectors/modalSelectors';
 
 import Login from './Login';
 import SignUp from './SignUp';
@@ -19,15 +20,14 @@ const PrivateOutlet = () => {
 
 const AuthApp = () => {
   const signUp = useSelector(isSignUp);
-  const modalState = useSelector(getModalState);
-  const modalType = useSelector(getModalType);
+  const modalIsOpen = useSelector(getModalState);
 
-  const isAuthModalType = (type) => type === 'error' || type === 'success';
+  useEffect(() => console.log(modalIsOpen), [modalIsOpen]);
 
   return (
     <div className={styles.container}>
       { signUp ? <SignUp /> : <PrivateOutlet />}
-      {(modalState && isAuthModalType(modalType)) && <ModalBox />}
+      {modalIsOpen && <ModalBox />}
     </div>
   );
 };

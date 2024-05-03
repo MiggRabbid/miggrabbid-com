@@ -7,14 +7,11 @@
 .container {
   @apply
   h-full
-  min-h-32
   w-1/2
-  min-w-32
-  px-1
-  py-1
   rounded-lg
   flex
   flex-col
+  gap-2
   justify-between;
 
   .header {
@@ -29,7 +26,7 @@
       @apply 
       w-full
       text-sm
-      text-start
+      text-center
       uppercase;
     }
 
@@ -40,7 +37,7 @@
 
   .body {
     @apply
-    h-64
+    h-56
     py-2
     px-1
     m-0
@@ -90,8 +87,7 @@
         text-ellipsis;
       }
     }
-
-    
+  }
 
   .footer {
     @apply
@@ -99,27 +95,29 @@
     h-fit
     flex
     flex-row
-    justify-between;
+    justify-between
+    px-1;
 
     .footer__pagination {
       @apply
       h-fit
       w-fit
       flex
-      flex-row
-      gap-1;
+      flex-row;
 
       .pagination__text {
         @apply
         flex
         items-center
         justify-center
-        w-10;
+        w-11;
 
         p {
           @apply
+          w-fit
           text-xs
-          text-myTheme-accent;
+          text-myTheme-accent
+          scale-90;
         }
       }
     }
@@ -131,6 +129,5 @@
     .footer__bottom_disable {
       @extend %small-button-disable;
     } 
-  }
   }
 }

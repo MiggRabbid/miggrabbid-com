@@ -18,12 +18,16 @@ const AboutPage = () => {
           {t('aboutMe.description.second_1_p')}
           <span>{t('aboutMe.description.second_2_sp')}</span>
           {t('aboutMe.description.second_3_p')}
+          <span>{t('aboutMe.description.second_4_sp')}</span>
+          {t('aboutMe.description.second_5_p')}
+          <span>{t('aboutMe.description.second_6_sp')}</span>
         </p>
         <p>
           {t('aboutMe.description.third_1_p')}
           <span>
             {t('aboutMe.description.third_2_sp')}
           </span>
+          {t('aboutMe.description.third_3_p')}
         </p>
         <p>
           {t('aboutMe.description.fourth_1_p')}

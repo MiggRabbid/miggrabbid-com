@@ -4,11 +4,11 @@
 
 .container {
   @extend %container;
-  @apply gap-3;
 
   .title {
     @include shadow();
-    @apply w-11/12;
+    @apply w-11/12
+    mb-10;
 
     h2 {
       @extend %title;
@@ -22,7 +22,8 @@
     h-max
     flex
     flex-col
-    items-center;
+    items-center
+    gap-10;
 
     .skills__experience {
       @apply w-full
@@ -35,7 +36,7 @@
         text-myTheme-light
         mb-2;
       }
-
+      
       .skills__project {
         @apply py-4
         flex
@@ -104,7 +105,7 @@
           @apply
           left-0
           w-full
-          h-full
+          h-80
           flex
           flex-row
           cursor-default
@@ -114,19 +115,36 @@
   
           .examples__decs {
             @apply
-            h-fit
+            h-full
             w-8/12
             min-w-96
             px-4
             py-4
-            font-myTextFont
-            uppercase
-            font-bold
-            text-ellipsis
             flex
-            items-center
-            text-myTheme-light
-            indent-10;
+            flex-col
+            justify-center
+            gap-3;
+            
+            .decs__text__main, .decs__text__second {
+              @apply
+              font-myTextFont
+              uppercase
+              text-2xl
+              font-bold
+              text-ellipsis
+              flex
+              items-center;
+            }
+
+            .decs__text__main {
+              @apply text-myTheme-accent
+              text-opacity-90;
+            }
+
+            .decs__text__second {
+              @apply text-myTheme-light
+              text-opacity-90;
+            }
           }
         }
       }
@@ -143,9 +161,11 @@
       border-t-myTheme-accent;
 
       .footer__text {
-        @apply text-2xl
+        @apply text-xl
         text-myTheme-light
-        py-5;
+        uppercase
+        font-semibold
+        py-8;
       }
     }
   }

@@ -16,71 +16,79 @@
     }
   }
 
-  .stack,
-  .stack__second {
-    @include shadow();
-    @apply mt-8
-    w-full
-    max-w-screen-2xl
+  .stack__section {
+    @apply h-full
     flex
     flex-col
-    gap-8
-    overflow-hidden;
+    justify-center
+    gap-8;
 
-    .stack__scroll {
-      @apply w-max
+    .stack__main,
+    .stack__second {
+      @include shadow();
+      @apply w-full
+      max-w-screen-2xl
       flex
-      justify-start;
-
-      ul {
-        @include horizontal-scroll(120);
-        @apply text-myTheme-dark
-        w-max
-        h-max
+      flex-col
+      gap-8
+      overflow-hidden;
+  
+      .stack__scroll {
+        @apply w-max
         flex
-        gap-10
-        px-4;
-
-        li {
-          @include return-anim-duration-1000();
-          @apply w-min
+        justify-start;
+  
+        ul {
+          @include horizontal-scroll(120);
+          @apply text-myTheme-dark
+          w-max
           h-max
-          text-7xl
-          font-myTitleFont
-          uppercase
-          font-black
-          text-nowrap
-          select-none
-          m-0
-          p-0;
-
-          &:hover {
-            @include anim-duration-500();
-            @apply text-myTheme-accent
-            scale-105
-            cursor-default;
+          flex
+          gap-10
+          px-4;
+  
+          li {
+            @include return-anim-duration-1000();
+            @apply w-min
+            h-max
+            text-7xl
+            font-myTitleFont
+            uppercase
+            font-black
+            text-nowrap
+            select-none
+            m-0
+            p-0;
+  
+            &:hover {
+              @include anim-duration-500();
+              @apply text-myTheme-accent
+              scale-105
+              cursor-default;
+            }
+          }
+        }
+      }
+    }
+  
+    .stack__second {
+      @apply gap-6
+      mb-12;
+  
+      .stack__scroll {
+        ul {
+          @include horizontal-scroll(80);
+          @apply gap-7
+          px-2;
+  
+          li {
+            @apply font-myTextFont
+            font-bold
+            text-4xl;
           }
         }
       }
     }
   }
 
-  .stack__second {
-    @apply gap-6
-    mb-12;
-
-    .stack__scroll {
-      ul {
-        @include horizontal-scroll(80);
-        @apply gap-7
-        px-2;
-
-        li {
-          @apply font-myTextFont
-          font-bold
-          text-4xl;
-        }
-      }
-    }
-  }
 }

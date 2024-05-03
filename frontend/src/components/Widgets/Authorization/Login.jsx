@@ -31,15 +31,15 @@ const Login = () => {
       try {
         const response = await axios.post(routes.loginRequestPath(), values);
         logIn(response.data);
-        modalOpen({ modalType: MODAL_SUCCESS, data: t('templates.modal.success') });
+        modalOpen({ modalType: MODAL_SUCCESS, message: t('templates.modal.success') });
       } catch (e) {
         console.error(e.response.data);
         loginFailed(e.response.data);
-        const payload = { modalType: MODAL_ERROR, data: t('validationError.networkErr') };
+        const payload = { modalType: MODAL_ERROR, message: t('validationError.networkErr') };
         if (!e.isAxiosError) {
-          payload.data = t('validationError.unknownErr');
+          payload.message = t('validationError.unknownErr');
         } else if (e.response.status === 401) {
-          payload.data = t('validationError.thisUserDoesNotExists');
+          payload.message = t('validationError.thisUserDoesNotExists');
         }
         modalOpen(payload);
       }

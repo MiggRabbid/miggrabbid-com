@@ -5,33 +5,13 @@
 @import '../../../styles/animation.scss';
 
 .container {
-  @apply flex
-  flex-col
-  justify-between
-  z-10
-  w-full
-  h-full;
+  @extend %auth-pages-container;
 
-  .title {
-    @apply relative
-    content-center;
-
-    h5 {
-      @apply w-full
-    text-center
-    text-lg
-    font-bold
-    font-myTitleFont
-    text-myTheme-light
-    uppercase;
-    }
-
-    .title__back {
+  .title__back {
       @extend %small-button-dark;
       @apply absolute
       left-0;
     }
-  }
 
   .login {
     @apply flex
