@@ -1,0 +1,64 @@
+@mixin anim-duration-1000() {
+  transition: theme('transitionProperty.DEFAULT');
+  transition-duration: theme('transitionDuration.700');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
+}
+
+@mixin return-anim-duration-1000() {
+  transition: 1000ms ease-in-out;
+}
+
+@mixin anim-duration-500() {
+  transition: theme('transitionProperty.DEFAULT');
+  transition-duration: theme('transitionDuration.500');
+  transition-timing-function: theme('transitionTimingFunction.in-out');
+}
+
+@mixin return-anim-duration-500() {
+  transition: 500ms ease-in-out;
+}
+
+@mixin typing-text() {
+  animation: 
+  typing 3.5s steps(35, end),
+  blink-caret .75s step-end infinite;
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FFAF0F }
+  }
+}
+
+@mixin horizontal-scroll($seconds: 80) {
+  @if ($seconds == 120) {
+    animation: scroll 120s linear infinite;
+  } @else {
+    animation: scroll 80s linear infinite;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0%) }
+    100% { transform: translate3d(-100%, 0, 0) }
+  }
+}
+
+@mixin modal-progress() {
+    animation: scroll 6s linear normal;
+
+  @keyframes scroll {
+    0% { transform: translateX(0%) }
+    100% { transform: translate3d(-110%, 0, 0) }
+  }
+}
+
+@mixin click-on-menu() {
+  animation: shift 5s ease-in-out;
+  animation-delay: 500ms;
+
+  @keyframes shift {
+    0% { transform: translateY(0%) }
+    100% { transform: translateY(-200%) }
+  }
+}

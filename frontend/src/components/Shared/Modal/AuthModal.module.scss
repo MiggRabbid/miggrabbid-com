@@ -1,0 +1,68 @@
+@import '../../../styles//mixins.scss';
+@import '../../../styles/animation.scss';
+@import '../../../styles/input.extends.scss';
+
+.error, .success {
+  @apply
+  absolute
+  z-50
+  top-12
+  right-6
+  w-48
+  h-fit
+  flex
+  flex-col
+  justify-between
+  items-center
+  rounded-md
+  bg-opacity-75
+  overflow-hidden
+  shadow-md;
+
+
+  .modal__text {
+    @apply
+    h-fit
+    w-fit
+    uppercase
+    text-xs
+    text-center
+    py-5
+    px-2;
+  }
+
+  div {
+    @include modal-progress();
+    @apply
+    absolute
+    left-0
+    bottom-0
+    w-full
+    h-2;
+  }
+}
+
+.error {
+  @apply
+  bg-red-700 
+  bg-opacity-75
+  shadow-red-700;
+
+  div {
+    @apply
+    bg-red-700
+  }
+}
+
+.success {
+  @apply 
+  bg-green-700 
+  bg-opacity-75
+  shadow-green-700;
+
+  div {
+    @apply
+    bg-green-700
+  }
+}
+

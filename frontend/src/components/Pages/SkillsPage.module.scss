@@ -1,0 +1,172 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/extends.scss";
+
+.container {
+  @extend %container;
+
+  .title {
+    @include shadow();
+    @apply w-11/12
+    mb-10;
+
+    h2 {
+      @extend %title;
+      @extend %section-title;
+    }
+  }
+
+  .skills {
+    @apply w-11/12
+    max-w-screen-2xl
+    h-max
+    flex
+    flex-col
+    items-center
+    gap-10;
+
+    .skills__experience {
+      @apply w-full
+      cursor-default
+      mt-4;
+
+      h3 {
+        @extend %title;
+        @apply text-2xl
+        text-myTheme-light
+        mb-2;
+      }
+      
+      .skills__project {
+        @apply py-4
+        flex
+        flex-col
+        items-center;
+
+        h5 {
+          @apply w-5/6
+          font-myTextFont
+          text-xl
+          mb-1;
+        }
+
+        ul {
+          @apply list-none;
+        }
+
+        .project__desc,
+        ul,
+        li {
+          @apply w-5/6
+          font-myTextFont
+          text-xl
+          text-myTheme-light
+          indent-10;
+        }
+
+        a {
+          @apply italic text-myTheme-accent;
+        }
+      }
+    }
+
+    .skills__examples {
+      @apply relative
+      w-10/12
+      h-max
+      flex
+      flex-col
+      items-center
+      justify-center
+      mt-6;
+
+      .examples__title {
+        @apply w-11/12 h-fit;
+
+        h3 {
+          @extend %title;
+          @apply text-2xl
+          text-myTheme-light
+          block
+          w-11/12
+          mb-10;
+        }
+      }
+
+      .examples__block {
+        @apply w-full
+        flex
+        flex-col
+        gap-12
+        justify-center
+        items-center;
+        
+        .block__example {
+          @apply
+          left-0
+          w-full
+          h-80
+          flex
+          flex-row
+          cursor-default
+          bg-myTheme-dark
+          rounded-2xl
+          overflow-hidden;
+  
+          .examples__decs {
+            @apply
+            h-full
+            w-8/12
+            min-w-96
+            px-4
+            py-4
+            flex
+            flex-col
+            justify-center
+            gap-3;
+            
+            .decs__text__main, .decs__text__second {
+              @apply
+              font-myTextFont
+              uppercase
+              text-2xl
+              font-bold
+              text-ellipsis
+              flex
+              items-center;
+            }
+
+            .decs__text__main {
+              @apply text-myTheme-accent
+              text-opacity-90;
+            }
+
+            .decs__text__second {
+              @apply text-myTheme-light
+              text-opacity-90;
+            }
+          }
+        }
+      }
+    }
+
+    .skills__footer {
+      @include shadow();
+      @apply w-full
+      flex
+      justify-center
+      items-center
+      border-t-4
+      border-opacity-50
+      border-t-myTheme-accent;
+
+      .footer__text {
+        @apply text-xl
+        text-myTheme-light
+        uppercase
+        font-semibold
+        py-8;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+%input {
+  @apply
+  h-12
+  mt-4
+  block
+  w-full
+  rounded-md
+  py-1.5
+  px-1.5
+  text-myTheme-light
+  bg-myTheme-primary
+  caret-myTheme-accent
+  placeholder:text-gray-400
+  placeholder:mx-2;
+}
+
+%input-focus {
+  @apply
+  outline
+  outline-1
+  -outline-offset-0
+  outline-myTheme-accent
+  ring-4
+  ring-myTheme-accent
+  ring-opacity-75;
+}
+
+%input__invalid {
+  @apply
+  outline
+  outline-1
+  outline-offset-0
+  outline-red-700;
+
+  &:focus {
+    @apply
+    ring-4
+    ring-red-700
+    ring-opacity-75;
+  }
+}

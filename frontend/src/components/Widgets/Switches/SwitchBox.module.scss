@@ -1,0 +1,31 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/animation.scss';
+
+.switcher {
+  @extend %container-exampels;
+  @apply
+  flex
+  flex-col
+  justify-center
+  items-center;
+
+  .switcher__lang, .switcher__theme {
+    @apply
+    h-1/2
+    w-full
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-2;
+  }
+
+  .switcher__theme {
+    @apply
+    border-t-2
+    border-t-myTheme-primary;
+  }
+}

@@ -1,0 +1,90 @@
+%button {
+  @apply
+  mt-4
+  rounded-md
+  font-bold
+  text-myTheme-primary
+  bg-myTheme-accent;
+
+  &:hover {
+    @apply
+    bg-opacity-80;
+  }
+}
+
+%button-auth {
+  @extend %button;
+
+  button {
+    @apply
+    py-3
+    w-full;
+  }
+}
+
+%button-switcher {
+  @extend %button;
+
+  button {
+    @apply
+    h-fit
+    w-32
+    px-5
+    py-2
+    uppercase;
+  }
+}
+
+%button-switcher-disable {
+  @extend %button-switcher;
+  @apply
+  text-myTheme-accent
+  bg-myTheme-dark
+  border-2
+  border-myTheme-accent
+  opacity-50;
+}
+
+%small-button {
+  @apply
+  size-6
+  rounded-md;
+
+  &:hover {
+    @apply
+    bg-opacity-80
+    border-opacity-80
+    text-opacity-80;
+  }
+
+  button {
+    @apply
+    h-full
+    w-full
+    flex
+    justify-center
+    items-center;
+  }
+}
+
+%small-button-ligth {
+  @extend %small-button;
+  @apply
+  bg-myTheme-accent
+  text-myTheme-dark;
+}
+
+%small-button-dark {
+  @extend %small-button;
+  @apply
+  bg-myTheme-dark
+  text-myTheme-accent
+  border-2
+  border-myTheme-accent;
+}
+
+%small-button-disable {
+  @extend %small-button-dark;
+  @apply
+  opacity-50;
+}

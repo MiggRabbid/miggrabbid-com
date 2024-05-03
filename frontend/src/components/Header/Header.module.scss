@@ -1,0 +1,97 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/buttons.extends.scss";
+
+.container {
+  @apply z-50
+  bg-myTheme-primary
+  text-myTheme-light
+  flex
+  items-center
+  justify-center
+  w-full
+  h-20;
+
+  .header {
+    @apply relative
+    flex
+    justify-between
+    items-center
+    w-11/12
+    max-w-screen-2xl
+    h-16;
+
+    .header_button {
+      @extend %small-button;
+      @apply absolute
+      right-0
+      text-myTheme-accent;
+    }
+
+    .header__title {
+      @apply font-myTextFont
+      font-semibold
+      flex
+      justify-center
+      w-fit
+      h-fit
+      ms-12
+      text-2xl;
+
+      h3 {
+        @include typing-text();
+        @apply my-0
+        mx-auto
+        text-2xl
+        overflow-hidden
+        text-nowrap
+        border-e-4
+        tracking-widest
+        border-myTheme-accent
+        cursor-default;
+      }
+    }
+
+    .header__link {
+      nav {
+        @apply flex
+        justify-between
+        items-center
+        gap-3
+        me-12
+        h-16
+        text-lg;
+
+        a {
+          @include return-anim-duration-500();
+          @apply relative
+          flex
+          justify-center
+          items-center
+          size-8;
+
+          p {
+            @apply hidden;
+          }
+
+          &:hover {
+            @include anim-duration-500();
+            @apply scale-125;
+
+            p {
+              @apply text-nowrap
+              block
+              absolute
+              -bottom-4
+              text-myTheme-accent
+              font-normal
+              font-myTextFont
+              text-xs
+              scale-75;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@mixin shadow() {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #181818 20%, #181818 80%, transparent);
+}
+

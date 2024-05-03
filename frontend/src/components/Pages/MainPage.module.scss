@@ -1,0 +1,131 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/animation.scss";
+@import "../../styles/extends.scss";
+
+.container {
+  height: calc(100vmin - 6rem);
+  @extend %container;
+  @apply justify-center;
+
+  .title {
+    @apply flex
+    flex-col
+    justify-between
+    w-11/12
+    max-w-screen-2xl
+    h-full;
+
+    .title__title {
+      @apply w-full
+      h-min
+      min-h-fit
+      flex
+      justify-center
+      items-start;
+
+      h1 {
+        @extend %title;
+        @apply text-myTheme-dark;
+      }
+    }
+
+    .title__nav {
+      @apply relative
+      h-full
+      min-h-fit
+      w-full
+      min-w-max
+      flex
+      justify-start
+      items-start;
+
+      nav {
+        @apply relative
+        left-5
+        z-10
+        w-3/6
+        min-w-max
+        h-full
+        min-h-max
+        flex
+        justify-start
+        items-center;
+
+        .nav__bg {
+          @apply absolute
+          h-fit
+          w-fit
+          z-0;
+
+          img {
+            @apply h-fit
+            w-fit;
+          }
+        }
+
+        ul {
+          @apply relative
+          left-7
+          w-fit
+          h-full
+          min-h-max
+          rotate-3
+          flex
+          flex-col
+          gap-0.5
+          justify-center;
+
+          .nav__li {
+            @apply 
+            w-max
+            h-min
+            min-h-24
+            block;
+
+            .li__button{
+              &:hover {
+                @apply text-myTheme-dark
+                translate-x-4;
+                @include click-on-menu();
+              }
+            }
+
+            button {
+              @include return-anim-duration-500();
+              @apply
+              text-9xl
+              font-black
+              uppercase
+              select-none;
+
+              
+              &:hover {
+                @include anim-duration-500();
+                @apply text-myTheme-accent
+                translate-x-4
+                cursor-pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dev {
+    @apply absolute
+    bottom-10
+    right-16
+    w-fit
+    h-fit
+    flex
+    justify-end
+    items-end
+    text-3xl
+    uppercase
+    font-myTitleFont
+    font-black
+    cursor-default
+    text-myTheme-accent;
+  }
+}

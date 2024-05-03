@@ -1,0 +1,88 @@
+%app {
+  @apply
+  box-border
+  p-0
+  m-0
+  w-full
+  h-max
+  tracking-wide
+  font-myTextFont
+  bg-myTheme-dark;;
+}
+
+%container {
+  @apply
+  relative
+  min-h-max
+  w-full
+  mt-2
+  flex
+  flex-col
+  items-center
+  bg-myTheme-primary
+  text-myTheme-light;
+}
+
+%title {
+  @apply
+  w-full
+  h-fit
+  text-center
+  text-7xl
+  uppercase
+  tracking-wider
+  font-myTitleFont
+  font-black
+  mt-4
+  cursor-default
+  text-myTheme-light
+  select-none;
+};
+
+%section-title {
+  @apply
+  text-myTheme-light
+  border-b-4
+  border-opacity-50
+  border-b-myTheme-accent
+  pt-4
+  pb-8
+  mb-4
+  select-none;
+}
+
+%container-exampels {
+  @apply
+  relative
+  h-80
+  w-96
+  px-3
+  py-4
+  border-e-8
+  border-myTheme-primary
+  overflow-hidden;
+}
+
+%auth-pages-container {
+  @apply h-full
+  w-full
+  relative
+  flex
+  flex-col
+  justify-between
+  z-10;
+
+  .title {
+    @apply content-center;
+
+    h5 {
+      @apply w-full
+      text-center
+      text-lg
+      font-bold
+      font-myTitleFont
+      text-myTheme-light
+      uppercase;
+    }
+  }
+}

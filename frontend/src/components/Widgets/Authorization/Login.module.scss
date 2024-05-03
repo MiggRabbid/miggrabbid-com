@@ -1,0 +1,74 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/animation.scss';
+
+.container {
+  @extend %auth-pages-container;
+
+  .login {
+    @apply flex
+    flex-col;
+
+    .login__form {
+      @apply w-full
+      h-full;
+
+      div {
+        @apply w-full
+        h-fit
+        relative
+        flex
+        flex-col
+        justify-end
+        items-center;
+
+        .form__label {
+          @apply z-40
+          text-sm
+          leading-6
+          text-gray-900
+          hidden;
+        }
+
+        .form__input {
+          @extend %input;
+          &:focus {
+            @extend %input-focus;
+          }
+        }
+
+        .form__invalid {
+          @extend %input;
+          @extend %input__invalid;
+        }
+      }
+
+      .form_submit {
+        @extend %button-auth;
+      }
+    }
+  }
+
+  .footer {
+    .footer__signup {
+      @apply flex
+      items-center
+      justify-center
+      w-full
+      h-fit
+      border-t-2
+      border-t-myTheme-primary
+      pt-3;
+
+      button {
+        @apply ms-1
+        w-fit
+        text-myTheme-accent
+        cursor-pointer
+        font-bold;
+      }
+    }
+  }
+}

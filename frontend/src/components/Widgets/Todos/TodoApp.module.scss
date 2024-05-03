@@ -1,0 +1,16 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+@import '../../../styles/input.extends.scss';
+@import '../../../styles/buttons.extends.scss';
+@import '../../../styles/animation.scss';
+
+.container {
+  @extend %container-exampels;
+  @apply
+  relative
+  flex
+  flex-row
+  gap-3
+  justify-center
+  items-center;
+}
