@@ -120,7 +120,7 @@ export default {
           title: 'LogIn',
           footer: {
             text: 'No account? ',
-            link: 'SignUp',
+            link: 'Register',
           },
           inputName: {
             label: 'Username',
@@ -133,6 +133,10 @@ export default {
         },
         signUp: {
           title: 'Registration',
+          footer: {
+            text: 'Have an account? ',
+            link: 'Login',
+          },
           inputName: {
             label: 'Username',
             placeholder: 'Username - 3 to 20 symbols',
@@ -155,7 +159,7 @@ export default {
       },
       buttons: {
         logIn: 'LogIn',
-        signUp: 'SignUp',
+        signUp: 'Register',
         logOut: 'LogOut',
         up: 'Up',
         back: 'Back',

@@ -1,0 +1,68 @@
+@import '../../../styles//mixins.scss';;
+
+.card_track {
+  @apply
+  h-full
+  w-1/2
+  flex
+  items-center
+  relative;
+}
+
+.card_wrapper {
+  @apply
+  h-full 
+  w-full
+  relative;
+}
+
+.card {
+  @apply
+  h-full
+  flex
+  items-center
+  justify-center
+  relative
+  rounded-full
+  overflow-hidden
+  cursor-default
+  aspect-square;
+}
+
+.card_gradient {
+  @include gradient-for-text();
+
+  @apply
+  h-full
+  w-full
+  absolute
+  pointer-events-none
+  z-30;
+}
+
+.card_letters {
+  @apply 
+  absolute
+  left-0
+  top-0
+  h-full
+  w-full
+  text-myTheme-light
+  text-sm
+  font-medium
+  break-words
+  opacity-0
+  transition-opacity
+  duration-500
+  scale-105;
+
+  -webkit-mask-image: radial-gradient( 
+    rgb(255 255 255) 20%, 
+    rgb(255 255 255 / 25%), 
+    transparent
+  );
+}
+
+.card:hover .card_letters {
+  @apply opacity-100;
+}

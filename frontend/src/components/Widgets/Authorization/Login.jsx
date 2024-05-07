@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
-import styles from './Login.module.scss';
+import styles from './Login&SingUp.module.scss';
 
 import MainButton from '../../Shared/Button/MainButton';
 

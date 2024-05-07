@@ -13,7 +13,8 @@
 
     .login__form {
       @apply w-full
-      h-full;
+      h-full
+      px-4;
 
       div {
         @apply w-full
@@ -26,7 +27,7 @@
 
         .form__label {
           @apply z-40
-          text-sm
+          text-base
           leading-6
           text-gray-900
           hidden;
@@ -42,6 +43,26 @@
         .form__invalid {
           @extend %input;
           @extend %input__invalid;
+        }
+
+        .form__feedback {
+          @apply z-50
+          absolute
+          -bottom-0
+          right-3
+          leading-6
+          translate-y-full
+          w-fit
+          h-fit
+          px-4
+          bg-red-700
+          rounded-b-md
+          font-myTextFont
+          text-xs;
+        }
+
+        .feedback__hidden {
+          @apply hidden;
         }
       }
 
@@ -60,7 +81,7 @@
       h-fit
       border-t-2
       border-t-myTheme-primary
-      pt-3;
+      pt-5;
 
       button {
         @apply ms-1

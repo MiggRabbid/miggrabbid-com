@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './MainPage.module.scss';
 
 import bgTitleBody from '../../assets/bgTitleBody.png';
+import BgAnimation from '../Shared/BgAnimation/BgAnimation';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -44,6 +45,7 @@ const MainPage = () => {
               </li>
             </ul>
           </nav>
+          <BgAnimation />
         </div>
       </div>
 

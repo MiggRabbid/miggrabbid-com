@@ -6,6 +6,7 @@ const authSlice = createSlice({
     isAuthenticated: false,
     error: null,
     signUp: false,
+    logIn: false,
     newUser: false,
   },
   reducers: {

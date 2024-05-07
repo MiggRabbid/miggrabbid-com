@@ -2,3 +2,10 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #181818 20%, #181818 80%, transparent);
 }
 
+@mixin gradient-for-text() {
+  background: radial-gradient(
+    #FFAF0F 0%, 
+    #191919 80%,
+  );
+  mix-blend-mode: darken;
+}
