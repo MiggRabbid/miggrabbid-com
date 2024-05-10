@@ -1,8 +1,7 @@
 {
   "name": "miggrabbid-com",
-  "version": "0.0.1",
+  "version": "0.1.9",
   "description": "Personal site",
-  "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
     "start": "start-server -s ./frontend/build",
