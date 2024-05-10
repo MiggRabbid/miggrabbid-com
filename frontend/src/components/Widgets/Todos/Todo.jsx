@@ -13,7 +13,7 @@ const ADD_TODO = 'addTodo';
 const OPEN_TODO = 'openTodo';
 // const DEL_TODO = 'deleteTodo';
 
-const LINES_PER_PAGE = 7;
+const LINES_PER_PAGE = 9;
 
 const initialModalState = {
   isOpen: false,
@@ -51,13 +51,7 @@ const Todo = (props) => {
   return (
     <div className={styles.container} id={id}>
       <div className={styles.header}>
-        <p>{title}</p>
-        <SmallButton
-          className={styles.header__bottom}
-          onClick={() => setTodo([])}
-          icon={iconReset}
-          text={t('templates.buttons.resetTodo')}
-        />
+        <h5>{title}</h5>
       </div>
       <div className={styles.body}>
         {todos.length === 0
@@ -75,7 +69,15 @@ const Todo = (props) => {
                 if (e.key === 'Enter' || e.key === 'Space') handleClickTodo(e);
               }}
             >
-              <p>Актуальные задачи:</p>
+              <div className={styles.table__title}>
+                <p>Актуальные задачи</p>
+                <SmallButton
+                  className={styles.title__bottom}
+                  onClick={() => setTodo([])}
+                  icon={iconReset}
+                  text={t('templates.buttons.resetTodo')}
+                />
+              </div>
               {currentTodos.map((item) => (
                 <li key={item.id} data-id={item.id} className={styles.body__list}>
                   {item.title}

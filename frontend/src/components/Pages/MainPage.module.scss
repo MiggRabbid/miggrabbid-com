@@ -8,20 +8,25 @@
   @apply justify-center;
 
   .title {
-    @apply flex
+    @apply 
+    flex
     flex-col
     justify-between
+    items-center
     w-11/12
     max-w-screen-2xl
     h-full;
 
     .title__title {
-      @apply w-full
-      h-min
-      min-h-fit
+      @apply 
+      absolute
+      top-0
+      left-1/2
+      -translate-x-1/2
+      w-full
       flex
       justify-center
-      items-start;
+      items-center;
 
       h1 {
         @extend %title;
@@ -29,15 +34,15 @@
       }
     }
 
-    .title__nav {
+    .title__main {
       @apply relative
       h-full
       min-h-fit
       w-full
       min-w-max
       flex
-      justify-start
-      items-start;
+      justify-center
+      items-center;
 
       nav {
         @apply relative
@@ -115,7 +120,8 @@
   .dev {
     @apply absolute
     bottom-10
-    right-16
+    left-1/2
+    -translate-x-1/2
     w-fit
     h-fit
     flex
@@ -126,6 +132,7 @@
     font-myTitleFont
     font-black
     cursor-default
-    text-myTheme-accent;
+    text-myTheme-accent
+    z-40;
   }
 }

@@ -4,15 +4,13 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
-import styles from './SignUp.module.scss';
+import styles from './Login&SingUp.module.scss';
 
 import useAuth from '../../../hooks/useAuth';
 import useActions from '../../../hooks/useActions';
 import routes from '../../../routes';
 
-import SmallButton from '../../Shared/Button/SmallButton';
 import MainButton from '../../Shared/Button/MainButton';
-import { iconBack } from '../../Shared/icons';
 
 const MODAL_ERROR = 'error';
 const MODAL_SUCCESS = 'success';
@@ -65,12 +63,6 @@ const SignUp = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <SmallButton
-          className={styles.title__back}
-          icon={iconBack}
-          text={t('templates.buttons.back')}
-          onClick={() => signUpSuccess()}
-        />
         <h5>{t('templates.authorization.signUp.title')}</h5>
       </div>
 
@@ -180,6 +172,20 @@ const SignUp = () => {
             text={t('templates.buttons.signUp')}
           />
         </form>
+      </div>
+
+      <div className={styles.footer}>
+        <div className={styles.footer__signup}>
+          <span>{t('templates.authorization.signUp.footer.text')}</span>
+          <button
+            type="button"
+            // Получился костыль
+            // TODO: переделать возвращение на страницу логина
+            onClick={() => signUpSuccess()}
+          >
+            {t('templates.authorization.signUp.footer.link')}
+          </button>
+        </div>
       </div>
     </div>
   );

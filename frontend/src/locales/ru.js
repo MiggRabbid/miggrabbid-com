@@ -133,6 +133,10 @@ export default {
         },
         signUp: {
           title: 'Регистрация',
+          footer: {
+            text: 'Есть аккаунта? ',
+            link: 'Войти',
+          },
           inputName: {
             label: 'Имя пользователя',
             placeholder: 'Имя пользователя - от 3 до 20 символов',

@@ -1,7 +1,5 @@
 @import '../styles/extends.scss';
 @import "../styles/animation.scss";
-@import "../styles/animation.scss";
-@import "../styles/animation.scss";
 
 .app {
   @extend %app;
@@ -13,7 +11,8 @@
     right-5
     size-8
     rounded-lg
-    overflow-hidden;
+    overflow-hidden
+    z-40;
 
     .button__icon {
       @apply fill-myTheme-accent;
@@ -27,9 +26,5 @@
 
   #button-up.clicked {
     @include click-on-menu();
-    
-    .button__icon {
-      @apply fill-red-600;
-    }
   }
 };

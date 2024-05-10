@@ -54,10 +54,10 @@
 %container-exampels {
   @apply
   relative
-  h-80
-  w-96
-  px-3
-  py-4
+  h-96
+  w-100
+  min-w-100
+  p-5
   border-e-8
   border-myTheme-primary
   overflow-hidden;
@@ -78,7 +78,7 @@
     h5 {
       @apply w-full
       text-center
-      text-lg
+      text-2xl
       font-bold
       font-myTitleFont
       text-myTheme-light

@@ -59,7 +59,7 @@
         li {
           @apply w-5/6
           font-myTextFont
-          text-xl
+          text-2xl
           text-myTheme-light
           indent-10;
         }
@@ -72,7 +72,7 @@
 
     .skills__examples {
       @apply relative
-      w-10/12
+      w-full
       h-max
       flex
       flex-col
@@ -105,7 +105,7 @@
           @apply
           left-0
           w-full
-          h-80
+          h-fit
           flex
           flex-row
           cursor-default
@@ -115,9 +115,10 @@
   
           .examples__decs {
             @apply
-            h-full
+            h-96
+            min-h-fit
             w-8/12
-            min-w-96
+            min-w-128
             px-4
             py-4
             flex
@@ -127,23 +128,22 @@
             
             .decs__text__main, .decs__text__second {
               @apply
-              font-myTextFont
               uppercase
-              text-2xl
-              font-bold
               text-ellipsis
               flex
               items-center;
             }
 
             .decs__text__main {
-              @apply text-myTheme-accent
-              text-opacity-90;
+              @apply text-myTheme-light
+              text-opacity-90
+              text-4xl;
             }
 
             .decs__text__second {
-              @apply text-myTheme-light
-              text-opacity-90;
+              @apply text-myTheme-accent
+              text-opacity-90
+              text-xl;
             }
           }
         }
@@ -161,7 +161,7 @@
       border-t-myTheme-accent;
 
       .footer__text {
-        @apply text-xl
+        @apply text-2xl
         text-myTheme-light
         uppercase
         font-semibold

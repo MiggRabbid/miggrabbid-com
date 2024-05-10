@@ -10,7 +10,7 @@ const SwitchBox = () => {
 
   const { t, i18n } = useTranslation();
 
-  const themeLight = t('theme.light', { lng: 'en' });
+  const themeLight = t('theme.dark', { lng: 'en' });
   const themeDark = t('theme.dark', { lng: 'en' });
   const curLng = i18n.language;
   const altLang = curLng === t('languages.ru') ? t('languages.en') : t('languages.ru');
@@ -38,7 +38,7 @@ const SwitchBox = () => {
       <Switcher
         className={styles.switcher__theme}
         onClick={switchTheme}
-        title={t('theme.title')}
+        title={`${t('theme.title')} (dev)`}
         firstBtn={themeLight}
         secondBtn={themeDark}
         curValue={theme}
