@@ -3,7 +3,21 @@
 $card_size: theme('height.128');
 $font-size: theme('fontSize.xs');
 
-.card_track {
+.dark {
+  .card_gradient {
+    @include card-gradient(theme('colors.myTheme.primary'));
+  }
+}
+
+.light {
+  .card_gradient {
+
+    @include card-gradient(theme('colors.myTheme.light'));
+  }
+
+}
+
+.dark, .light {
   @apply 
   h-5/6
   w-1/2
@@ -32,9 +46,7 @@ $font-size: theme('fontSize.xs');
       cursor-default;
       
 
-      .card_gradient{
-        @include card-gradient();
-
+      .card_gradient {
         @apply
         absolute
         h-full

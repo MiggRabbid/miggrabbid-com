@@ -27,17 +27,16 @@ const getValidationSchema = () => yup.object({
 * TodoModal плохое название, т.к. элемент добавляет или изменяет задачу.
 */
 const TodoModal = (props) => {
-  console.log('------- TodoModal');
   const {
     state, setState, initialModalState, setModal, modalState, id,
   } = props;
   const modalInputRef = useRef(null);
-  console.log(modalState);
+
   useEffect(() => {
     if (isAddModal(modalState.modalType)) {
       modalInputRef.current.focus();
     }
-  }, [modalInputRef]);
+  }, []);
 
   const formik = useFormik({
     initialValues: { title: '', body: '' },

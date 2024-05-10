@@ -1,8 +1,23 @@
 @import '../styles/extends.scss';
 @import "../styles/animation.scss";
 
-.app {
+.dark {
+  @extend %app-dark;
+}
+
+.light {
+  @extend %app-light;
+}
+
+.dark, .light {
   @extend %app;
+
+  & > * {
+    @apply
+    transition-colors
+    ease-in-out
+    duration-500;
+  }
 
   .app_button {
     @include return-anim-duration-500();

@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { AuthContext } from '../../contexts/index';
 
 const AuthProvider = ({ children }) => {
-  const currentUser = JSON.parse(localStorage.getItem('user'));
-  const [user, setUser] = useState(currentUser
-    ? { username: currentUser.username, token: currentUser.token }
-    : null);
+  console.log('----- AuthProvider');
+  const initialUser = useMemo(() => {
+    const currentUser = localStorage.getItem('user');
+    return currentUser ? JSON.parse(currentUser) : null;
+  }, []);
+
+  const [user, setUser] = useState(initialUser);
 
   const logIn = (data) => {
     localStorage.setItem('user', JSON.stringify(data));
@@ -18,13 +21,14 @@ const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const getAuthHeader = () => {
-    const localUser = JSON.parse(localStorage.getItem('user'));
-    if (localUser && localUser.token) {
-      return { Authorization: `Bearer ${localUser.token}` };
+  const getAuthHeader = useMemo(() => () => {
+    const localUser = localStorage.getItem('user');
+    if (localUser) {
+      const { token } = JSON.parse(localUser);
+      return { Authorization: `Bearer ${token}` };
     }
     return {};
-  };
+  }, []);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values

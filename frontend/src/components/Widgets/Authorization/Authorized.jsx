@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
@@ -20,9 +19,6 @@ const UserEntered = () => {
   };
 
   const newUser = useSelector(isNewUser);
-  useEffect(() => {
-    console.log('newUser', newUser);
-  }, [newUser]);
 
   return (
     <div className={styles.container}>

@@ -55,7 +55,7 @@
 
 @mixin click-on-menu() {
   animation: shift 5s ease-in-out;
-  animation-delay: 500ms;
+  animation-delay: 800ms;
 
   @keyframes shift {
     0% { transform: translateY(0%) }

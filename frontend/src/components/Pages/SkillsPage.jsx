@@ -3,14 +3,18 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './SkillsPage.module.scss';
 
+import useTheme from '../../hooks/useTheme';
+
 import AuthApp from '../Widgets/Authorization/AuthApp';
 import SwitchBox from '../Widgets/Switches/SwitchBox';
 import TodoApp from '../Widgets/Todos/TodoApp';
 
 const SkillsPage = () => {
   const { t } = useTranslation();
+  const { siteTheme } = useTheme();
+
   return (
-    <div className={styles.container} id="skills">
+    <section className={styles[siteTheme]} id="skills">
       <div className={styles.title}>
         <h2>{t('skills.title')}</h2>
       </div>
@@ -102,7 +106,7 @@ const SkillsPage = () => {
         </section>
 
       </div>
-    </div>
+    </section>
   );
 };
 

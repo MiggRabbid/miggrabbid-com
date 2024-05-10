@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 import styles from './AuthApp.module.scss';
 
@@ -21,8 +20,6 @@ const PrivateOutlet = () => {
 const AuthApp = () => {
   const signUp = useSelector(isSignUp);
   const modalIsOpen = useSelector(getModalState);
-
-  useEffect(() => console.log(modalIsOpen), [modalIsOpen]);
 
   return (
     <div className={styles.container}>

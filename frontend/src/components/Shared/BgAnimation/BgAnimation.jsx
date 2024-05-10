@@ -5,7 +5,7 @@ import styles from './BgAnimation.module.scss';
 
 import jsBuildData from '../../../data/jsForBg';
 
-const BgAnimation = () => {
+const BgAnimation = ({ siteTheme }) => {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const BgAnimation = () => {
   }, []);
 
   return (
-    <div className={styles.card_track}>
+    <div className={styles[siteTheme]}>
       <div className={styles.card_wrapper} ref={cardRef}>
         <div className={styles.card}>
           <div className={styles.card_gradient} />

@@ -2,7 +2,25 @@
 @import "../../styles/animation.scss";
 @import "../../styles/extends.scss";
 
-.container {
+.dark {
+  @extend %container-dark;
+
+  h1 {
+    @extend %title-dark;
+    @apply text-myTheme-dark
+  }
+}
+
+.light {
+  @extend %container-light;
+
+  h1 {
+    @extend %title-light;
+    @apply text-slate-100;
+  }
+}
+
+.dark, .light {
   height: calc(100vmin - 6rem);
   @extend %container;
   @apply justify-center;
@@ -30,7 +48,6 @@
 
       h1 {
         @extend %title;
-        @apply text-myTheme-dark;
       }
     }
 
@@ -86,14 +103,6 @@
             h-min
             min-h-24
             block;
-
-            .li__button{
-              &:hover {
-                @apply text-myTheme-dark
-                translate-x-4;
-                @include click-on-menu();
-              }
-            }
 
             button {
               @include return-anim-duration-500();

@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next';
 
+import useTheme from '../../hooks/useTheme';
+
 import styles from './AboutPage.module.scss';
 
 const AboutPage = () => {
   const { t } = useTranslation();
+  const { siteTheme } = useTheme();
 
   return (
-    <section className={styles.container} id="about">
+    <section className={styles[siteTheme]} id="about">
       <div className={styles.title}>
         <h2>{t('aboutMe.title')}</h2>
       </div>

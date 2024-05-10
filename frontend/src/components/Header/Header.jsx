@@ -9,9 +9,12 @@ import iconTelegram from '../../assets/icon-tg.png';
 import iconGitHub from '../../assets/icon-git.png';
 import iconHabr from '../../assets/icon-hb.png';
 import iconLinkedIn from '../../assets/icon-in.png';
+import useTheme from '../../hooks/useTheme';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const { siteTheme } = useTheme();
+
   const curLng = i18n.language;
   const altLang = curLng === t('languages.ru') ? t('languages.en') : t('languages.ru');
 
@@ -20,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.container} id="header">
+    <header className={styles[siteTheme]} id="header">
       <div className={styles.header}>
         <SmallButton
           className={styles.header_button}

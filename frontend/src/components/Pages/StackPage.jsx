@@ -4,6 +4,7 @@ import styles from './StackPage.module.scss';
 
 import stackMain from '../../data/stackMain';
 import stackSecond from '../../data/stackSecond';
+import useTheme from '../../hooks/useTheme';
 
 const getStack = (stack, index) => {
   const quarter = 0.25;
@@ -22,6 +23,7 @@ const getStack = (stack, index) => {
 
 const StackPage = () => {
   const { t } = useTranslation();
+  const { siteTheme } = useTheme();
 
   const liFirst = getStack(stackMain, 'first').map((item) => (<li key={item}>{item}</li>));
   const liSecond = getStack(stackMain, 'second').map((item) => (<li key={item}>{item}</li>));
@@ -34,7 +36,7 @@ const StackPage = () => {
   const liSecondFourth = getStack(stackSecond, 'fourth').map((item) => (<li key={item}>{item}</li>));
 
   return (
-    <section className={styles.container} id="stack">
+    <section className={styles[siteTheme]} id="stack">
       <div className={styles.title}>
         <h2>{t('stack.title')}</h2>
       </div>
