@@ -28,7 +28,7 @@ const MainPage = () => {
           <h1>{t('main.title')}</h1>
         </div>
 
-        <div className={styles.title__nav}>
+        <div className={styles.title__main}>
           <nav>
             <div className={styles.nav__bg}>
               <img src={bgTitleBody} alt="" />

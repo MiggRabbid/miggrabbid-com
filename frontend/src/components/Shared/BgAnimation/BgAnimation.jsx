@@ -10,7 +10,7 @@ const BgAnimation = () => {
 
   useEffect(() => {
     const card = cardRef.current;
-    const letters = card.querySelector(`.${styles.card_letters}`);
+    const letters = card.querySelector('#card_letters');
 
     const handleOnMove = (e) => {
       const rect = card.getBoundingClientRect();
@@ -37,7 +37,7 @@ const BgAnimation = () => {
       <div className={styles.card_wrapper} ref={cardRef}>
         <div className={styles.card}>
           <div className={styles.card_gradient} />
-          <div className={styles.card_letters} />
+          <div className={styles.card_letters} id="card_letters" />
         </div>
         <div className={styles.card_corners}>
           {[...Array(4)].map(() => (
