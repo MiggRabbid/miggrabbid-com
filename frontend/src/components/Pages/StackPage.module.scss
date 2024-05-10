@@ -2,18 +2,39 @@
 @import "../../styles/animation.scss";
 @import "../../styles/extends.scss";
 
-.container {
+.dark {
+  @extend %container-dark;
+
+  h2 {
+    @extend %title-dark;
+    @extend %section-title-dark;
+  }
+
+  ul {
+    @apply text-myTheme-dark;
+  }
+}
+
+.light {
+  @extend %container-light;
+
+  h2 {
+    @extend %title-light;
+    @extend %section-title-light;
+  }
+
+  ul {
+    @apply text-slate-400
+  }
+}
+
+.dark, .light {
   height: calc(100vmin - 1rem);
   @extend %container;
 
   .title {
     @include shadow();
     @apply w-11/12;
-
-    h2 {
-      @extend %title;
-      @extend %section-title;
-    }
   }
 
   .stack__section {
@@ -21,6 +42,7 @@
     w-full
     flex
     flex-col
+    items-center
     justify-center
     gap-8;
 
@@ -41,7 +63,7 @@
   
         ul {
           @include horizontal-scroll(120);
-          @apply text-myTheme-dark
+          @apply
           w-max
           h-max
           flex

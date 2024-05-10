@@ -2,20 +2,32 @@
 @import "../../styles/animation.scss";
 @import "../../styles/extends.scss";
 
-.container {
+.dark {
+  @extend %container-dark;
+
+  h2 {
+    @extend %title-dark;
+    @extend %section-title-dark;
+  }
+}
+
+.light {
+  @extend %container-light;
+
+  h2 {
+    @extend %title-light;
+    @extend %section-title-light;
+  }
+}
+
+.dark, .light {
   height: calc(100vmin - 1rem);
 
-  @extend %container;
   @apply gap-12;
 
   .title {
     @include shadow();
     @apply w-11/12;
-
-    h2 {
-      @extend %title;
-      @extend %section-title;
-    }
   }
 
   .about {

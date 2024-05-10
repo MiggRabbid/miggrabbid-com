@@ -9,7 +9,6 @@ const AuthModal = ({ modalType, modalClose }) => {
   const modalMessage = useSelector(getModalMessage);
 
   useEffect(() => {
-    console.log('useEffect - setTimeout modalClose');
     const timerId = setTimeout(() => modalClose(), 5500);
     return () => clearTimeout(timerId);
   }, [modalClose]);

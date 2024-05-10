@@ -25,7 +25,8 @@
       text-base
       text-center
       font-bold
-      uppercase;
+      uppercase
+      text-myTheme-light;
     }
   }
 
@@ -55,7 +56,8 @@
       @apply
       h-64
       w-full
-      overflow-hidden;
+      overflow-hidden
+    text-myTheme-light;
 
       .table__title {
         @apply 

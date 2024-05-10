@@ -2,15 +2,14 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #181818 20%, #181818 80%, transparent);
 }
 
-@mixin card-gradient() {
-  $shadow-color:  theme('colors.myTheme.primary');
+@mixin card-gradient($color) {
   $horizontal: 0px;
   $vertical: 0px;
   $blur: 25px;
   $spread: 20px;
-  box-shadow: $horizontal $vertical $blur $spread $shadow-color inset;
-  -webkit-box-shadow: $horizontal $vertical $blur $spread $shadow-color inset;
-  -moz-box-shadow: $horizontal $vertical $blur $spread $shadow-color inset;
+  box-shadow: $horizontal $vertical $blur $spread $color inset;
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $color inset;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $color inset;
 }
 
 @mixin focus-bgText() {

@@ -7,7 +7,17 @@
   h-max
   tracking-wide
   font-myTextFont
-  bg-myTheme-dark;;
+  bg-myTheme-dark;
+}
+
+%app-light {
+  @extend %app;
+  @apply bg-slate-100;
+}
+
+%app-dark {
+  @extend %app;
+  @apply bg-myTheme-dark;
 }
 
 %container {
@@ -18,9 +28,20 @@
   mt-2
   flex
   flex-col
-  items-center
+  items-center;
+}
+
+%container-dark {
+  @extend %container;
+  @apply
   bg-myTheme-primary
   text-myTheme-light;
+}
+
+%container-light {
+  @extend %container;
+  @apply
+  bg-myTheme-light;
 }
 
 %title {
@@ -35,9 +56,18 @@
   font-black
   mt-4
   cursor-default
-  text-myTheme-light
   select-none;
 };
+
+%title-light {
+  @extend %title;
+  @apply text-myTheme-light;
+}
+
+%title-dark {
+  @extend %title;
+  @apply text-myTheme-primary;
+}
 
 %section-title {
   @apply
@@ -49,6 +79,17 @@
   pb-8
   mb-4
   select-none;
+}
+
+%section-title-light {
+  @extend %section-title;
+  @apply text-myTheme-primary;
+
+}
+
+%section-title-dark {
+  @extend %section-title;
+  @apply text-myTheme-light;
 }
 
 %container-exampels {

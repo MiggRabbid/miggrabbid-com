@@ -2,18 +2,37 @@
 @import "../../styles/animation.scss";
 @import "../../styles/extends.scss";
 
-.container {
-  @extend %container;
+.dark {
+  @extend %container-dark;
 
+  h2 {
+    @extend %title-dark;
+    @extend %section-title-dark;
+  }
+
+  .skills__footer {
+    @apply text-myTheme-light;
+  }
+}
+
+.light {
+  @extend %container-light;
+
+  h2 {
+    @extend %title-light;
+    @extend %section-title-light;
+  }
+
+  .skills__footer {
+    @apply text-myTheme-primary;
+  }
+}
+
+.dark, .light {
   .title {
     @include shadow();
     @apply w-11/12
     mb-10;
-
-    h2 {
-      @extend %title;
-      @extend %section-title;
-    }
   }
 
   .skills {
@@ -25,50 +44,6 @@
     items-center
     gap-10;
 
-    .skills__experience {
-      @apply w-full
-      cursor-default
-      mt-4;
-
-      h3 {
-        @extend %title;
-        @apply text-2xl
-        text-myTheme-light
-        mb-2;
-      }
-      
-      .skills__project {
-        @apply py-4
-        flex
-        flex-col
-        items-center;
-
-        h5 {
-          @apply w-5/6
-          font-myTextFont
-          text-xl
-          mb-1;
-        }
-
-        ul {
-          @apply list-none;
-        }
-
-        .project__desc,
-        ul,
-        li {
-          @apply w-5/6
-          font-myTextFont
-          text-2xl
-          text-myTheme-light
-          indent-10;
-        }
-
-        a {
-          @apply italic text-myTheme-accent;
-        }
-      }
-    }
 
     .skills__examples {
       @apply relative
@@ -136,16 +111,55 @@
 
             .decs__text__main {
               @apply text-myTheme-light
-              text-opacity-90
               text-4xl;
             }
 
             .decs__text__second {
               @apply text-myTheme-accent
-              text-opacity-90
               text-xl;
             }
           }
+        }
+      }
+    }
+
+    .skills__experience {
+      @apply w-full
+      cursor-default
+      mt-4;
+
+      h3 {
+        @extend %title;
+        @apply text-2xl
+        mb-2;
+      }
+      
+      .skills__project {
+        @apply py-4
+        flex
+        flex-col
+        items-center;
+
+        h5 {
+          @apply w-5/6
+          font-myTextFont
+          text-xl
+          mb-1;
+        }
+
+        ul {
+          @apply list-none;
+        }
+
+        .project__desc, ul, li {
+          @apply w-5/6
+          font-myTextFont
+          text-2xl
+          indent-10;
+        }
+
+        a {
+          @apply italic text-myTheme-accent;
         }
       }
     }
@@ -162,7 +176,6 @@
 
       .footer__text {
         @apply text-2xl
-        text-myTheme-light
         uppercase
         font-semibold
         py-8;

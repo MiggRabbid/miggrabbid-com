@@ -5,9 +5,11 @@ import styles from './MainPage.module.scss';
 
 import bgTitleBody from '../../assets/bgTitleBody.png';
 import BgAnimation from '../Shared/BgAnimation/BgAnimation';
+import useTheme from '../../hooks/useTheme';
 
 const MainPage = () => {
   const { t } = useTranslation();
+  const { siteTheme } = useTheme();
 
   const handleClickOnMenu = (e) => {
     const currentTarget = e.target.dataset.target.toLowerCase();
@@ -22,7 +24,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles[siteTheme]} id="main">
       <div className={styles.title}>
         <div className={styles.title__title}>
           <h1>{t('main.title')}</h1>
@@ -45,7 +47,7 @@ const MainPage = () => {
               </li>
             </ul>
           </nav>
-          <BgAnimation />
+          <BgAnimation siteTheme={siteTheme} />
         </div>
       </div>
 

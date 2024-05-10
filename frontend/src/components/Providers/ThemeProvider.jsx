@@ -1,37 +1,30 @@
-import { useLayoutEffect, useMemo, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { ThemeContext } from '../../contexts/index';
 
 const THEME_LIGHT = 'light';
 const THEME_DARK = 'dark';
 
 const ThemeProvider = ({ children }) => {
-  console.log('ThemeProvider');
-  const initValue = localStorage.getItem('siteTheme');
-  const [theme, setTheme] = useState(initValue || THEME_DARK);
+  console.log('----- ThemeProvider');
+  const [siteTheme, setSiteTheme] = useState(THEME_DARK);
+
+  const availableThemes = { THEME_DARK, THEME_LIGHT };
 
   useLayoutEffect(() => {
-    console.log('ThemeProvider useEffect theme -', theme);
-    if (theme === THEME_DARK) {
-      document.documentElement.setAttribute('data-theme', THEME_DARK);
-    }
-    if (theme === THEME_LIGHT) {
-      document.documentElement.setAttribute('data-theme', THEME_LIGHT);
-    }
-  }, [theme]);
+    document.documentElement.setAttribute('data-theme', siteTheme);
+  }, [siteTheme]);
 
-  const contextValue = useMemo(() => {
-    const changeTheme = () => {
-      const newTheme = (theme === THEME_DARK) ? THEME_LIGHT : THEME_DARK;
-      console.log('ThemeProvider theme    -', theme);
-      console.log('ThemeProvider newTheme -', newTheme);
-      setTheme(newTheme);
-      localStorage.setItem('siteTheme', newTheme);
-    };
-    return { theme, changeTheme };
-  }, [theme]);
+  const setTheme = (newTheme) => {
+    setSiteTheme(newTheme);
+    localStorage.setItem('siteTheme', newTheme);
+  };
 
   return (
-    <ThemeContext.Provider value={contextValue}>
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <ThemeContext.Provider value={{
+      siteTheme, setTheme, availableThemes,
+    }}
+    >
       {children}
     </ThemeContext.Provider>
   );

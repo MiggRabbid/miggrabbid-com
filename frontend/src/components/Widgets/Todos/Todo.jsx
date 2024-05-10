@@ -22,7 +22,6 @@ const initialModalState = {
 };
 
 const Todo = (props) => {
-  console.log('------- Todo');
   const { t } = useTranslation();
   const {
     title, todos, setTodo, id,
@@ -43,7 +42,6 @@ const Todo = (props) => {
     if (e.target.tagName.toLowerCase() === 'li') {
       const todoId = e.target.dataset.id;
       const currentTodo = todos.filter((todo) => todo.id === todoId);
-      console.log(currentTodo);
       setModal({ isOpen: true, modalType: OPEN_TODO, todo: currentTodo[0] });
     }
   };
