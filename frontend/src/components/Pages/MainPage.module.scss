@@ -21,125 +21,147 @@
 }
 
 .dark, .light {
-  height: calc(100vmin - 6rem);
-  @extend %container;
-  @apply justify-center;
+  min-height: fit-content;
+  height: calc(100vh - 7rem);
+  @apply
+  items-center
+  justify-center;
 
   .title {
     @apply 
+    absolute
+    top-0
+    left-1/2
+    -translate-x-1/2
+    w-11/12
     flex
-    flex-col
+    justify-center
+    items-start
+    z-20;
+
+    h1 {
+      @extend %title;
+    }
+  }
+
+  .main {
+    @apply
+    flex
+    flex-row
     justify-between
     items-center
+    flex-wrap
+    h-5/6
+    min-h-fit
+    max-md:w-full
+    max-lg:w-full
     w-11/12
+    px-0
     max-w-screen-2xl
-    h-full;
+    z-10;
 
-    .title__title {
-      @apply 
-      absolute
-      top-0
-      left-1/2
-      -translate-x-1/2
-      w-full
-      flex
-      justify-center
-      items-center;
-
-      h1 {
-        @extend %title;
-      }
-    }
-
-    .title__main {
+    .main__nav {
       @apply relative
       h-full
-      min-h-fit
-      w-full
-      min-w-max
-      flex
-      justify-center
-      items-center;
+      max-md:w-2/3
+      max-lg:w-fit
+      w-1/2
+      z-20;
 
-      nav {
-        @apply relative
-        left-5
-        z-10
-        w-3/6
-        min-w-max
-        h-full
-        min-h-max
-        flex
-        justify-start
-        items-center;
+      .nav__bg {
+        @apply absolute
+        top-1/2
+        -translate-y-1/2
+        max-md:left-0
+        max-lg:-left-1
+        max-xl:-left-8
+        left-0
+        max-md:h-128
+        max-md:w-128
+        max-lg:h-100
+        max-lg:w-100
+        w-full;
 
-        .nav__bg {
-          @apply absolute
+        img {
+          @apply
+          max-lg:h-full
+          max-lg:w-full
           h-fit
-          w-fit
-          z-0;
-
-          img {
-            @apply h-fit
-            w-fit;
-          }
+          w-fit;
         }
+      }
 
-        ul {
-          @apply relative
-          left-7
-          w-fit
-          h-full
-          min-h-max
-          rotate-3
-          flex
-          flex-col
-          gap-0.5
-          justify-center;
+      .nav__list {
+        @apply absolute
+        top-1/2
+        -translate-y-1/2
+        max-md:left-10
+        max-lg:left-10
+        max-xl:left-0
+        left-8
+        h-fit
+        w-fit
+        rotate-3
+        flex
+        flex-col
+        justify-center
+        z-20;
 
-          .nav__li {
-            @apply 
-            w-max
-            h-min
-            min-h-24
-            block;
+        .nav__li {
+          @apply 
+          w-max
+          h-min
+          min-h-24
+          block;
 
-            button {
-              @include return-anim-duration-500();
-              @apply
-              text-9xl
-              font-black
-              uppercase
-              select-none;
+          button {
+            @include return-anim-duration-500();
+            @apply
+            max-md:text-9xl
+            max-lg:text-8xl
+            text-9xl
+            font-black
+            uppercase
+            select-none;
 
-              
-              &:hover {
-                @include anim-duration-500();
-                @apply text-myTheme-accent
-                translate-x-4
-                cursor-pointer;
-              }
+            &:hover {
+              @include anim-duration-500();
+              @apply text-myTheme-accent
+              translate-x-4
+              cursor-pointer;
             }
           }
         }
       }
     }
+
+    
+    .main__bg {
+      @apply 
+      h-full
+      w-1/2
+      pt-4
+      max-md:w-full
+      max-md:right-0
+      max-md:py-20
+      max-md:absolute
+      max-lg:z-0;
+    }
   }
+
 
   .dev {
     @apply absolute
-    bottom-10
+    bottom-5
     left-1/2
     -translate-x-1/2
-    w-fit
+    w-full
     h-fit
-    flex
-    justify-end
-    items-end
     text-3xl
     uppercase
     font-myTitleFont
     font-black
+    text-center
     cursor-default
     text-myTheme-accent
     z-40;

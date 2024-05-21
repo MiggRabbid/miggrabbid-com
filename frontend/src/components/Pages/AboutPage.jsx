@@ -13,6 +13,7 @@ const AboutPage = () => {
       <div className={styles.title}>
         <h2>{t('aboutMe.title')}</h2>
       </div>
+
       <div className={styles.about}>
         <p>
           {t('aboutMe.description.first_1_P')}
@@ -60,7 +61,6 @@ const AboutPage = () => {
           {t('aboutMe.description.sixth_1_p')}
         </p>
       </div>
-
     </section>
   );
 };

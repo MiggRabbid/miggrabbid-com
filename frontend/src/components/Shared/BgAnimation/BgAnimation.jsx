@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { uniqueId } from 'lodash';
 
 import styles from './BgAnimation.module.scss';
 
@@ -38,11 +37,6 @@ const BgAnimation = ({ siteTheme }) => {
         <div className={styles.card}>
           <div className={styles.card_gradient} />
           <div className={styles.card_letters} id="card_letters" />
-        </div>
-        <div className={styles.card_corners}>
-          {[...Array(4)].map(() => (
-            <span key={uniqueId()} className={styles.card_corner} />
-          ))}
         </div>
       </div>
     </div>

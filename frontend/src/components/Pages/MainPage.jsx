@@ -24,35 +24,36 @@ const MainPage = () => {
   };
 
   return (
-    <div className={styles[siteTheme]} id="main">
+    <section className={styles[siteTheme]} id="main">
       <div className={styles.title}>
-        <div className={styles.title__title}>
-          <h1>{t('main.title')}</h1>
-        </div>
+        <h1>{t('main.title')}</h1>
+      </div>
 
-        <div className={styles.title__main}>
-          <nav>
-            <div className={styles.nav__bg}>
-              <img src={bgTitleBody} alt="" />
-            </div>
-            <ul>
-              <li className={styles.nav__li}>
-                <button type="button" data-target={t('main.menu.stack')} onClick={handleClickOnMenu}>{t('main.menu.stack')}</button>
-              </li>
-              <li className={styles.nav__li}>
-                <button type="button" data-target={t('main.menu.about')} onClick={handleClickOnMenu}>{t('main.menu.about')}</button>
-              </li>
-              <li className={styles.nav__li}>
-                <button type="button" data-target={t('main.menu.skills')} onClick={handleClickOnMenu}>{t('main.menu.skills')}</button>
-              </li>
-            </ul>
-          </nav>
+      <div className={styles.main}>
+        <nav className={styles.main__nav}>
+          <div className={styles.nav__bg}>
+            <img src={bgTitleBody} alt="" />
+          </div>
+          <ul className={styles.nav__list}>
+            <li className={styles.nav__li}>
+              <button type="button" data-target={t('main.menu.stack')} onClick={handleClickOnMenu}>{t('main.menu.stack')}</button>
+            </li>
+            <li className={styles.nav__li}>
+              <button type="button" data-target={t('main.menu.about')} onClick={handleClickOnMenu}>{t('main.menu.about')}</button>
+            </li>
+            <li className={styles.nav__li}>
+              <button type="button" data-target={t('main.menu.skills')} onClick={handleClickOnMenu}>{t('main.menu.skills')}</button>
+            </li>
+          </ul>
+        </nav>
+
+        <div className={styles.main__bg}>
           <BgAnimation siteTheme={siteTheme} />
         </div>
       </div>
 
       <div className={styles.dev}>{t('main.dev')}</div>
-    </div>
+    </section>
   );
 };
 
