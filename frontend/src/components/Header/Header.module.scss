@@ -27,10 +27,12 @@
     flex
     justify-between
     items-center
-    max-lg:w-full
     w-11/12
     max-w-screen-2xl
-    h-16;
+    h-16
+    
+    
+    max-lg:w-full;
 
     .header_button {
       @extend %small-button;
@@ -53,14 +55,16 @@
         @include typing-text();
         @apply my-0
         mx-auto
-        max-md:text-xl
         text-2xl
         overflow-hidden
         text-nowrap
         border-e-4
         tracking-widest
         border-myTheme-accent
-        cursor-default;
+        cursor-default
+        
+        
+        max-md:text-xl;
       }
     }
 
@@ -70,13 +74,17 @@
         max-md:justify-end
         justify-between
         items-center
-        max-md:flex-wrap
         gap-3
-        max-lg:me-5
         me-12
         h-full
+        text-sm
+        
+        max-sm:w-24
+
+        max-md:flex-wrap
         max-md:w-32
-        text-sm;
+        
+        max-lg:me-5;
 
         a {
           @include return-anim-duration-500();
@@ -84,8 +92,11 @@
           flex
           justify-center
           items-center
-          max-md:size-7
-          size-8;
+          size-8
+          
+          max-sm:size-6
+
+          max-md:size-7;
 
           p {
             @apply hidden;
