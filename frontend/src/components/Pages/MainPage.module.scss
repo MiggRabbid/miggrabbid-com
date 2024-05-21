@@ -41,6 +41,7 @@
 
     h1 {
       @extend %title;
+      @apply max-md:text-wrap;
     }
   }
 
@@ -50,44 +51,41 @@
     flex-row
     justify-between
     items-center
-    flex-wrap
     h-5/6
     min-h-fit
-    max-md:w-full
-    max-lg:w-full
     w-11/12
     px-0
     max-w-screen-2xl
-    z-10;
+    z-10
+
+    max-lg:w-full;
 
     .main__nav {
       @apply relative
       h-full
-      max-md:w-2/3
-      max-lg:w-fit
-      w-1/2
-      z-20;
+      w-128
+      z-20
+
+      max-md:h-100
+      max-md:w-100;
 
       .nav__bg {
         @apply absolute
         top-1/2
         -translate-y-1/2
-        max-md:left-0
-        max-lg:-left-1
-        max-xl:-left-8
-        left-0
-        max-md:h-128
-        max-md:w-128
-        max-lg:h-100
-        max-lg:w-100
-        w-full;
+        -left-2
+        h-128
+        w-128
+
+        max-md:h-100
+        max-md:w-100
+
+        max-lg:-left-1;
 
         img {
           @apply
-          max-lg:h-full
-          max-lg:w-full
-          h-fit
-          w-fit;
+          h-full
+          w-full;
         }
       }
 
@@ -95,34 +93,32 @@
         @apply absolute
         top-1/2
         -translate-y-1/2
-        max-md:left-10
-        max-lg:left-10
-        max-xl:left-0
-        left-8
+        left-10
         h-fit
         w-fit
-        rotate-3
+        rotate-6
         flex
         flex-col
         justify-center
-        z-20;
+        z-20
+        
+        max-lg:left-9;
 
         .nav__li {
           @apply 
-          w-max
-          h-min
-          min-h-24
+          w-fit
+          h-fit
           block;
 
           button {
             @include return-anim-duration-500();
             @apply
-            max-md:text-9xl
-            max-lg:text-8xl
             text-9xl
             font-black
             uppercase
-            select-none;
+            select-none
+            
+            max-md:text-8xl;
 
             &:hover {
               @include anim-duration-500();
@@ -137,14 +133,22 @@
 
     
     .main__bg {
-      @apply 
+      @apply
+      flex-1
       h-full
-      w-1/2
+      min-w-100
+      max-w-3xl
       pt-4
-      max-md:w-full
-      max-md:right-0
-      max-md:py-20
+
+      max-sm:w-full
+      max-sm:min-w-full
+
       max-md:absolute
+      max-md:right-0
+      max-md:min-w-56
+      max-md:max-w-80
+      max-md:py-20
+
       max-lg:z-0;
     }
   }
@@ -164,6 +168,11 @@
     text-center
     cursor-default
     text-myTheme-accent
-    z-40;
+    z-40
+    
+    max-sm:text-xl
+
+    max-md:text-wrap
+    max-md:text-2xl;
   }
 }
