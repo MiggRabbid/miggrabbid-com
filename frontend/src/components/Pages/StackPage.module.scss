@@ -29,7 +29,6 @@
 }
 
 .dark, .light {
-  height: calc(100vmin - 1rem);
   @extend %container;
 
   .title {
@@ -74,7 +73,8 @@
             @include return-anim-duration-1000();
             @apply w-min
             h-max
-            text-7xl
+            text-6xl
+            xl:text-7xl
             font-myTitleFont
             uppercase
             font-black
@@ -107,7 +107,8 @@
           li {
             @apply font-myTextFont
             font-bold
-            text-4xl;
+            text-3xl
+            xl:text-4xl;
           }
         }
       }

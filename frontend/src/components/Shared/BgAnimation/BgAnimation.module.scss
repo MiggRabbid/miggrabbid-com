@@ -11,17 +11,15 @@ $font-size: theme('fontSize.xs');
 
 .light {
   .card_gradient {
-
     @include card-gradient(theme('colors.myTheme.light'));
   }
-
 }
 
 .dark, .light {
   @apply 
-  h-5/6
-  w-1/2
-  py-3
+  h-full
+  w-full
+
   relative
   flex
   items-center;
@@ -59,7 +57,7 @@ $font-size: theme('fontSize.xs');
         @include focus-bgText();
 
         @apply 
-        absolute
+        relative
         top-0
         left-0
         h-full
@@ -69,7 +67,8 @@ $font-size: theme('fontSize.xs');
         text-center
         font-medium
         break-all
-        opacity-0
+        text-wrap
+        opacity-0;
         ;
       }
 

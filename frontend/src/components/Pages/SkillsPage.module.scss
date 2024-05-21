@@ -60,7 +60,8 @@
 
         h3 {
           @extend %title;
-          @apply text-2xl
+          @apply text-xl
+          xl:text-2xl
           text-myTheme-light
           block
           w-11/12
@@ -79,7 +80,8 @@
         .block__example {
           @apply
           left-0
-          w-full
+          w-11/12
+          xl:w-full
           h-fit
           flex
           flex-row
@@ -93,7 +95,8 @@
             h-96
             min-h-fit
             w-8/12
-            min-w-128
+            min-w-100
+            xl:min-w-128
             px-4
             py-4
             flex
@@ -111,12 +114,14 @@
 
             .decs__text__main {
               @apply text-myTheme-light
-              text-4xl;
+              text-3xl
+              xl:text-4xl;
             }
 
             .decs__text__second {
               @apply text-myTheme-accent
-              text-xl;
+              text-lg
+              xl:text-xl;
             }
           }
         }
@@ -130,7 +135,8 @@
 
       h3 {
         @extend %title;
-        @apply text-2xl
+        @apply text-xl 
+        xl:text-2xl
         mb-2;
       }
       
@@ -143,7 +149,8 @@
         h5 {
           @apply w-5/6
           font-myTextFont
-          text-xl
+          text-lg
+          xl:text-xl
           mb-1;
         }
 
@@ -154,7 +161,8 @@
         .project__desc, ul, li {
           @apply w-5/6
           font-myTextFont
-          text-2xl
+          text-xl
+          xl:text-2xl
           indent-10;
         }
 
@@ -175,7 +183,9 @@
       border-t-myTheme-accent;
 
       .footer__text {
-        @apply text-2xl
+        @apply 
+        text-xl
+        xl:text-2xl
         uppercase
         font-semibold
         py-8;

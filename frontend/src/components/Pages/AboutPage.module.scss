@@ -21,8 +21,6 @@
 }
 
 .dark, .light {
-  height: calc(100vmin - 1rem);
-
   @apply gap-12;
 
   .title {
@@ -31,28 +29,30 @@
   }
 
   .about {
-    @apply w-full
+    @apply h-max
+    w-full
     max-w-screen-2xl
     relative
-    right-10
     flex
     flex-col
     justify-center
     items-center
-    gap-6;
+    gap-6
+    mb-12;
 
     p {
       @apply w-5/6
       min-w-96
-      h-fit
-      text-2xl
+      text-xl
+      xl:text-2xl
       font-normal
       text-start
       cursor-default
       indent-10;
 
       span {
-        @apply text-myTheme-accent;
+        @apply 
+        text-myTheme-accent;
       }
     }
   }
