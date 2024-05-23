@@ -1,0 +1,34 @@
+@import '../../../styles/extends.scss';
+@import '../../../styles/animation.scss';
+
+.app_button {
+  @include return-anim-duration-500();
+  @apply fixed
+  bottom-5
+  right-5
+  size-8
+  rounded-lg
+  overflow-hidden
+  rotate-180
+  z-40;
+
+  .button__icon {
+    @apply fill-myTheme-accent;
+  }
+
+  &:hover {
+    @include anim-duration-500();
+    @apply scale-110
+  }
+}
+
+.app_button__rotated {
+  @include anim-duration-500();
+  @extend .app_button;
+  @apply -rotate-0;
+}
+
+
+#button-up.clicked {
+  @include click-on-menu();
+}
