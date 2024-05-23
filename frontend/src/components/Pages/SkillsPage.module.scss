@@ -85,9 +85,8 @@
           h-fit
           flex
           flex-row
+          gap-2
           cursor-default
-          bg-myTheme-dark
-          rounded-2xl
           overflow-hidden;
   
           .examples__decs {
@@ -102,7 +101,9 @@
             flex
             flex-col
             justify-center
-            gap-3;
+            gap-3
+            rounded-e-2xl
+          bg-myTheme-dark;
             
             .decs__text__main, .decs__text__second {
               @apply

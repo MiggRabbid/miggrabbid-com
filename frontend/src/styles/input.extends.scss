@@ -7,6 +7,14 @@
   rounded-md
   py-1.5
   px-1.5
+  outline
+  outline-1
+  outline-transparent
+  ring-4
+  ring-transparent
+  ring-opacity-0
+  transition-all
+  duration-300
   text-myTheme-light
   bg-myTheme-primary
   caret-myTheme-accent
@@ -16,25 +24,19 @@
 
 %input-focus {
   @apply
-  outline
-  outline-1
   -outline-offset-0
   outline-myTheme-accent
-  ring-4
   ring-myTheme-accent
   ring-opacity-75;
 }
 
 %input__invalid {
   @apply
-  outline
-  outline-1
   outline-offset-0
   outline-red-700;
 
   &:focus {
     @apply
-    ring-4
     ring-red-700
     ring-opacity-75;
   }
